@@ -36,7 +36,7 @@
         <td width="22%"></td>
         <td width="78%"><table width="292" height="27"  border="5" align="center" bordercolor="#DAD8FA">
           <tr>
-            <td width="274" align="center" bgcolor="#D7EBFF"><a href="http://blog.sina.com.cn/u/1253924794#gbook_1" target="_blank">去我的博客留言吧--<strong><font color="#ff0000">Go!!!</font></strong></a><img src="img/icon/icon_down.gif" width="15" height="15"></td>
+            <td width="274" align="center" bgcolor="#D7EBFF"><a href="#" onClick="javascript:document.blog_gbook.style.display='';">去我的博客留言吧--<strong><font color="#ff0000">Go!!!</font></strong></a><img src="img/icon/icon_down.gif" width="15" height="15"></td>
           </tr>
         </table></td>
       </tr>
@@ -83,7 +83,8 @@
                 <PARAM NAME="AllowScriptAccess" VALUE="always">
                 <PARAM NAME="Scale" VALUE="ShowAll">
                 <PARAM NAME="DeviceFont" VALUE="0">
-                <PARAM NAME="EmbedMovie" VALUE="0">
+                <PARAM NAME="EmbedMovie" VALUE="0"
+				>
                 <PARAM NAME="BGColor" VALUE="">
                 <PARAM NAME="SWRemote" VALUE="">
                 <PARAM NAME="MovieData" VALUE="">

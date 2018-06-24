@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+</head>
+
+<body>
+<form name="f">
+  <textarea name="txt" cols="70" rows="20"></textarea>
+  <input type="button" name="button" value="go            " onClick="xx();">
+</form>
+<script>
+	function xx(){
+		var Lrc=new Array();
+		lIdx=0;
+		str=document.f.txt.value.replace(/"/g,"\\\"");
+		Lrc[lIdx++]=str;
+		document.f.txt.value="\""+str+"\"";
+		
+	}
+</script>
+</body>
+</html>

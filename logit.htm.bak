@@ -1,11 +1,5 @@
-<html>
-<head>
 <script src="Functions.js"></script>
 <script src="Users.js"></script>
-<title>正在处理……</title>
-</head>
-<body>
-
 <script>
 	var usname=getKey("usname","logit.htm");
 	var uspwd=getKey("uspwd","logit.htm");
@@ -15,12 +9,10 @@
 	this.location.href="ideas.htm";
 </script>
 
-
-
 <b></b>
 <b></b>
 <b></b>
 <b></b>
 <b></b>
-</body>
-</html>
+<b></b>
+<b></b>

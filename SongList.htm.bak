@@ -185,7 +185,7 @@ MM_reloadPage(true);
                         color=#ffffff>Z</FONT></B></A></FONT></TD>
     <TD align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><span class="style6"><a href="#"onClick="javascript:hide('lrAll');swap('lrAll','className','up','down');$('Jia0').innerHTML=$('Jia0').innerHTML=='+'?'--':'+';"><strong><font id="Jia0" color="#ff9900">--</font></strong></a></span></TD>
   </tr>
-  <tr> </tr>
+
 </table>
 <br>
 
@@ -521,7 +521,8 @@ MM_reloadPage(true);
           经典的<br>
           歌er<br>
           呢？<br>
-          还不如<br>
+          还<br>
+          不如<br>
           大家<br>
           一起来<br>
           凑歌<br>

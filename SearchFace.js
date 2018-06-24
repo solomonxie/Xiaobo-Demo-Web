@@ -34,6 +34,7 @@
 	function setAllPosition(){
 		for(i=0;i<arr_lrs.length;i++){
 			$(arr_lrs[i]).style.left=295;
+			//$(arr_lrs[i]).style.left=$("form_Total").style.left+300;
 			$(arr_lrs[i]).style.top=300;
 		}
 	}
