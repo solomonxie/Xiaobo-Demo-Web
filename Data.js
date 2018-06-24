@@ -11,7 +11,7 @@ var Data=new Array();
 var dataIndex=2;//用作累积数，为了后面方便
 //key的值，会出现在引用此js文件的叶面里*************
 //Data[dataIndex++]=new Array("form_","Get",form_);
-// [0]是fname表单名称 [1]是Method提交类型 [2]是表格值 [3]是显示出来的名称  [4]是表单的keyName(for Post only)] [5]是归属类型
+// [0]是fname表单名称 [1]是Method提交类型 [2]是地址值 [3]是显示出来的名称  [4]是表单的keyName(for Post only)] [5]是归属类型
 //###############################################################################################################################
 
 //以下是各个具体表单值
@@ -86,7 +86,7 @@ var form_bt_china="http://search.btchina.net/btsearch.php?query=";//gggggggggggg
 	Data[dataIndex++]=new Array("form_bt_china","Get",form_bt_china,"BT@China","download");
 
 
-var form_verycd="http://find.verycd.com/folders/?kw=";//ggggggggggggggggggggggggggggggg
+var form_verycd="http://find.verycd.com/folders/";//ggggggggggggggggggggggggggggggg
 	Data[dataIndex++]=new Array("form_verycd","Get",form_verycd,"VeryCD","download");
 
 var form_Vagaa="http://hot.yikuai.com/search.php?stype=3&keyword=";//ggggggggggggggggggggggggggggggg

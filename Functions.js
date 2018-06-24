@@ -15,27 +15,22 @@
 
 //----Start----处理Get/Post方法提交表单的搜索----
 	//*******注意：Data数组，会出现在引用此js文件的叶面里（因为我会在那个叶面引用Data.js文件*******
-	//专门处理Get方法提交表单的搜索
-	function goSearchGet(fname){//fname是指表单名
-		//处理get方法的表单，直接跳转链接就可以了
-		
-		//[2]是对应的地址//大白话理解：this.location.href="www.xxx.com/k="+"搜索信息"//为什么要这样呢？因为Data里面的初始值设定问题
-		//window.open(getForm(fname)[2]+Data[0]);
-		this.location.href=getForm(fname)[2]+Data[0];
+	
+	//综合搜索转接处
+	function goSearch(fname){
+		var form=getForm(document.form_Total.fname.value);
+		var key=document.form_Total.key.value;
+		if(form[0]=="form_XiaoBo_music"){searchMusicHere(key);return false;}
+		if(form[1]=="Get")	window.open(form[2]+key);
+		else goSearchPost(form);
+		document.form_Total.reset();
+		return false;
 	}
 	
 	//专门处理Post方法提交表单的搜索
 	//*****************************此函数暂时有问题，稍后处置!!!!!!!!!!!!!!!!!!!!!!!!!*****************************
-	function goSearchPost(fname){
-		
-		var form=getForm(fname);//form得到数组
-		document.write(form[2]);//[2]是对应的整个表单语句
-		//alert(form[0]);alert(form[1]);alert(form[2]);alert(form[3]);
-		//document.form[0].form[3].value=Data[0];//设置key值//[3]是对应的keyName
-		//alert(document.form[0].form[3].value);
-		//document.form[0].target="_blank";
-		//document.form[0].style.visibility="hidden";
-		//document.form[0].submit();
+	function goSearchPost(form){
+		/*还没有想好方法*/
 	}
 //----End----处理Get/Post方法提交表单的搜索----
 
@@ -51,6 +46,7 @@
 		}
 		//如果检查到没有此表单，则自动跳回搜索页
 		//this.location.href="SearchFace.htm";
+		//如果没有，则到默认站点搜索
 		return Data[1];
 	}
 //----End----从Data数组中查找制定名称的数组，并返回----
@@ -61,11 +57,13 @@
 function searchMusicHere(words){
 	if(words=="") this.location.href="SongList.htm";
 	var arrSongs=new Array();var aidx=0;
+	var arrWords=words.split(" ").sort();//分割搜索词
 	var i;
 	for(i=0;i<Songs.length;i++)
-		if(Songs[i].toString().indexOf(words)>=0) arrSongs[aidx++]=Songs[i];
-	if(arrSongs.length==0){alert("对不起，小波快歌没有你要找的歌儿");window.close();return;}
-	else this.location.href="SongList.htm#"+arrSongs[0][1];
+		for(j=0;j<arrWords.length;j++)//这个实现了多个词查询
+		if(Songs[i].toString().indexOf(arrWords[j])>=0) arrSongs[aidx++]=Songs[i];
+	if(arrSongs.length==0){alert("对不起，小波快歌没有你要找的歌儿");return false;}
+	else window.open("SongList.htm#"+arrSongs[0][1]);//具体跳到arrSongs的哪一个位置还没有定夺
 }
 
 

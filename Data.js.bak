@@ -86,7 +86,7 @@ var form_bt_china="http://search.btchina.net/btsearch.php?query=";//gggggggggggg
 	Data[dataIndex++]=new Array("form_bt_china","Get",form_bt_china,"BT@China","download");
 
 
-var form_verycd="http://find.verycd.com/folders/?kw=";//ggggggggggggggggggggggggggggggg
+var form_verycd="http://find.verycd.com/folders/";//ggggggggggggggggggggggggggggggg
 	Data[dataIndex++]=new Array("form_verycd","Get",form_verycd,"VeryCD","download");
 
 var form_Vagaa="http://hot.yikuai.com/search.php?stype=3&keyword=";//ggggggggggggggggggggggggggggggg
@@ -141,7 +141,7 @@ var form_Alibaba="http://search.china.alibaba.com/search/offer_search.htm?tracel
 
 //ÒôÀÖ##########################################################################
 //!!!Õ¾ÄÚ¸èÇúËÑË÷£¡£¡£¡
-var form_XiaoBo_music="SongList.htm";//ggggggggggggggggggggggggggggggg
+var form_XiaoBo_music="SongList.htm?key=";//ggggggggggggggggggggggggggggggg
 	Data[dataIndex++]=new Array("form_XiaoBo_music","Get",form_XiaoBo_music,"Ð¡²¨¿ì¸è","music");
 
 var form_baidu_music="http://mp3.baidu.com/m?f=ms&tn=baidump3&ct=134217728&lf=&rn=&lm=-1&word=";//ggggggggggggggggggggggggggggggg

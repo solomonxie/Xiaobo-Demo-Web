@@ -15,6 +15,7 @@
 <script src="Functions.js"></script>
 <script src="SearchFace.js"></script>
 <script src="Data.js"></script>
+<script src="Songs.js"></script>
 <META content="MSHTML 6.00.2900.3020" name=GENERATOR>
 <script language="JavaScript" type="text/JavaScript">
 <!--
@@ -36,21 +37,22 @@ width=250><BR>
 <BR><BR><BR>
 <DIV id=l>
 <DIV id="Bar">
-<a href="#" id="1" onclick="getLrSelect('web');changeColor('1');">网页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="2" onclick="getLrSelect('dongman');changeColor('2');">动漫</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="3" onclick="getLrSelect('download');changeColor('3');">资源</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="4" onclick="getLrSelect('video');changeColor('4');">视频</a>&nbsp;&nbsp; <a href="#" id="5" onclick="getLrSelect('buy');changeColor('5');">购物</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="6" onclick="getLrSelect('music');changeColor('6');">歌er</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="7" onclick="getLrSelect('picture');changeColor('7');">图片</a> &nbsp;&nbsp;<a href="Search.htm">更多&gt;&gt;&nbsp;</a>
+<A id=1 onclick="getLrSelect('web');changeColor('1');" href="#">网页</a>&nbsp;&nbsp;&nbsp;&nbsp;<A id=2 onclick="getLrSelect('dongman');changeColor('2');" href="#">动漫</a>&nbsp;&nbsp;&nbsp;&nbsp;<A id=3 onclick="getLrSelect('download');changeColor('3');" href="#">资源</a>&nbsp;&nbsp;&nbsp;&nbsp;<A id=4 onclick="getLrSelect('video');changeColor('4');" href="#">视频</a>&nbsp;&nbsp; <A id=5 onclick="getLrSelect('buy');changeColor('5');" href="#">购物</a>&nbsp;&nbsp;&nbsp;&nbsp;<A id=6 onclick="getLrSelect('music');changeColor('6');" href="#">歌er</a>&nbsp;&nbsp;&nbsp;&nbsp;<A id=7 onclick="getLrSelect('picture');changeColor('7');" href="#">图片</a> &nbsp;&nbsp;<A href="Search.htm">更多&gt;&gt;&nbsp;</a>
 </DIV>
 </DIV>
 <TABLE cellSpacing=0 cellPadding=0 width=600 border=0>
   <TR vAlign=top>
     <TD width=92></TD>
     <TD height=62>
-    	<FORM name="form_Total" id="form_Total" action="Manager.htm" target="_blank">
+    	<FORM name="form_Total" id="form_Total" onSubmit="return goSearch(this.fname.value);" target="_blank">
 			<INPUT class=kw size=36 name="key">
-			<input type="hidden" name="type" value="">
-			<input type="hidden" name="fname" value="">
+			<input type="hidden" name="type" >
+			<input type="hidden" name="fname" >
+			<input type="hidden" name="param" >
 			<INPUT type=submit class=sb value=小波搜索>
         </FORM>
 	</TD>
-  <TD width=100 align="center"><a href="index.htm"><img src="img/icon/return.jpg" width="60" height="30" border="0"></a>  </TD>
+  <TD width=100 align="middle"><A href="index.htm"><IMG height=30 src="img/icon/return.jpg" width=60 border=0></a>  </TD>
   </TR>
 </TABLE>
 <table width="600"  border="0">
@@ -65,19 +67,19 @@ width=250><BR>
 <br>
 <br>
 <P style="HEIGHT: 30px">
-	<a onclick="addHomepage(this);" href="#">
+	<A onclick=addHomepage(this); href="#">
 		把这儿设为首页
 	</a> <script>function addHomepage(a){a.style.behavior='url(#default#homepage)';a.setHomePage(this.location.href);}</script>
 </P>
-<P style="HEIGHT: 14px"><a href="index.htm">首页</a> | <a href="#" onClick="javascript:window.external.addFavorite(
-									'http://52xiaobo.xinwen520.com/Search.htm','小波搜索--最舒服');">收藏本搜索器</a> | <a href="Talk.htm">给我留言</a> | <A 
-href="Ideas.htm">wo的想法</A> | <a href="AboutI.htm">About 小波</a></P>
-<P id=b>&copy;2007 小波 。网站以共同学习为目的，供大家学习参考，后台以最简单直观方式编辑</P>
+<P style="HEIGHT: 14px"><A href="index.htm">首页</a> | <A onclick="javascript:window.external.addFavorite(&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;'http://52xiaobo.xinwen520.com/Search.htm','小波搜索--最舒服');" href="#" >收藏本搜索器</a> | <A href="Talk.htm">给我留言</a> | <A 
+href="Ideas.htm">wo的想法</A> | <A href="AboutI.htm">About 小波</a></P>
+<P id=b>2007 小波 。网站以共同学习为目的，供大家学习参考，后台以最简单直观方式编辑.<script src='http://s103.cnzz.com/stat.php?id=395664&web_id=395664' language='JavaScript' charset='gb2312'></script></P>
 
 
 <br>
 <hr size="2">
-<p>&nbsp;</p>
+<div align="center"><font color="#ffffff">耶和华没有赐予我最好的建设能力 但赐予了我最好的整理能力 阿们</font></div>
+<p></p>
 </CENTER>
 
 

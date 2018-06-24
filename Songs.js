@@ -177,10 +177,16 @@ function getSongs(zm,flag){//zm是字母,flag是排列方式如按照歌曲排或者按照歌手排
 	if(arrSongs.length<1) return "Sorry,Have not";
 	arrSongs=arrSongs.sort();
 	for(var i=0;i<arrSongs.length;i++)
-		inner+=arrSongs[i][2]==""?
-				"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
-				:
-				"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"["+ arrSongs[i][2] +"]" +"</a><br>";
+		if(flag=="Songs")
+			inner+=arrSongs[i][2]==""?
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
+					:
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"["+ arrSongs[i][2] +"]" +"</a><br>";
+		else
+			inner+=arrSongs[i][2]==""?
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
+					:
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][2]+":"+ arrSongs[i][0] +"</a><br>";
 	return inner;
 }
 

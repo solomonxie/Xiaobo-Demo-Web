@@ -4,12 +4,13 @@
 <script src="Functions.js"></script>
 </head>
 <body>
-	<form action="test02.htm" method="get">
+	<form name="f" action="test02.htm" method="get">
 		<input type="text" name="usname">
 		<input type="text" name="uspwd">
 		<input type="submit" value="зЂВс" onClick="setCookie();">
 	</form>
 	<script>
+	
 		function setCookie(){
 			now=new Date();
 			now.setTime(now.getTime() + 1000*60*5);

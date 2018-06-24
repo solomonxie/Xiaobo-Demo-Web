@@ -175,11 +175,13 @@ function getSongs(zm,flag){//zm是字母,flag是排列方式如按照歌曲排或者按照歌手排
 	for(var i=0;i<Songs.length;i++)//如果符合，则记录下来
 		if(Songs[i][zz]==zm) arrSongs[aidx++]=Songs[i];
 	if(arrSongs.length<1) return "Sorry,Have not";
+	arrSongs=arrSongs.sort();
 	for(var i=0;i<arrSongs.length;i++)
-		inner+=arrSongs[i][2]==""?
-				"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
-				:
-				"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"["+ arrSongs[i][2] +"]" +"</a><br>";
+			inner+=arrSongs[i][2]==""?
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
+					:
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"["+ arrSongs[i][2] +"]" +"</a><br>";
+		
 	return inner;
 }
 
