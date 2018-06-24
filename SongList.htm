@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>小波DEMO网--我喜欢的歌曲</title>
+<title>小波快歌er--小波DEMO网[我最喜欢的歌er]</title>
 <link rel="stylesheet" type="text/css" href="Sheet.css">
 <style type="text/css">
 <!--
@@ -13,6 +13,7 @@ body {
 -->
 </style>
 <script src="Songs.js"></script>
+<script src="Functions.js"></script>
 <script language="JavaScript" type="text/JavaScript">
 <!--
 function MM_reloadPage(init) {  //reloads the window if Nav4 resized
@@ -51,7 +52,7 @@ MM_reloadPage(true);
     <td width="110" rowspan="5">&nbsp;</td>
     <td colspan="51"><a href="index.htm">DEMO</a>- - - <a href="Music.htm">好歌推荐</a>- -我喜欢的歌er<a name="#dh"></a></td>
   </tr>
-  <tr>
+  <tr id="trZM">
     <TD width=17 align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><FONT 
                         face=Arial color=#ffffff><A 
                         href="#"
@@ -210,9 +211,35 @@ MM_reloadPage(true);
 
 <br>
 
+<!--lrForSearch start-->
+<div id="tbForSearch">
+<table width="722"  border="0">
+  <tr>
+    <td width="16%"></td>
+    <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color="#ff9900"><div id="aForSearch"></div></font></td>
+  </tr>
+</table>
+</div>
+<div id="lrForSearch" style="margin-left:120px;margin-right:120px;"></div>
+<!--lrForSearch start-->
+
+<!--###############################################################################-->
+<script>
+<!--进行search列赋值 start-->
+	//for search only
+	var key=getKey("arrSongsNum","SongList.htm");
+	var isSearch=false;
+	if(key!=""){
+		showSongsForSearch(key);//在结尾有东西的情况下才执行下一步
+		isSearch=true;
+	}
+<!--进行search列赋值  end-->
+</script>
+<!--###############################################################################-->
+
 
 <!--lrAll Start-->
-<div id="lrAll">
+<div id="lrAll" style="display:none;"><script>if(isSearch==false) $("lrAll").style.display="";</script>
 <table width="722"  border="0">
   <tr>
     <td width="110"></td>
@@ -448,41 +475,18 @@ MM_reloadPage(true);
 </table>
 <div id="lrZ" style="margin-left:120px;margin-right:120px;"></div>
 <br>
+</div>
+<!--lrAll end-->
 
 <table width="722"  border="0">
   <tr>
     <td width="16%"></td>
-    <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color="#ff9900">&nbsp;</font></td>
+    <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color="#ff9900"><div id="aForSearch"></div></font></td>
   </tr>
 </table>
-<script>
-<!--进行各列赋值start-->
-	showSongs("Songs");
-<!--进行各列赋值end-->
-</script>
-</div>
-<!--lrAll end-->
 
-
-
-<br>
-<table width="722" border="0">
-  <tr>
-  	<td width="110" align="center" valign="bottom">&nbsp;</td>
-    <td align="center" valign="bottom"  bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >Copyright &copy; 2006, 小波. All right are reserved. <span id="Count"></span></td>
-  </tr>
-  <tr>
-    <td width="110" align="center">&nbsp;</td>
-    <td align="center" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">别看是静态页，运用的都是数据库模式哦，可扩展性高呢！了解更多，请联系我</td>
-  </tr>
-</table>
-<div id="xx" style="display:none;"><script src='http://s103.cnzz.com/stat.php?id=395664&web_id=395664' language='JavaScript' charset='gb2312'></script></div>
-<script>$("Count").innerHTML=$("xx").innerHTML;$("xx").innerHTML="";</script>
-
-<br>
-
-	
-<div id="lrNames" style="position:absolute; width:126px; z-index:3; top: 147px; left: 820px;">
+<!--音乐公告 start-->
+<div id="lrPubs" style="position:absolute; width:126px; z-index:3; top: 147px; left: 820px;display:none;"><script>if(isSearch==false) $("lrPubs").style.display="";</script>
       <table width="100%" height="120"  border="0" align="center">
         <tr>
           <td align="center" bgcolor="#66CCFF"><span class="style6"><a href="#"onClick="javascript:hide('pubnews');swap('pubnews','className','up','down');$('Jia2').innerHTML=$('Jia2').innerHTML=='+'?'--':'+';">音乐公告<strong><font id="Jia2" color="#ff9900">+</font></strong></a></span></td>
@@ -492,7 +496,6 @@ MM_reloadPage(true);
             <marquee align="middle" behavior=scroll direction="up" width=100% scrollamount=2 scrolldelay=10 onmouseover="this.stop()" onmouseout="this.start()">
             <center>
               <span class="style6"> 
-          
           感谢大家<br>
           一起帮忙<br>
           收集好听的<br>
@@ -572,6 +575,33 @@ MM_reloadPage(true);
         </tr>
       </table>
 </div>
+<!--音乐公告 start-->
+
+
+<!--###############################################################################-->
+<script>
+<!--进行各列赋值start-->
+	if(isSearch==false) showSongs("Songs");
+<!--进行各列赋值end-->
+</script>
+<!--###############################################################################-->
+
+
+<br>
+<table width="722" border="0">
+  <tr>
+  	<td width="110" align="center" valign="bottom">&nbsp;</td>
+    <td align="center" valign="bottom"  bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >Copyright &copy; 2006, 小波. All right are reserved. <script src='http://s103.cnzz.com/stat.php?id=395664&web_id=395664' language='JavaScript' charset='gb2312'></script></td>
+  </tr>
+  <tr>
+    <td width="110" align="center">&nbsp;</td>
+    <td align="center" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">别看是静态页，运用的都是数据库模式哦，可扩展性高呢！了解更多，请联系我</td>
+  </tr>
+</table>
+<br>
+
+	
+
 
 <a></a>
 <a></a>

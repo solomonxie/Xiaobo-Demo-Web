@@ -160,6 +160,7 @@ tkPerson[tkp++]="燕茹";
 tkPerson[tkp++]="洋葱";
 tkPerson[tkp++]="晨晨";
 tkPerson[tkp++]="萍";
+tkPerson[tkp++]="<font color='red'>张汉东</font><br><font color='green'>不得不谢</font>";
 //tkPerson[tkp++]="";
 //###############################################################################################################################
 
@@ -177,17 +178,52 @@ function getSongs(zm,flag){//zm是字母,flag是排列方式如按照歌曲排或者按照歌手排
 	if(arrSongs.length<1) return "Sorry,Have not";
 	arrSongs=arrSongs.sort();
 	for(var i=0;i<arrSongs.length;i++)
+		if(flag=="Songs")
 			inner+=arrSongs[i][2]==""?
 					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
 					:
 					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"["+ arrSongs[i][2] +"]" +"</a><br>";
-		
+		else
+			inner+=arrSongs[i][2]==""?
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
+					:
+					"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][2]+":"+ arrSongs[i][0] +"</a><br>";
 	return inner;
 }
 
 function showSongs(flag){//flag是排列方式如按照歌曲排或者按照歌手排
 	for(var i=0;i<26;i++)
 		$("lr"+String.fromCharCode(i+65)).innerHTML=getSongs(String.fromCharCode(i+65),flag);
+}
+
+function showSongsForSearch(key){
+	var inner="";
+	var arrSongs=new Array();var aidx=0;
+	var paramList=key//getKey("arrSongsNum","SongList.htm");
+	//去除参数最后的"#"等杂符号符号，防止刷新时的bug
+	if(paramList.charAt(paramList.length-1)=="#") paramList=paramList.split("SongList.htm")[0];
+	
+	var arrSongsNum=paramList.split("*");//切割参数
+	
+	for(var i=0;i<arrSongsNum.length;i++) arrSongs[i]=Songs[arrSongsNum[i]];
+	
+	arrSongs=arrSongs.sort();
+	
+	for(var i=0;i<arrSongs.length-1;i++)//为什么减1才行呢？
+		inner+=arrSongs[i][2]==""?
+						"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"</a><br>"
+						:
+						"<a href='#' onClick=\"setSrc('"+ arrSongs[i][4] +"');\">"+ arrSongs[i][0]+"["+ arrSongs[i][2] +"]" +"</a><br>";
+	
+	$("lrForSearch").innerHTML=inner
+		+
+		"<br><a href='SongList.htm'><font color='#ff9900'>想听更多歌er?</font></a>";
+	//把其他的面板处理以下
+	$("aForSearch").innerHTML="搜索结果";
+	$("trZM").style.display="none";
+	
+	//document.write("------------<a href='SongList.htm'><font color='#ff9900'>想听更多歌er?</font></a>-------------");
+	document.write("<br>"+$("tbForSearch").innerHTML);
 }
 
 //哈哈，成功啦！！！通过动态更改innerHtml就可以达到动态赋值拉！张汉东功劳——留名至此！##########################################

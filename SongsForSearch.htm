@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>小搜波--搜歌er--小波DEMO网</title>
+<link rel="stylesheet" type="text/css" href="Sheet.css">
+<style type="text/css">
+<!--
+body {
+	margin-left: 100px;margin-right: 100px;
+}
+-->
+</style>
+<script src="Songs.js"></script>
+<script src="Functions.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<script>
+	function $(s){
+		return document.getElementById(s);
+	} 
+	function swap(s,a,b,c){
+		$(s)[a]=$(s)[a]==b?c:b;//操，经典
+	}
+	function hide(s){
+		$(s).style.display=$(s).style.display=="none"?"":"none";
+	}
+</script>
+</head>
+
+<body onMouseOut="window.status='如果喜欢小波Demo网或喜欢小波本人，就一定要给我留言并且转给你的朋友们哦！！';return true">
+	<script src="DaoHang.js"></script>
+
+<hr size="2">
+<table width="722">
+  <tr>
+    <td width="110" rowspan="5">&nbsp;</td>
+    <td colspan="51"><a href="index.htm">DEMO</a>- - - <a href="Music.htm">好歌推荐</a>- <a href="SearchFace.htm">小搜波</a>---搜歌儿<a name="#dh"></a></td>
+  </tr>
+</table>
+<br>
+
+<div style="margin-left: 120px;margin-right: 120px;">
+  <a href="#"onClick="javascript:hide('lrPlayer');swap('lrPlayer','className','up','down');$('Jia').innerHTML=$('Jia').innerHTML=='+'?'-':'+';">播放器<strong><font id="Jia" color="#ff9900">-</font></strong></a></td>
+<span id="download"><a href="#" title='点击下载'><font color="#ff9900">↓</font></a></span>
+<div id="lrPlayer">
+        <EMBED style="FILTER: invert(); WIDTH: 350px; HEIGHT: 50px;" 
+				src="" 	
+				type=audio/mpeg
+				id="player" 
+				LOOP="5" 
+				AUTOSTART="1" 
+				SHOWSTATUSBAR="2"
+				controls=console>
+		</EMBED>
+  </div>
+</div>
+
+<br>
+
+<!--lrForSearch start-->
+<div id="tbForSearch">
+<table width="722"  border="0">
+  <tr>
+    <td width="16%"></td>
+    <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color="#ff9900"><div id="aForSearch"></div></font></td>
+  </tr>
+</table>
+</div>
+
+<div id="lrForSearch" style="margin-left:120px;margin-right:120px;"></div>
+
+<!--lrForSearch start-->
+
+<!--###############################################################################-->
+<script>
+<!--进行search列赋值 start-->
+	var key=getKey("arrSongsNum","SongList.htm");
+	showSongsForSearch(key);//在结尾有东西的情况下才执行下一步
+<!--进行search列赋值  end-->
+</script>
+<!--###############################################################################-->
+
+<table width="722"  border="0">
+  <tr>
+    <td width="16%"></td>
+    <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color="#ff9900"><div id="aForSearch"></div></font></td>
+  </tr>
+</table>
+
+
+<br>
+<table width="722" border="0">
+  <tr>
+  	<td width="110" align="center" valign="bottom">&nbsp;</td>
+    <td align="center" valign="bottom"  bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >Copyright &copy; 2006, 小波. All right are reserved. <span id="Count"></span></td>
+  </tr>
+  <tr>
+    <td width="110" align="center">&nbsp;</td>
+    <td align="center" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">别看是静态页，运用的都是数据库模式哦，可扩展性高呢！了解更多，请联系我</td>
+  </tr>
+</table>
+<script>$("Count").innerHTML="<script src='http://s103.cnzz.com/stat.php?id=395664&web_id=395664' language='JavaScript' charset='gb2312'></script>";</script>
+<br>
+
+	
+
+
+<a></a>
+<a></a>
+<a></a>
+</body>
+</html>
+

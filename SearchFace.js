@@ -42,6 +42,73 @@
 		document.form_Total.type.value=type;
 		document.form_Total.fname.value=fname;
 	}
+	
+	//----Start----处理Get/Post方法提交表单的搜索----
+	//*******注意：Data数组，会出现在引用此js文件的叶面里（因为我会在那个叶面引用Data.js文件*******
+	
+	//综合搜索转接处
+	function goSearch(fname){
+		var form=getForm(document.form_Total.fname.value);
+		var key=document.form_Total.key.value;
+		if(form[0]=="form_XiaoBo_music"){searchMusicHere(key);return false;}
+		if(form[1]=="Get")	window.open(form[2]+key);
+		else goSearchPost(form);
+		//document.form_Total.reset();
+		return false;
+	}
+	
+	//专门处理Post方法提交表单的搜索
+	//*****************************此函数暂时有问题，稍后处置!!!!!!!!!!!!!!!!!!!!!!!!!*****************************
+	function goSearchPost(form){
+		/*还没有想好方法*/
+	}
+//----End----处理Get/Post方法提交表单的搜索----
+
+
+
+//----Start----从Data数组中查找制定名称的数组，并返回----
+	function getForm(fname){
+		for(j=2;j<Data.length;j++){
+			//window.status="中断位置在"+j;//检查循环中断的位置
+			if(Data[j][0]==fname){//[0]是对应的表单名参数
+				return Data[j];//找到了，就把表单数组返回
+			}
+		}
+		//如果检查到没有此表单，则自动跳回搜索页
+		//this.location.href="SearchFace.htm";
+		//如果没有，则到默认站点搜索
+		return Data[1];
+	}
+//----End----从Data数组中查找制定名称的数组，并返回----
+
+
+
+//----Start----站内音乐搜索----自己做搜索引擎真累-------
+function searchMusicHere(words){
+	if(words=="") window.open("SongList.htm");
+	var arrSongsNum=new Array();var aidx=0;//记录下来符合条件的编号
+	var arrWords=words.split(" ").sort();//分割搜索词
+	var isIt;
+	for(var i=0;i<Songs.length;i++){
+		isIt=true;
+		for(j=0;j<arrWords.length;j++)//这个实现了多关键字查询
+			if(Songs[i].toString().toLowerCase().indexOf(arrWords[j].toString().toLowerCase())<0)//统一改为小写统一比较
+				isIt=false;//只要有一个不符合，则认定为不是
+		if(isIt==true) arrSongsNum[aidx++]=i;
+	}
+	if(arrSongsNum.length==0){alert("我这儿没这首歌儿啊，换个关键词试试吧！");return false;}
+	//else window.open("SongList.htm#"+arrSongs[0][1]);//具体跳到arrSongs的哪一个位置还没有定夺
+	else{
+		var xx=arrSongsNum[0];for(var i=1;i<arrSongsNum.length;i++)	xx+="*"+arrSongsNum[i];
+		window.open("SongList.htm?arrSongsNum="+xx);
+	}
+}
+
+
+
+//----End----站内音乐搜索---
+	
+	
 	/*
 	//显示已经选择了的搜索引擎名称,利用鼠标跟随效果
 	function showWP(id){

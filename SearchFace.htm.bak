@@ -23,20 +23,6 @@ function MM_reloadPage(init) {  //reloads the window if Nav4 resized
 MM_reloadPage(true);
 //-->
 </script>
-<script>
-	//----Start----点击列 隐藏/显示----
-	function $(s){
-		return document.getElementById(s);
-	} 
-	function swap(s,a,b,c){
-		$(s)[a]=$(s)[a]==b?c:b;//操，经典
-	}
-	function hide(s){
-		$(s).style.display=$(s).style.display=="none"?"":"none";
-	}
-	
-//----End----点击列 隐藏/显示----
-</script>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312"></HEAD>
 <BODY text=#000000 vLink=#0000cc aLink=#ff6600 link=#0000cc>
 <div align="center">
@@ -83,16 +69,18 @@ width=250><BR>
 </P>
 <P style="HEIGHT: 14px"><A href="index.htm">首页</a> | <A onclick="javascript:window.external.addFavorite(&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;'http://52xiaobo.xinwen520.com/SearchFace.htm','小波搜索--最舒服');" href="#" >收藏本搜索器</a> | <A href="Talk.htm">给我留言</a> | <A 
 href="Ideas.htm">wo的想法</A> | <A href="AboutI.htm">About 小波</a></P>
-<P id=b>2007 小波 。网站以共同学习为目的，供大家学习参考，后台以最简单直观方式编辑.
-<script src="DataForSearch.js"></script>
-<script src="Songs.js"></script>
-<script src='http://s103.cnzz.com/stat.php?id=395664&web_id=395664' language='JavaScript' charset='gb2312'></script></P>
+<P id=b>2007 小波 。网站以共同学习为目的，供大家学习参考，后台以最简单直观方式编辑.<script src='http://s103.cnzz.com/stat.php?id=395664&web_id=395664' language='JavaScript' charset='gb2312'></script></P>
+
 
 <br>
 <hr size="2">
 <div align="center"><font color="#ffffff">耶和华没有赐予我最好的建设能力 但赐予了我最好的整理能力 阿们</font></div>
 <p></p>
 </CENTER>
+<script src="Functions.js"></script>
+<script src="SearchFace.js"></script>
+<script src="Data.js"></script>
+<script src="Songs.js"></script>
 
 <a></a>
 <a></a>

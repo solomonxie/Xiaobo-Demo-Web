@@ -23,7 +23,7 @@
 		if(form[0]=="form_XiaoBo_music"){searchMusicHere(key);return false;}
 		if(form[1]=="Get")	window.open(form[2]+key);
 		else goSearchPost(form);
-		document.form_Total.reset();
+		//document.form_Total.reset();
 		return false;
 	}
 	
@@ -53,18 +53,25 @@
 
 
 
-//----Start----站内音乐搜索----
+//----Start----站内音乐搜索----自己做搜索引擎真累-------
 function searchMusicHere(words){
-	if(words=="") this.location.href="SongList.htm";
-	var arrSongs=new Array();var aidx=0;
+	if(words=="") window.open("SongList.htm");
+	var arrSongsNum=new Array();var aidx=0;//记录下来符合条件的编号
 	var arrWords=words.split(" ").sort();//分割搜索词
-	alert(arrWords);
-	var i;
-	for(i=0;i<Songs.length;i++)
-		for(j=0;j<arrWords.length;j++)//这个实现了多个词查询
-		if(Songs[i].toString().indexOf(arrWords[j])>=0) arrSongs[aidx++]=Songs[i];
-	if(arrSongs.length==0){alert("对不起，小波快歌没有你要找的歌儿");return false;}
-	else window.open("SongList.htm#"+arrSongs[0][1]);//具体跳到arrSongs的哪一个位置还没有定夺
+	var isIt;
+	for(var i=0;i<Songs.length;i++){
+		isIt=true;
+		for(j=0;j<arrWords.length;j++)//这个实现了多关键字查询
+			if(Songs[i].toString().toLowerCase().indexOf(arrWords[j].toString().toLowerCase())<0)//统一改为小写统一比较
+				isIt=false;//只要有一个不符合，则认定为不是
+		if(isIt==true) arrSongsNum[aidx++]=i;
+	}
+	if(arrSongsNum.length==0){alert("我这儿没这首歌儿啊，换个关键词试试吧！");return false;}
+	//else window.open("SongList.htm#"+arrSongs[0][1]);//具体跳到arrSongs的哪一个位置还没有定夺
+	else{
+		var xx=arrSongsNum[0];for(var i=1;i<arrSongsNum.length;i++)	xx+="*"+arrSongsNum[i];
+		window.open("SongList.htm?arrSongsNum="+xx);
+	}
 }
 
 
@@ -103,13 +110,14 @@ function searchMusicHere(words){
 			if(arrKey[0]==keyName)//[0]代表name
 				return arrKey[1];//[1]代表value
 			}
+			
 			return "";
 			
 			
 			//##################################################################
 			
 
-			/*//最初使用的方法
+			/*//最初使用的方法,也能用，就是长
 			
 			//尝试截取字符串，检查有没有传参数过来#############################################
 			//test//document.form_All.Show.value=url.substring(url.indexOf("Search.htm")+10,url.length);
