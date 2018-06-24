@@ -1,0 +1,20 @@
+<html>
+<body>
+<script src="Functions.js"></script>
+
+<script>
+	alert("all cookies: "+document.cookie);
+
+	//function getCookie(name){
+		var strCookie=document.cookie;
+		var arrCookie=strCookie.split(";"); // 将多cookie切割为多个名/值对
+		for(var i=0;i<arrCookie.length;i++){ // 遍历cookie数组，处理每个cookie对
+			var arrKL=arrCookie[i].split("="); // 找到名称为userId的cookie，并返回它的值
+			if(arrKL[0]=="usname")
+				alert("usname is : "+arrKL[1]);
+		}
+	//}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>小波DEMO网--制作收藏</title>
+
+<style type="text/css">
+<!--
+.linkGreen01 {	COLOR: #5c5639
+}
+.textInput01 {	BORDER-RIGHT: #c8c5ac 1px solid; BORDER-TOP: #c8c5ac 1px solid; BORDER-LEFT: #c8c5ac 1px solid; WIDTH: 73px; BORDER-BOTTOM: #c8c5ac 1px solid
+}
+.my_border {	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid
+}
+-->
+</style>
+</head>
+
+<body>
+
+		<script> 
+			function dragit(){ 
+				aa.style.pixelLeft=event.clientX 
+				aa.style.pixelTop=event.clientY 
+				aa.style.display="none"?"":"none";
+			} 
+		</script> 
+		<div id=aa style="background:#DDD9F7;position:absolute;">Hello!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div> 
+
+        <p><input type="button" value="按我保存网页" onClick="javascript:document.execCommand('SaveAs','mycodes.txt'); "></p>
+        <table border="2" >
+          <tr class=sysHand>
+            <td width="300">点击我下面将隐藏</td>
+          </tr>
+          <tr>
+            <td>
+				<div id="xxx" style="background-color:#00FF99 "  onclick="javascript:hide('xxx');swap('xxx','className','up','down');">HHHHHHHHHHHHHHHHHHH</div>
+			</td>
+          </tr>
+		  <script>
+				//点击列 隐藏/显示
+				function $(s){
+					return document.getElementById(s);
+				}
+				function swap(s,a,b,c){
+					$(s)[a]=$(s)[a]==b?c:b;//操，经典
+				}
+				function hide(s){
+					$(s).style.display=$(s).style.display=="none"?"":"none";
+				}
+			</script>
+        </table>
+    <p>&nbsp;</p>
+        <table width="100%"  border="0"   onmousemove="dragit(aa)">
+          <tr>
+            <td>
+              <SCRIPT LANGUAGE="JavaScript">
+					function document.onmousemove()
+					{
+						document.all.x.value=event.x;
+						document.all.y.value=event.y;
+					}
+				</SCRIPT>
+      x:
+      <input type="text" id="x">
+      <br>
+      y:
+      <input type="text" id="y">
+            </td>
+          </tr>
+        </table>
+    <p>&nbsp;</p>
+    <p> <br>
+</p>
+	<table width="100%"  border="0">
+      <tr>
+	  	<td align="center">
+        <A href="http://minisite.qq.com/all/aio.shtml" target="_blank"><IMG 
+		src="img/button/miniimg2.gif" 
+		width=99 height=17 border="0"></A><a href="javascript:u=location.href;t=document.title;c=%22%22+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text);c=c.substr(0,480);var url=%22http://cang.baidu.com/do/add?it=%22+encodeURIComponent(t)+%22&iu=%22+encodeURIComponent(u)+%22&dc=%22+encodeURIComponent(c)+%22&fr=js#nw=1%22;window.open(url,'_blank','scrollbars=no,width=600,height=450,left=75,top=20,status=no,resizable=yes');void 0"><img src="img/icon/add_soucang03.gif" width="116" height="19" border="0"></a></td>
+	  </tr>
+</table>
+	<p>&nbsp;</p>
+	<hr onClick="window.open('http://www.baidu.com');">
+<p>&nbsp;</p>
+<p align="center">
+				<A href="http://wpa.qq.com/msgrd?V=1&amp;Uin=563787750&amp;Menu=yes" target="_blank">
+					<IMG src="img/button/qq_online.gif" alt=几何体 width="74" height="23" border=0>
+				</A>
+</p>
+<p>&nbsp;</p>
+		<table border=1 cellspacing=0 width=100% bordercolor=#99DF95 cellpadding=0>
+			<script language="javascript">
+			function search4(){
+				if(form1.abc0.checked)
+				window.open("http://post.baidu.com/f?kw="+form1.key.value,"mspg0");
+				if(form1.abc1.checked)
+				window.open("http://www.sogou.com/web?sogouhome=&shuru=shou&query="+form1.key.value,"mspg1");
+				if(form1.abc2.checked)
+				window.open("http://cn.search.yahoo.com/search?p="+form1.key.value,"mspg2");
+				if(form1.abc3.checked)
+				window.open("http://www.skycn.com/search.php?sor=00&ss_name="+form1.key.value,"mspg3");
+				if(form1.abc4.checked)
+				window.open("http://www.google.cn/search?hl=zh-CN&q="+form1.key.value,"mspg4");
+				if(form1.abc5.checked)
+				window.open("http://zhidao.baidu.com/q?ct=17&pn=0&tn=ikaslist&rn=10&word="+form1.key.value,"mspg5");
+				if(form1.abc6.checked)
+				window.open("http://www.baidu.com/s?tn=sitehao123&word="+form1.key.value,"mspg6");
+				if(form1.abc7.checked)
+				window.open("http://mp3search.baidu.com/wstsearch?tn=baidump3&ct=134217728&lm=-1&rn=&word="+form1.key.value,"mspg7");
+				
+				if(form1.abc9.checked)
+				window.open("http://mp3search.baidu.com/wstsearch?tn=baidump3lyric&ct=150994944&lm=-1&rn=&word="+form1.key.value,"mspg9");
+				if(form1.abc10.checked)
+				window.open("http://www.baidu.com/baidu?ft=all&q1="+form1.key.value,"mspg10");
+				if(form1.abc11.checked)
+				window.open("http://www.baidu.com/i?ct=201326592&cl=2&lm=-1&tn=baiduimage&word="+form1.key.value,"mspg11");
+				if(form1.abc12.checked)
+				window.open("http://www.baidu.com/s?tn=sitehao123&word="+form1.key.value+"%20site%3Awww.hao123.com","mspg12");
+				if(form1.abc13.checked)
+				window.open("http://baike.baidu.com/w?ct=17&lm=0&tn=baiduWikiSearch&pn=0&rn=10&word="+form1.key.value+"&submit=search","mspg13");
+				if(form1.abc14.checked)
+				window.open("http://map.baidu.com/m?word="+form1.key.value,"mspg14");
+				if(form1.abc15.checked)
+				window.open("http://news.baidu.com/ns?cl=2&rn=20&tn=news&word="+form1.key.value,"mspg15");
+				if(form1.abc16.checked)
+				window.open("http://www.baidu.com/baidu?ie=gb2312&bs=&sr=&z=&ct=1048576&cl=3&f=8&word="+form1.key.value,"mspg16");
+				return false;
+			}
+		</script>
+		<tr align="center">
+			<td height="15" colspan="2">综合搜索引擎</td>
+		  </tr>
+			<form name="form1" onsubmit="return(search4())">
+			<tr><td width="325" rowspan="2" align="right" valign="top">关键字:
+			<input type=text name="key" size=23 onMouseOver="this.focus()" onFocus="this.select()" style="margin-bottom:-5px; font-size:15px;">
+			<input type=submit style="margin-bottom:-4px;COLOR: rgb(0,0,0); FONT-SIZE: 9pt" value="搜索" name="B2">&nbsp;
+			</td>
+			<td ><input type=checkbox name="abc6" value="google checked">百度&nbsp;
+			<input type=checkbox name="abc4" value="3721">
+			google
+			<input type=checkbox name="abc7" value="baidump3">mp3&nbsp;
+			<input type=checkbox name="abc9" value="baidump3">歌词&nbsp;
+			<input type=checkbox name="abc11" value="baidump3">图片&nbsp;
+			<input type=checkbox name="abc0" value="baidutieba">贴吧&nbsp;
+			<input name="abc5" type=checkbox  value="ikaslist">知道&nbsp;
+			
+			<input name="abc15" type=checkbox  value="baidunews">新闻</td>
+			</tr><tr><td style="padding-top:3px;"><input type=checkbox name="abc12" value="hao123">站内&nbsp;
+			<input type=checkbox name="abc16" value="baidudict">词典&nbsp;
+			<input type=checkbox name="abc14" value="baidump3">地图&nbsp;
+			<input type=checkbox name="abc10" value="baidufile">文档&nbsp;
+			<input type=checkbox name="abc3" value="yeah">软件&nbsp;
+			
+			<input type=checkbox name="abc2" value="yahoo">雅虎&nbsp;
+			<input type=checkbox name="abc13" value="baidubaike">百科&nbsp;
+			<input type=checkbox name="abc1" value="sohu">搜狗</td>
+			</tr>
+			
+		</form>
+</table>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" bordercolor="#0033CC">
+	<tr><td bgcolor="#0099FF">新闻
+		<IFRAME border=0 name=play marginWidth=0 marginHeight=0 src="http://www1.xise.cn/222/jintian.htm" frameBorder=0 width=140 scrolling=no height=155></IFRAME>
+	</td></tr>
+</table>
+
+
+<table><script language="javascript" type="text/javascript" src="http://union.yahoo.com.cn/v2/news.js?a=2063&b=1005&p=1007&nt=10101&m=16960"> </script></table>        
+
+<table width="722">
+  <tr>
+    <td width="120" rowspan="2">&nbsp; </td>
+    <td width="590" colspan="26"><div align="center">
+        <!--
+		<table  border="0">
+          <tr>
+            <td>
+              <div align="center">
+                <embed ID="focus_flash" 
+				src="http://image2.sina.com.cn/bj/zonghe/pixviewer.swf" 
+				wmode="opaque" bgcolor="#FDD248"
+				FlashVars="pics=http://album.sina.com.cn/pic/4880b9b602000dwz|http://album.sina.com.cn/pic/4880b9b602000dx0|http://album.sina.com.cn/pic/4880b9b602000dx1|http://album.sina.com.cn/pic/4880b9b602000dx2|http://album.sina.com.cn/pic/4880b9b602000dx3&links=http://www.baidu.com|http://www.baidu.com|http://www.baidu.com|http://www.baidu.com|http://www.baidu.com&texts=文章名字1|文章名字2|文章名字3|文章名字4|文章名字5&borderwidth=180&borderheight=180&textheight=20" menu="false" quality="high" width="180" height="200" allowScriptAccess="sameDomain" 
+				type="application/x-shockwave-flash" 
+				pluginspage="http://www.macromedia.com/go/getflashplayer" />
+            </div></td>
+          </tr>
+        </table>
+		-->
+    </div></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<SCRIPT language=javascript>
+		function g(formname)	{
+		var url = "http://www.baidu.com/baidu";
+		if (formname.s[1].checked) {
+			formname.ct.value = "2097152";
+		}
+		else {
+			formname.ct.value = "0";
+		}
+		formname.action = url;
+		return true;
+		}
+	</SCRIPT>
+<!--
+<IFRAME align=left marginWidth=0 marginHeight=0 src="http://top.baidu.com/winkvane.html" frameBorder=0 width=237 scrolling=no height=302></IFRAME>
+-->
+
+<iframe src="http://ip.91.com/ip/showip.asp?text=&bg=&line=2&scro=1&leng=140" frameborder="0" scrolling="no" width="260" height="66" marginheight="4" marginwidth="0"></iframe>
+<DIV><IMG src="http://hotik.com/sign.png" border=0> </DIV>
+<div style='border:1px #FF0000 solid;'>红色边框</div>
+
+<IFRAME border=0 name=sina_roll marginWidth=0 marginHeight=0 src="http://news.sina.com.cn/o/allnews/input/index.html" frameBorder=No width="100%" scrolling=no height=15></IFRAME>
+
+<br><br><br><br>
+<hr>
+<br><br><br><br>
+
+
+
+
+
+</body>
+</html>
+
+

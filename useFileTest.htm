@@ -1,0 +1,9 @@
+<script>
+	var fso = new ActiveXObject("Scripting.FileSystemObject");
+	var f1 = fso.GetFile("aa.txt");
+	alert("文件最后更改日期: " + f1.DateLastModified);
+	f1.WriteLine("Hello World");
+	f1.WriteBlankLines(1);
+	f1.Close();
+
+</script>

@@ -1,0 +1,1157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>小波Demo网站--小波搜索</title>
+<link rel="stylesheet" type="text/css" href="Sheet.css">
+<script src="Functions.js"></script>
+<style type="text/css">
+<!--
+	body {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+	.SBut {
+		FONT-WEIGHT: bold; MARGIN: 0px 0.2em; WIDTH: auto; COLOR: #00c
+	}
+	.header{float:left;width:200px;display:block}
+	.toggleBtn{
+		display:block;
+		height:11px;
+		width:11px;
+		margin-top:13px;
+		line-height:13px;
+		float:right;
+		background-color:#fff;
+		font-weight:normal;
+		color:#F4C20A;
+		text-align:right;
+	}
+-->
+</style>
+
+<script>
+	function changeJia(id){
+		for(var i=1;i<=10;i++)	if(("Jia"+i)!=id) $("Jia"+i).innerHTML="+";
+		$(id).innerHTML=$(id).innerHTML=="+"?"-":"+";
+	}
+</script>
+
+</head>
+
+<body onLoad="" onMouseOut="window.status='如果喜欢小波Demo网或喜欢小波本人，就一定要给我留言并且转给你的朋友们哦！！';return true">
+	<script src="DaoHang.js"></script>
+<hr size="2">
+<p><br></p>
+
+
+
+<a href="#" onClick="javascript:hide('All');swap('All','className','up','down');changeJia('Jia0');"><strong><font id="Jia0" color="#ff9900">+</font></strong></a>搜 全部
+<table width="100%">
+    <td align="center" valign="middle"  id="All" style="display:none">
+		<form name="form_All">
+			<input name="key" type="text" size="50">
+			<input name="btn" type="button" class="SBut" value="Search" onClick="alert('还没做呢，哈哈！！');">
+		</form>
+	</td>
+  </tr>
+</table>
+<br>
+
+
+<a onClick="javascript:hideAll('WebInfo');hide('WebInfo');swap('WebInfo','className','up','down');changeJia('Jia1');" href="#"><strong><font id="Jia1" color="#ff9900">+</font></strong></a>搜 网络 信息<a name="搜网络信息" id="搜网络信息"></a> 
+<table width="100%">
+
+  <tr>
+    <td id="WebInfo" style="display:none">
+	<table width="100%"  border="0">
+        <tr>
+          <td>
+		  <br>
+            <table width="100%"  border="0">
+			  <tr>
+				<td align="center"><img src="img/logo/Google_logo.gif" width="286" height="110"></td>
+			  </tr>
+			  <tr>
+			    <td align="center">
+					<FORM action="http://www.google.com/search" name=f target="_blank">
+						<INPUT type=hidden value=zh-CN name=hl>
+						<INPUT title="Google 搜索" size=35 name=q>
+						<INPUT type=submit value="Google 搜索" name=btnG>
+						<INPUT type=submit value="手气不错" name=btnI>
+						<SCRIPT defer>
+						<!--
+						function qs(el){if(window.RegExp&&window.encodeURIComponent){var ue=el.href,qe=encodeURIComponent(document.f.q.value);if(ue.indexOf("q=")!=-1){el.href=ue.replace(new RegExp("q=[^&$]*"),"q="+qe);}else{el.href=ue+"&q="+qe;}}return 1;}
+						//-->
+						</SCRIPT>
+				  </FORM>
+				</td>
+		      </tr>
+			</table>
+			<br>
+			<table width="100%"  border="0">
+              <tr>
+                <td><div align="center"><A href="http://search.csdn.net/"><IMG src="img/logo/csdn_search_logo.gif" width="159" height="77" border="0"></A></div></td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <FORM name=form_CSDN target="_blank">
+                    <INPUT size=35 name=keyword>
+                    <INPUT type="button" value=" 搜索 " onClick="javascript:window.open('http://search.csdn.net/search/'+ form_CSDN.keyword.value +'/1/blog')">
+                    <input type=hidden value=blog name=sclass>
+                  </FORM>
+                </td>
+              </tr>
+            </table>
+			<br>
+            <table width="100%"  border="0">
+                <tr>
+                  <td><div align="center"><strong>腾讯<img src="img/logo/icon_soso_search.gif"></strong></div></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <FORM name="form_SoSo" action="http://www.soso.com/q" target=_blank>
+                      <INPUT size=35 name=w>
+                      <input type="submit" value="搜搜">
+                      <INPUT type=hidden value=web name=sc>
+                      <INPUT type=hidden value=w.q.news.b name=ch>
+                  </FORM></td>
+                </tr>
+            </table>
+              <br>
+              <table width="100%">
+                <tr>
+                  <td><div align="center"><strong><img src="img/logo/yahoo_logo.gif" width="192" height="55"></strong></div></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <FORM name="form_Yahoo">
+                      <INPUT name=p id="p" size="35">
+                      <SELECT name=select>
+                        <OPTION value="网页">网页</OPTION>
+                        <!--http://search.cn.yahoo.com/search?p=爱,断了线-->
+                        <OPTION value="资讯">资讯</OPTION>
+                        <OPTION value="知识">知识</OPTION>
+                        <OPTION value="音乐">音乐</OPTION>
+                        <OPTION value="图片">图片</OPTION>
+                        <OPTION value="影视">影视</OPTION>
+                        <OPTION value="酷帖">酷帖</OPTION>
+                      </SELECT>
+                      <input type="button" value="Yahoo!搜索" onClick="yahoo_Submit();">
+                  </FORM></td>
+                  <SCRIPT language=javascript type=text/javascript>
+				function yahoo_Submit(){
+					if(document.form_Yahoo.select.value=="网页"){
+						window.open("http://search.cn.yahoo.com/search?p="+document.form_Yahoo.p.value);
+					}else if(document.form_Yahoo.select.value=="资讯"){
+						window.open("http://news.yahoo.com.cn/search.html?p="+document.form_Yahoo.p.value);
+					}
+					else if(document.form_Yahoo.select.value=="知识"){
+						window.open("http://ks.yahoo.com.cn/search/search_result2?p="+document.form_Yahoo.p.value);
+					}
+					else if(document.form_Yahoo.select.value=="音乐"){
+						window.open("http://music.yahoo.com.cn/search?p="+document.form_Yahoo.p.value);
+					}
+					else if(document.form_Yahoo.select.value=="图片"){
+						window.open("http://image.yahoo.com.cn/search?p="+document.form_Yahoo.p.value);
+					}
+					else if(document.form_Yahoo.select.value=="影视"){
+						window.open("http://ys.cn.yahoo.com/mohu/index.html?p="+document.form_Yahoo.p.value);
+					}
+					else if(document.form_Yahoo.select.value=="酷帖"){
+						window.open("http://cool.yahoo.com.cn/psearch.html?p="+document.form_Yahoo.p.value);
+					}
+				}
+			</SCRIPT>
+                </tr>
+              </table>
+              <br>
+              <table width="100%">
+                <tr>
+                  <td align="center"><strong><img src="img/logo/iAsk_logo.gif" width="165" height="75"></strong></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <FORM name="form_iAsk" target=_blank>
+                      <INPUT type="hidden"  name=key2>
+                      <INPUT type=hidden value=1318 name=classid>
+                      <INPUT type=hidden name=example>
+                      <INPUT name=title type="text" size="35">
+                      <INPUT value="我搜" type=button name=submit_answer onClick="window.open('http://iask.sina.com.cn/search_engine/search_knowledge_engine.php?key='+ form_iAsk.title.value +'&title=&type=0&page=0')">
+                      <INPUT name=submit_ask type=button value="我问" onClick="window.open('http://iask.sina.com.cn/question/ask_new_2.php?key=&title='+ form_iAsk.title.value +'&classid=0&type=0&page=0')">
+                  </FORM></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%"  border="0">
+			  	<tr><td align="center"><img src="img/logo/tom_logo.gif" width="170" height="60"></td>
+			  	</tr>
+                <tr>
+                  <td align="center">
+                    <FORM name="form_tom" action="http://search.tom.com/search.php" method="get" target="_blank">
+                      <INPUT type=hidden value=8 name=f>
+                      <INPUT type=hidden value=3 name=cl>
+                      <INPUT type=hidden value=8 name=f>
+                      <INPUT type=hidden value=0 name=edt>
+                      <INPUT size=35 name=word >
+                      <SELECT name=tomsearch>
+                        <OPTION value=webpage selected>网页</OPTION>
+                        <OPTION value=news>新闻</OPTION>
+                        <OPTION value=pic>图片</OPTION>
+                        <OPTION value=mp3>音乐</OPTION>
+                        <OPTION value=dict>词典</OPTION>
+                        <OPTION value=bbs>论坛</OPTION>
+                        <OPTION value=tomnews>站内</OPTION>
+                        <OPTION value=software>软件</OPTION>
+                      </SELECT>
+                      <input type="submit" value="TOM搜索" name="submit2">
+                  </FORM></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%"  border="0">
+			  	<tr><td align="center"><img src="img/logo/sogou_logo.gif" width="250" height="70"></td>
+			  	</tr>
+                <tr>
+                  <td align="center">
+                    <FORM  name="form_SouGou" action=http://www.sogou.com/site method=get target="_blank">
+                      <INPUT maxLength=100 size=35 name=query>
+                      <INPUT type=submit value="搜狗搜索">
+                      <INPUT onclick="javasctipt:window.open('http://www.sogou.com/express/sq.jsp')" type=submit value=直通车>
+                      <INPUT type=hidden name=sogouhome>
+                      <INPUT type=hidden value=shou name=shuru>
+                  </FORM></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%"  border="0">
+			  	<tr><td align="center"><img src="img/logo/taipingyang_logo.gif" width="194" height="90"></td>
+			  	</tr>
+                <tr>
+                  <td align="center">
+                    <FORM name=s action="http://ks.pconline.com.cn/index.jsp" method=get target=_blank>
+                      <INPUT size=35 name=q>
+                      <INPUT type="submit" value="太平洋全方位搜索">
+                  </FORM></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <FORM name=s action="http://ks.pcgames.com.cn/games_index.jsp" method=get target=_blank>
+                      <INPUT size=35 name=q>
+                      <INPUT type="submit" name=submit value="太平洋游戏区搜索">
+                      <input type=hidden value=games_cms name=qx>
+                      <input type=hidden value=games_download name=qx>
+                      <input type=hidden value=games_bbs name=qx>
+                      <input type=hidden value=games_gallery name=qx>
+                  </FORM></td>
+                </tr>
+              </table>
+          <br></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('Music');hide('Music');swap('Music','className','up','down');changeJia('Jia2');" href="#"><strong><font id="Jia2" color="#ff9900">+</font></strong></a>搜 歌 er<a name="搜歌er" id="搜歌er"></a>
+<table width="100%">
+
+  <tr>
+    <td id="Music" style="display:none">
+		<table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center"><br>
+              <table width="86%" height="53" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" >
+                <tr>
+                  <td height="25" align="center" valign="bottom"><span class="style3"></span> <img src="img/logo/baidu_music_logo.gif" width="137" height="46"></td>
+                </tr>
+                <tr>
+                  <td height="53">
+                    <table width="100%" height="53" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" >
+                      <tr>
+                        <td height="53" align="center">
+                          <form name="form_baidu_music" action="http://mp3.baidu.com/m"  target="_blank">
+                            <input type=hidden name=f value=ms>
+                            <input type=hidden name=tn value="baidump3">
+                            <input type=hidden name=ct value=134217728>
+                            <input type=hidden name=lf>
+                            <input type=hidden name=rn>
+                            <input type="text" name="word" size="35">
+                            <input type=submit value=百度MP3 >
+                            <input type=button value=搜词 onclick="javascript:window.open('http://mp3.baidu.com/m?f=ms&rn=10&tn=baidump3lyric&ct=150994944&word='+ form_baidu_music.word.value +'&lm=-1')">
+                        </form></td>
+                      </tr>
+                  </table></td>
+                </tr>
+              </table>
+              <br>
+              <table width="86%"  border="0" align="center" cellpadding="2" cellspacing="0">
+                <tr>
+                  <td><div align="center" class="style6" ><strong><img src="img/logo/yahoo_music_logo.gif" width="207" height="45"></strong></div></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <form name="form_yahoo" target="_blank"  method="get" action="http://music.yahoo.com.cn/search">
+                      <input type="hidden" name="pid" value="ysearch">
+                      <input type="hidden" name="source" value="ysearch_music_result_topsearch">
+                      <input name="p" type="text" size="35" maxlength="64" >
+                      <input name="submit" type=submit onClick="" value="雅虎音乐">
+                      <input type="hidden" name="source" value="yisou_music_hp_search">
+                  </form></td>
+                </tr>
+              </table>
+              <br>
+              <table width="86%"  border="0" align="center" cellpadding="4" cellspacing="0">
+                <tr>
+                  <td align="center" class="style6"><strong><img src="img/logo/sogou_music_logo.gif" width="250" height="70"></strong></td>
+                </tr>
+                <tr>
+                  <FORM name=form_SouGou_Music action="http://d.sogou.com/music.so" method=get target="_blank">
+                    <td align="center">
+                      <INPUT maxLength=100 size=35 name=query>
+                      <input type=submit value="搜狗音乐 " name=submit2>
+                    </td>
+                    <INPUT type=hidden name=h>
+                  </FORM>
+                </tr>
+              </table>
+              <br>
+              <table width="86%"  border="0">
+                <tr>
+                  <td align="center"><img src="img/logo/kugoo_logo.gif" width="217" height="67"></td>
+                </tr>
+                <tr>
+                <tr>
+                  <td align="center">
+                    <FORM name=form_kugoo action=http://search.kugoo.com/search.aspx method=get target="_blank">
+                      <INPUT size=35 name=keyword>
+                      <INPUT type=hidden value=15 name=searchtype>
+                      <INPUT  type=submit value=酷狗音乐>
+                  </FORM></td>
+                </tr>
+              </table><br>
+              <table width="86%"  border="0">
+                <tr>
+                  <td align="center" class="style6"><strong><img src="img/logo/sogua_logo.gif" width="156" height="54"></strong></td>
+                </tr>
+                <tr>
+                <tr>
+                  <td align="center">
+                    <FORM name=form_SoSo_Music action="http://music.soso.com/q" target=_blank>
+                      <INPUT type=hidden value=mus name=sc>
+                      <INPUT type=hidden value=w.soso.pr name=ch>
+                      <INPUT type=hidden value=1 name=pg>
+                      <INPUT type=hidden name=sty>
+                      <INPUT class=s size=35 name=w>
+                      <INPUT class=btn type=submit value=腾迅搜搜音乐>
+                  </FORM></td>
+                </tr>
+              </table>
+              <br>
+              <table width="86%">
+                <tr>
+                  <td><div align="center" class="style6"><strong><img src="img/logo/haoting_logo.gif" width="220" height="82"></strong></div></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <FORM name="form_Haoting" action="http://www1.haoting.com/user/search.asp" method=post target="_blank">
+                      <INPUT type="text" maxLength=50 size=35 name=keyword>
+                      <SELECT class=find name=stype>
+                        <OPTION value=Music selected>歌曲名称</OPTION>
+                        <OPTION value=Singer>歌手姓名</OPTION>
+                        <OPTION value=Special>专辑名称</OPTION>
+                      </SELECT>
+                      <input name="image" type="submit" value="好听音乐">
+                  </FORM></td>
+                </tr>
+              </table>
+              <br></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('Blog');hide('Blog');swap('Blog','className','up','down');changeJia('Jia3');" href="#"><strong><font id="Jia3" color="#ff9900">+</font></strong></a><a name="搜博客" id="搜博客"></a>搜 博客
+<table width="100%">
+  <tr>
+    <td id="Blog" style="display:none">
+	<table width="100%"  border="0">
+        <tr>
+          <td>
+              <table width="100%">
+                <tr>
+                  <td colspan="2" align="center">  <img src="img/logo/sina_blog_logo.gif"></td>
+                </tr>
+                <tr>
+                  <td width="15%">
+                    <SCRIPT type=text/javascript>
+							function iask(fn,strName){
+									if(fn.k.value=="" || fn.k.value=="请输入查询词"){fn.k.value="请输入查询词";fn.k.focus();return false;}
+									if(strName == "blog"){
+									if(document.forms["iask_f"].t.selectedIndex==3){
+									fn.action="http://circle.blog.sina.com.cn/group/group_search.php";
+									}else{
+									fn.action="http://search.blog.sina.com.cn/blog/search";
+									}
+									}else{
+									return false;
+									}
+									fn.submit();
+									return false;
+							}
+							function g(URL){
+								window.location.href=URL;
+							}
+						</SCRIPT>
+                  </td>
+                  <td width="85%">
+                    <FORM name="form_Sina_Blog" action="http://search.blog.sina.com.cn/blog/search" target=_blank>
+                      <INPUT name=q id=k size="35">
+                      <INPUT type=hidden name=tag>
+                      <SELECT onchange="changelocation();" name=t>
+                        <OPTION value=keyword selected>博客全文</OPTION>
+                        <OPTION value=title>文章标题</OPTION>
+                        <OPTION value=author>博客作者</OPTION>
+                        <OPTION value=circle>博客圈</OPTION>
+                      </SELECT>
+                      <input type="submit" value="新浪博客搜索">
+                  </FORM></td>
+                </tr>
+              </table>
+          </td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('Transcate');hide('Transcate');swap('Transcate','className','up','down');changeJia('Jia4');" href="#"><strong><font id="Jia4" color="#ff9900">+</font></strong></a><a name="中英翻译" id="中英翻译"></a>中英翻译
+<table width="100%">
+  <tr>
+    <td id="Transcate" style="display:none">
+	<table width="100%"  border="0">
+      <tr>
+        <td>
+		<br>
+          <table width="100%"  border="0">
+		  		<tr><td align="center"><img src="img/logo/baidu_cd_logo.gif" width="137" height="46"> </td></tr>
+            <tr>
+              <td align="center">
+                <form name="form_CiDian" action=http://www.baidu.com/baidu target="_blank">
+                  <input type=hidden value=gb2312 name=ie>
+                  <input type=text name=word size=35>
+                  <input type=submit value="英汉词典">
+                  <input name=ct type=hidden id="ct" value=1048576>
+                </form>
+			</td>
+            </tr>
+          </table>          
+          <br>
+		  </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('Picture');hide('Picture');swap('Picture','className','up','down');changeJia('Jia5');" href="#"><strong><font id="Jia5" color="#ff9900">+</font></strong></a><a name="搜图片" id="搜图片"></a>搜 图片
+<table width="100%">
+  <tr>
+    <td id="Picture" style="display:none">
+	<table width="100%"  border="0">
+        <tr>
+          <td><br>
+              <table width="100%"  border="0">
+                <tr>
+                  <td><div align="center"><strong><img src="img/logo/163_logo.gif" width="120" height="50"></strong></div></td>
+                </tr>
+                <tr>
+                  <td height="23">
+                    <FORM name="form_163_Picture" action="http://photo.163.com/search.php" method=post target="_blank">
+                      <div align="center">
+                        <INPUT id=keyword size=35 name=k>
+                        <input type="submit" name="Submit" value="网易相册搜索!">
+                        <br>
+                      [要先登陆才能查得到哦] </div>
+                  </FORM></td>
+                </tr>
+              </table>
+              <table width="100%"  border="0">
+                <tr>
+                  <td><div align="center"><strong>网易163相册<img src="img/logo/zpoo_logo.gif" width="165" height="71">批量下载！！</strong></div></td>
+                </tr>
+                <tr>
+                  <td>
+                    <FORM name="form_163_zpoo" action="http://163.zpoo.com/syphoto.php" method=get target="_blank">
+                      <div align="center">请输入网易163相册用户名<BR>
+                          <INPUT name=user size="35">
+                          <INPUT name="submit" type=submit id="submit" value=Zpoo搜索>
+                      </div>
+                  </FORM></td>
+                </tr>
+              </table>
+              <br>
+              <table width="100%">
+                <tr>
+                  <td><div align="center"><strong><img src="img/logo/yahoo_picture_logo.gif" width="210" height="44"></strong></div></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <FORM name="form_yahoo_photo" onsubmit="return verify_input();" action="http://gallery.photos.cn.yahoo.com/site/search_result.php" method=get target="_blank">
+                      <!--<BUTTON onclick="return rd_clk2('/sou/frame');" type=submit>搜索</BUTTON>-->
+                      <INPUT size=35 name=keyword>
+					  <input type="submit" onclick="return rd_clk2('/sou/frame');" value="Yahoo!相册">
+                      <select name="option">
+                        <option value="album" selected id=che_album>搜专辑</option>
+                        <option value="user" id=che_user>搜网友ID</option>
+                      </select>
+                  </FORM></td>
+                  <SCRIPT>
+						function verify_input() {
+							if (document.form_yahoo_photo.keyword.value == "") {
+								alert("请输入搜索关键字!");
+								return false;
+							}
+							return true;
+						}
+						
+						function rd_clk2(path) {   // 参数path 是预先定义的相对路径
+							var newurl;
+							if (document.images){
+								newurl="http://cn.rd.yahoo.com/home/photo21"+ path + "/*" + "http://cn.yimg.com/search/yisou/clk.gif";
+								(new Image()).src=newurl;
+							}
+							return true;
+						}
+					</SCRIPT>
+                </tr>
+              </table>
+              <br>
+		  	  <table width="100%"  border="0">
+                  <tr>
+                    <td align="center"><img src="img/logo/baidu_picture_logo.gif" width="174" height="59"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+						<form name="form_baidu_picture" action="http://image.baidu.com/i" method="get">
+							<input name="word" type="text" size="35">
+							<input type="submit" value="百度图片">
+							<input type="hidden" name="tn" value="baiduimage&ct=201326592&lm=-1&cl=2">
+						</form>
+					</td>
+                  </tr>
+            </table>
+		    <br>
+			  <table width="100%"  border="0">
+                  <tr>
+                    <td align="center"><img src="img/logo/google_picture_logo.gif" width="276" height="110"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+						<form name="form_Google_picture" action="http://images.google.com/images" method="get">
+							<input name="q" type="text" size="35">
+							<input type="submit" value="Google图片">
+							<input type="hidden" name="hl" value="zh-CN">
+						</form>
+					</td>
+                  </tr>
+            </table>
+			  <br>
+			  <table width="100%"  border="0">
+                  <tr>
+                    <td align="center"><img src="img/logo/yahoo_picture_logo.gif" width="210" height="44"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+						<form name="form_yahoo_picture" action="http://image.cn.yahoo.com/search" method="get">
+							<input name="p" type="text" size="35">
+							<input type="submit" value="yahoo!图片">
+						</form>
+					</td>
+                  </tr>
+            </table>
+			  <br>
+			  <table width="100%"  border="0">
+                  <tr>
+                    <td align="center"><img src="img/logo/SoSo_picture_logo.gif.gif" width="153" height="46"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+						<form name="form_SoSo_picture" action="http://image.soso.com/image.cgi" method="get">
+							<input name="w" type="text" size="35">
+							<input type="submit" value="SoSo图片">
+							<input type="hidden" name="sc" value="img&ch=w.soso&uin=">
+						</form>
+					</td>
+                  </tr>
+            </table>
+			  <br>
+			  <table width="100%"  border="0">
+                  <tr>
+                    <td align="center"><img src="img/logo/sina_picture_logo.gif" width="200" height="75"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+						<form name="form_iask_picture" action="http://p.iask.com/p?" method="get">
+							<input name="k" type="text" size="35">
+							<input type="submit" value="新浪iAsk图片">
+						</form>
+					</td>
+                  </tr>
+            </table>
+			  <br>
+			  <table width="100%"  border="0">
+                  <tr>
+                    <td align="center"><img src="img/logo/SoGou_piture_logo.gif" width="150" height="45"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+						<form name="form_sogou_picture" action="http://pic.sogou.com/pics" method="get">
+							<input name="query" type="text" size="35">
+							<input type="submit" value="搜狗图片">
+						</form>
+					</td>
+                  </tr>
+            </table>
+			  <br>
+			  <table width="100%"  border="0">
+                  <tr>
+                    <td align="center"><img src="img/logo/tom_logo.gif" width="170" height="60"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+						<form name="form_tom_picture" action="http://search.tom.com/searchpic.php" method="get">
+							<input name="word" type="text" size="35">
+							<input type="submit" value="Tom图片">
+							<input type="hidden" name="tomsearch" value="pic">
+						</form>
+					</td>
+                  </tr>
+            </table>
+				<br>
+		  </td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('Download');hide('Download');swap('Download','className','up','down');changeJia('Jia6');" href="#"><strong><font id="Jia6" color="#ff9900">+</font></strong></a><a name="搜下载资源" id="搜下载资源"></a>搜 下载资源 [bt,迅雷…]
+<table width="100%">
+  <tr>
+    <td id="Download" style="display:none">
+	<table width="100%"  border="0">
+      <tr>
+        <td><br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/fkee_logo.gif" width="273" height="91"></td>
+		  	</tr>
+            <tr>
+              <td align="center">
+                <FORM name=form_bt_fkee action=http://bt.fkee.com/search.aspx method=get target="_blank">
+                  <INPUT name=q id="q" size=35>
+				  <input name="submit" type="submit" id="submit" value="飞客BT搜索">
+              </FORM></td>
+            </tr>
+          </table>
+          <br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/btchina_logo.gif" width="575" height="67"></td>
+		  	</tr>
+            <tr>
+              <td align="center">
+                <FORM name=form_bt_china onsubmit="return checkSearch(this);" action="http://search.btchina.net/btsearch.php" method=get target="_blank">
+        <INPUT name=query id="query" size=35>
+          <INPUT name="submit" type=submit id="submit" value=BT@China搜!>
+              </FORM></td>
+              <SCRIPT language=javascript>
+				<!--
+				function checkSearch(theForm){
+				var keyword = theForm.query.value.replace(/\s+/g, ' ').replace(/^\s+/, '').replace(/\s+$/, '');
+				theForm.query.value = keyword;
+				if(keyword.length==0){
+				alert('请输入关键字！');
+				theForm.query.focus();
+				return false;
+				}
+				return true;
+				}
+				//-->
+			</SCRIPT>
+            </tr>
+          </table>
+          <br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/verycd_logo.gif" width="215" height="100"></td>
+		  	</tr>
+            <tr>
+              <td align="center">
+                <FORM name="form_verycd" method=get target="_blank">
+        <INPUT name=kw id=top-search-input size="35">
+          <input name="submit" type=submit id="submit" onClick="javascript:window.open('http://find.verycd.com/folders/'+document.form_verycd.kw.value);" value=VeryCD!搜索>
+          <!--
+          <INPUT name="button" type=button onClick="javascript:window.open('http://find.verycd.com/#advanced');" value="高级搜索">
+          <INPUT name="button" type=button onClick="javascript:window.open('http://beta.verycd.com/signin/*/http://bbs.verycd.com/');" value=发布资源>
+          -->
+              </FORM></td>
+            </tr>
+          </table>
+          <br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/xunlei_logo.gif" width="227" height="54"></td>
+		  	</tr>
+            <tr>
+              <td align="center">
+                <!--http://so.xunlei.com/search?search=ZZZZZZ&suffix=&restype=-1&id=2-->
+                <form name="form_XunLei" action="http://so.xunlei.com/search" method="get" target="_blank">
+                  <input name="search" type="text" size="35">
+                  <input type="submit" value="迅雷搜索">
+                  <input type="hidden" name="suffix">
+                  <input type="hidden" name="restype" value="-1">
+                  <input type="hidden" name="id" value="2">
+              </form></td>
+            </tr>
+          </table>          
+          <p>&nbsp;</p>
+          <table width="100%"  border="0">
+            <tr>
+              <td align="center"><img src="img/logo/vagaa_logo.gif" width="204" height="54"></td>
+            </tr>
+            <tr>
+              <td align="center">
+			  	<FORM action="http://hot.yikuai.com/search.php" method=get name="form_Vagaa" target="_blank">
+					<INPUT type=hidden value=3 name=stype> 
+					<INPUT name=keyword size="35">
+					<INPUT type=submit value=哇嘎搜索>
+				</FORM>			  </td>
+            </tr>
+          </table>          <p><br>
+              <br>
+          </p></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('DongMan');hide('DongMan');swap('DongMan','className','up','down');changeJia('Jia7');" href="#"><strong><font id="Jia7" color="#ff9900">+</font></strong></a><a name="搜动漫" id="搜动漫"></a>搜 动漫
+<table width="100%">
+  <tr>
+    <td id="DongMan" style="display:none">
+	<table width="100%"  border="0">
+      <tr>
+        <td><br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/tanlan_logo.gif" width="154" height="57"></td>
+		  	</tr>
+          <tr>
+            <td align="center">
+              <FORM name="form_TanLan" action="http://s.greedland.net/i.g" method=get target=_blank>
+                <INPUT name=k class=sipt id=k2 size="35">
+                <input name="submit" type="submit" id="submit" value="贪婪搜索">
+                <INPUT type=radio CHECKED align=absMiddle value=t name=os>
+        按时间排序
+        <input type=radio align=absMiddle value=c name=os>
+        按相关排序
+            </FORM></td>
+          </tr>
+        </table>
+          <br>
+		  
+		  <table width="100%"  border="0">
+		  <tr>
+			<td align="center"><img src="img/logo/dongmanXianFeng_logo.gif" width="119" height="39"></td>
+		  </tr>
+		  <tr>
+		    <td align="center">
+				<FORM name="form_DongManXianFeng" action="http://www.go2cartoon.com/index.php?p=search" method=post target="_blank">
+					<INPUT  name=search3 size="35">
+					<select name=search2>
+                      <option value=1 selected>片名</option>
+                      <option value=2>作家</option>
+				    </select>
+					<select name=search1>
+                      <option value=1 selected>动画片</option>
+                      <option value=2>漫画</option>
+				    </select>
+					<INPUT type="submit" value=动漫先锋搜索 name=Submit>
+				</FORM>
+				</td>
+		    </tr>
+		</table>
+		<br>
+		<table width="100%"  border="0">
+		  <tr>
+			<td align="center"><img src="img/logo/MeiRiDongMan_logo.gif" width="188" height="76"></td>
+		  </tr>
+		  <tr>
+			<td align="center">
+				<FORM name="form_MeiRiDongMan" action="http://www.angelskys.com/index/indexso.asp" method=get target="_blank">
+					<INPUT size=35 name=Keyword>
+					<SELECT size=1 name=dirs>
+						<OPTION value=news>动漫新闻</OPTION>
+						<OPTION value=cmtv>音乐频道</OPTION>
+						<OPTION value=mtv>MTV</OPTION>
+						<OPTION value=cvod selected>动漫电影</OPTION>
+						<OPTION value=clib>精彩漫画</OPTION>
+						<OPTION value=cpic>精典图库</OPTION>
+					</SELECT>
+					<SELECT size=1 name=zdtype>
+						<OPTION value=1>自动匹配</OPTION>
+						<OPTION value=title>标题</OPTION>
+						<OPTION value=text>内容</OPTION>
+						<OPTION value=titletext selected>标题和内容</OPTION>
+					</SELECT> 
+					<INPUT type=submit value=" 搜 索 " name=Send>
+				</FORM>
+			</td>
+		  </tr>
+		</table>
+
+		  <br>
+		  <table width="100%"  border="0">
+            <tr>
+              <td align="center"><img src="img/logo/TianShangRenJian_logo.gif" width="193" height="66"></td>
+            </tr>
+            <tr>
+              <td align="center">
+			  	<FORM name="form_TianShangRenJian" action="http://www.52tian.com/search.asp" method=get target=_blank>
+				<INPUT name=keyword size="35">
+				<select name=typeid>
+                  <option value=片名 selected>片名</option>
+                  <option value=演员>演员</option>
+                </select>
+				<INPUT type="submit" value="天上人间搜索">
+				</FORM>
+			  </td>
+            </tr>
+          </table>
+		  <br>
+		  
+		  <table width="100%"  border="0">
+            <tr>
+              <td align="center"><img src="img/logo/Moonboat_logo.gif" width="150" height="60"></td>
+            </tr>
+            <tr>
+              <td align="center">
+			  	<form action="http://www.ffsee.com/Default.asp" method="get" name="form_MoonBoat" target="_blank">
+					<input name="keyword" type="text" size="35">
+					<input type="submit" value="月亮船动漫论坛">
+				</form>
+			  </td>
+            </tr>
+          </table>
+		  <br>
+		</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('Video');hide('Video');swap('Video','className','up','down');changeJia('Jia8');" href="#"><strong><font id="Jia8" color="#ff9900">+</font></strong></a><a name="搜视频" id="搜视频"></a>搜 视频
+<table width="100%">
+  <tr>
+    <td id="Video" style="display:none">
+	<table width="100%"  border="0">
+      <tr>
+        <td><br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/sina_boke_logo.gif" width="189" height="39"></td>
+		  	</tr>
+          <tr>
+            <td align="center">
+              <FORM name="form_Sina_BoKe" action="http://search.v.blog.sina.com.cn/s" method=get target="_blank">
+                <INPUT name="key" size="35">
+                <SELECT name="type">
+                  <OPTION value=video selected>视频描述</OPTION>
+                  <OPTION value=user>上传作者</OPTION>
+                  <OPTION value=tag>视频标签</OPTION>
+                </SELECT>
+                <INPUT type=submit value="新浪播客搜索">
+            </FORM></td>
+          </tr>
+        </table>
+          <br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/tudou_logo.gif" width="199" height="60"></td>
+		  	</tr>
+            <tr>
+              <td align="center">
+                <FORM name="form_TuDou"action="http://www.tudou.com/search/programs" method=get target=_blank>
+                  <INPUT type="text" size="35" name=kw>
+                  <select id=posto name=posto>
+                    <option value=/search/programs/ selected>节目</option>
+                    <option value=/search/playlist/>                  
+                              
+                    豆单
+                    
+                    <option value=/search/user/>                  
+                              
+                    播客
+                  
+                  </select>
+                  <INPUT type="submit" value=土豆视频搜索>
+                  <INPUT type=hidden value=0 name=nav_search_target>
+              </FORM></td>
+            </tr>
+          </table>
+          <br>
+          <table width="100%"  border="0">
+		  	<tr><td align="center"><img src="img/logo/56_logo.gif" width="141" height="53"></td>
+		  	</tr>
+            <tr>
+              <td align="center">
+                <FORM name="form_WoLe" action="http://www.56.com/so/search.php" method=get target="_blank">
+                  <INPUT size=35 name=key>
+                  <INPUT type=submit value="56.Com!视频搜索">
+              </FORM></td>
+            </tr>
+          </table>
+          <br>
+          <table width="100%"  border="0">
+			  <tr><td align="center"><img src="img/logo/openv_logo.gif"></td></tr>
+            <tr>
+              <td align="center">
+                <FORM action="http://www.openv.tv/ls.jsp" method=get target="_blank">
+                  <INPUT type="text" size="35" name=q>
+                  <SELECT name=db>
+                    <OPTION value=video selected>全部视频</OPTION>
+                    <OPTION value=tv>电视新闻</OPTION>
+                  </SELECT>
+                  <input type="submit" value="OpenV!专业视频搜索" onClick="javascript:alert('中文编码暂时有问题,请在原站直接查询');">
+              </FORM></td>
+            </tr>
+          </table>
+          <br></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+<a onclick="javascript:hideAll('Buy');hide('Buy');swap('Buy','className','up','down');changeJia('Jia9');" href="#"><strong><font id="Jia9" color="#ff9900">+</font></strong></a><a name="搜想买的东西" id="搜想买的东西"></a>搜 想买的 东西
+<table width="100%">
+  <tr>
+    <td id="Buy" style="display:none">
+	<table width="100%"  border="0">
+      <tr>
+        <td><br>
+          <table width="100%"  border="0">
+		 	<tr><td align="center"><img src="img/logo/dangdang_logo.gif"></td></tr>
+          <tr>
+            <td align="center">
+              <FORM name=searchformnew action="http://search.dangdang.com/search.aspx" method=get target="_blank">
+                <INPUT size=35 name=key>
+                <INPUT type=submit value="当当网找书！">
+                <INPUT type=hidden name=mode>
+                <INPUT type=hidden name=catalog>
+            </FORM></td>
+          </tr>
+        </table>
+          <br>
+          <table width="100%"  border="0">
+		  		<tr><td align="center"><img src="img/logo/taobao_logo.gif"></td></tr>
+            <tr>
+              <td align="center">
+                <FORM name=qsearch action="http://search1.taobao.com/browse/search_auction.htm" method=get target="_blank">
+                  <INPUT type=hidden value="D9_5_1" name=f>
+                  <INPUT name=q size="35">
+                  <input type="submit" value="去淘宝咯！！">
+              </FORM></td>
+            </tr>
+          </table>
+          <br>
+          <table width="100%"  border="0">
+		  		<tr><td align="center"><img src="img/logo/alibaba_logo.gif"></td></tr>
+            <tr>
+              <td align="center">
+                <FORM name=searchform action="http://search.china.alibaba.com/search/offer_search.htm" method=post target="_blank">
+                  <INPUT name=keywords size="35">
+                  <INPUT type=submit value="到阿里巴巴找商机！">
+                  <input type=hidden name="tracelog" value="ui_chinaindex_searchbuyer">
+              </FORM></td>
+            </tr>
+          </table>
+          <br></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+
+
+<a onclick="javascript:hideAll('Other');hide('Other');swap('Other','className','up','down');changeJia('Jia10');" href="#"><strong><font id="Jia10" color="#ff9900">+</font></strong></a><a name="杂项查询"></a>杂项 查询
+<table width="100%">
+  <tr>
+    <td id="Other" style="display:none">
+	<table width="100%"  border="0">
+        <tr>
+          <td><br>
+              <table cellspacing=0 cellpadding=0 width="100%" border=0>
+                <tr>
+                  <td align="center"><strong><a href="http://www.7cx.com" target="_blank"><img src="img/logo/7cx_logo.gif" border="0"></a></strong></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <form name=form_SuanMing action="http://www.7cx.com/sm/" method=post target="_blank">
+        您的名字：
+          <input name=str1 id=str1 size="25">
+          <input name=Submit type=submit style="CURSOR: hand; COLOR: #ff0000" value=立即算命>
+                  </form></td>
+                </tr>
+              </table>
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center"><img src="img/logo/train_logo.gif"></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <form name="form_HuoChe" method="POST" action="http://train.chinamor.cn.net/zzcx2.asp" target="_blank">
+                      <input type="text" NAME="fzm" size=15 value="出发地" onFocus="markText_form_HuoChe(form_HuoChe.fzm,'');" onBlur="markText_form_HuoChe(form_HuoChe.fzm,'出发地');">
+                      <input type="text" NAME="dzm" size=15 value="目的地" onFocus="markText_form_HuoChe(form_HuoChe.dzm,'');" onBlur="markText_form_HuoChe(form_HuoChe.dzm,'目的地');">
+                      <input name="B" type="submit" id="B" value="火车の车次查询">
+                      <input type=hidden name=bug value=1>
+                  </form></td>
+                  <script language="javascript">
+					function markText_form_HuoChe(txt,mark){
+						if(txt.value=="出发地" || txt.value=="目的地"){
+							txt.value="";
+						}
+						if(txt.value==""){
+							txt.value=mark;
+						}
+					}
+				</script>
+                </tr>
+              </table>
+			  <br>
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <FORM name=form_IDCode onsubmit="return checkonSubmit(this);" action=http://www.7cx.com/idcsearch.php 
+				method=get target=_blank>
+                      <INPUT id=w maxLength=25 size=35 name=w>
+                      <INPUT name="submit" type=submit id="submit" value=身份证查询>
+                  </FORM></td>
+                </tr>
+                <SCRIPT language=javascript>
+		<!--
+			function checkIDCard (str) 
+			{ 
+				var isIDCard1 = new Object();
+				var isIDCard2 = new Object();
+				//身份证正则表达式(15位) 
+				isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/; 
+				//身份证正则表达式(18位) 
+				isIDCard2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/; 
+				//验证身份证，如果正确，提交到reg.asp页面
+				if (isIDCard1.test(str)||isIDCard2.test(str))
+				{    
+				return true;
+				}
+				alert("请重新输入正确的15或18位身份证号！");
+				return false;
+				}  
+				function checkonSubmit(frm){
+				if(validForm(frm)){
+				if(!checkIDCard (frm.w.value)) return false;
+				}else{
+				return false;
+				}
+				}
+		-->
+		  </SCRIPT>
+              </table>
+              
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <form name="form_QuHao" action="http://www.ip138.com/post/search.asp" method=post target="_blank">
+                      <input name="area" type="text" size=35 value="地区名" onFocus="javascript:if(this.value=='地区名') this.value='';" onBlur="if(this.value=='') this.value='地区名';">
+                      <input name="submit" type="submit"  value="查询区号">
+                      <input type="hidden" name="action" value="area2zone">
+                  </form></td>
+                </tr>
+              </table>
+              
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <FORM name="form_YouBian" action="http://www.ip138.com/post/search.asp" method=post target="_blank">
+                      <input name="area" type="text" size=35 value="地区名"  onFocus="javascript:if(this.value=='地区名') this.value='';" onBlur="if(this.value=='') this.value='地区名';">
+                      <input name="submit" type="submit" value="查询邮编">
+                      <INPUT TYPE="hidden" NAME="action" VALUE="area2zip">
+                  </FORM></td>
+                </tr>
+              </table>
+              
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <FORM name="form_DiMing" action="http://www.ip138.com/post/search.asp" method=post target="_blank">
+                      <input name="zone" type="text" size=35 value="地区号" onFocus="javascript:if(this.value=='地区号') this.value='';" onBlur="if(this.value=='') this.value='地区号';">
+                      <input name="submit" type="submit"value="查询地名">
+                      <INPUT name="action" type="hidden" value="zone2area">
+                  </form></td>
+                </tr>
+              </table>
+              
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <form name="form_QuYu" method = "post" action = "http://www.chuchuang.net/ip.php" target = "_blank">
+                      <input name="search_ip" type="text" size=35 value="地址" onFocus="javascript:if(this.value=='地址') this.value='';" onBlur="if(this.value=='') this.value='地址';">
+                      <input type="submit" value="查询区域">&nbsp;
+                    </form></td>
+                </tr>
+              </table>
+              
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <FORM name="form_DiMing2" action="http://www.ip138.com/post/search.asp" method=post target="_blank">
+                      <input name="zip" type="text" size=35 value="邮编码" onFocus="javascript:if(this.value=='邮编码') this.value='';" onBlur="if(this.value=='') this.value='邮编码';">
+                      <input name="submit" type="submit"value="查询地名">
+                      <INPUT TYPE="hidden" NAME="action" VALUE="zip2area">
+                  </FORM></td>
+                </tr>
+              </table>
+              
+              <table width="100%"  border="0">
+                <tr>
+                  <td align="center">
+                    <form name="form_MobilPhone" method="POST" action="http://www.imobile.com.cn/simcard.php" target="_blank">
+                      <input name="simcard" maxlength="11" type="text" size=35 value="手机号" onFocus="javascript:if(this.value=='手机号') this.value='';" onBlur="if(this.value=='') this.value='手机号';">
+                      <input type="submit" value="查询手机" name="submit">
+                  </form></td>
+                </tr>
+              </table>
+          </td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+<br>
+<table width="100%" border="0">
+  <tr>
+    <td align="center" valign="bottom" bgcolor="#67B7E2">Copyright &copy; 2006, 小波. All right are reserved. </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#67B7E2">全部都以最简单的方式引用各大搜索引擎哦，代码也是组织好了的，直接打看看就是了，供大家互相学习哦</td>
+  </tr>
+</table>
+<br>
+<br>
+<a></a>
+<a></a>
+<a></a>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<html>
+<head>
+<title>
+网页教学网幻灯片演示效果
+</title>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+//more javascript from http://www.webjx.com
+var interval = 6; // delay between rotating images (in seconds)
+interval *= 1000;
+var flagtime=0;
+var image_index = -1;
+image_list = new Array();
+note_list = new noteArray(10);
+var number_of_image = image_list.length;
+var timesnum=0;
+//下面为图片的位置
+image_list[0] = new imageItem("http://xtfcyd.blogchina.com/inc/iori.jpg");
+image_list[1] = new imageItem("http://xtfcyd2.blogchina.com/inc/kyo.jpg");
+image_list[2] = new imageItem("http://xtfcyd.blogchina.com/inc/children.gif ");
+image_list[3] = new imageItem("http://xtfcyd.blogchina.com/inc/hongwan.gif");
+image_list[4] = new imageItem("http://xtfcyd.blogchina.com/inc/icegirl.gif");
+image_list[5] = new imageItem("http://xtfcyd.blogchina.com/inc/k.gif");
+image_list[6] = new imageItem("http://xtfcyd.blogchina.com/inc/mei.gif");
+image_list[7] = new imageItem("http://xtfcyd.blogchina.com/inc/qijiashe.gif");
+image_list[8] = new imageItem("http://xtfcyd.blogchina.com/inc/ryo.gif");
+image_list[9] = new imageItem("http://xtfcyd.blogchina.com/inc/shenle.gif");
+//下面为图片的说明文字
+note_list[0] = "网页教学网图片展示特效说明1";
+note_list[1] = " 网页教学网图片展示特效说明2";
+note_list[2] = "网页教学网图片展示特效说明3 ";
+note_list[3] = "网页教学网图片展示特效说明4";
+note_list[4] = " 网页教学网图片展示特效说明5";
+note_list[5] = "网页教学网图片展示特效说明6 ";
+note_list[6] = "网页教学网图片展示特效说明7 ";
+note_list[7] = "网页教学网图片展示特效说明8 ";
+note_list[8] = " 网页教学网图片展示特效说明9";
+note_list[9] = "网页教学网图片展示特效说明10 ";
+function noteArray(size)
+{
+ this.length=size;
+ for(i=1;i<=size;i++)
+ {
+ this[i]=""
+ }
+ return this;
+}
+function counternum(){
+ if( timesnum < 10-1){
+ timesnum++;
+ document.all.slide_ent.src="/blog/about:blank";
+ document.all.slide_ent.src="http://cn.biz.yahoo.com/slideshow/spaceid_slideshow.html";
+ }
+}
+function run(obj){
+ interval=obj.options[obj.selectedIndex].value*1000;
+ rotateImage();
+}
+function stop(){
+ interval=0;
+}
+function previous(){
+ var new_image = getPreviousImage();
+ document['rImage'].src = new_image;
+}
+function next(){
+ var new_image = getNextImage();
+ document['rImage'].src = new_image;
+}
+function imageItem(image_location) {
+this.image_item = new Image();
+this.image_item.src = image_location;
+}
+function noteItem(note) {
+this.note_item = new Image();
+this.note_item.src = note;
+}
+function get_ImageItemLocation(imageObj) {
+return(imageObj.image_item.src)
+}
+function get_NoteItemLocation(noteObj) {
+return(noteObj.note_item.src)
+}
+function generate(x, y) {
+var range = y - x + 1;
+return Math.floor(Math.random() * range) + x;
+}
+function getPreviousImage() {
+image_index = image_index-1;
+if (image_index < 0){
+ image_index=image_index+10;
+ }
+var new_image = get_ImageItemLocation(image_list[image_index]);
+document.all.span_1.innerText=image_index+1;
+document.all.summary.innerText=note_list[image_index];
+return(new_image);
+}
+function getNextImage() {
+image_index = image_index+1;
+if (image_index >= 10){
+ image_index=image_index-10;
+ }
+var new_image = get_ImageItemLocation(image_list[image_index]);
+document.all.span_1.innerText=image_index+1;
+document.all.summary.innerText=note_list[image_index];
+return(new_image);
+}
+function rotateImage() {
+if (interval == 0){
+ return 1;
+}
+if (flagtime == 1){
+ var now = new Date();
+ var time1 = now.getTime();
+ var time2;
+ time1=time1+3000;
+ time2=now.getTime();
+ while(time2 < time1){
+ now = new Date();
+ time2=now.getTime();
+ }
+ flagtime=0;
+}
+var new_image = getNextImage();
+document['rImage'].src = new_image;
+var recur_call = "rotateImage('"+'rImage'+"')";
+setTimeout(recur_call,interval);
+}
+// End -->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=gb2312">
+<script type="text/javascript" src="http://cn.yimg.com/script/hp/ygcss.js"></script>
+</head>
+<body bgColor=#ffffff topmargin=0 leftmargin=0>
+<iframe id="slide_ent" src="http://cn.biz.yahoo.com/slideshow/spaceid_slideshow.html" style="display:none"></iframe>
+<center>
+<center>
+<table width="468" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFF2DF">
+<tr>
+<td valign="top" align="center">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:solid 1px #766D7C;">
+<tr>
+<td height="47"><img src="/images/logo.gif"></td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#9F90CC" style="border-top:solid 1px 
+
+#ffffff;">
+<tr>
+<td height="25" valign="bottom">
+<!---->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="text-indent:5px;"></td>
+<td width="100%">
+<table width="98%" cellspacing="0" cellpadding="0" border="0">
+<tr align="center">
+<td nowarp><big><b>酷图放映:</b></big></td>
+<td nowrap width=10%>连接</td>
+<td></td>
+<td width="10%" nowrap >连接１</td>
+<td></td>
+<td width="10%" nowrap>连接２</td>
+<td></td>
+<td width="10%" nowrap>连接３</td>
+<td></td>
+<td width="10%" nowrap>连接４</td>
+<td></td>
+<td width="10%" nowrap>连接５</td>
+<td></td>
+<td width="14%" nowrap>连接６</td>
+</tr>
+</table>
+</td>
+<td></td>
+</tr>
+</table>
+<!--/-->
+</td>
+</tr>
+<tr>
+<td><img src="http://cn.yimg.com/i/cn/sp/slide/slideshow_bg.gif" width="468" height="3" border="0"></td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td height="13"></td>
+</tr>
+</table>
+<!--img447*333-->
+<table width="447" height="333" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center"><img name="rImage" src=http://cn.yimg.com/sp/slideshow/biz/i20050429t110509b0-a.jpg onload="counternum()" 
+
+border="0"></td>
+</tr>
+</table>
+<!--/img447*333-->
+<!--text-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center" id="summary" height="28"></td>
+</tr>
+</table>
+<!--/text-->
+<!--bottom-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="http://cn.yimg.com/i/cn/sp/slide/slideshow_bg_3.gif" width="468" height="4" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#C9BEEB" height="25">
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+<form name=form1>
+<tr>
+<td width="80"></td>
+<td class="sbody" align="left"><span id=span_1>1</span>/10&nbsp;&nbsp;&nbsp;&nbsp;<img 
+
+src="http://cn.yimg.com/i/cn/sp/slide/slideshows_bottom_1.gif" width="35" height="21" align="absmiddle" border="0" alt="开始" 
+
+onclick="run(document.form1.select1)">&nbsp;&nbsp;<img src="http://cn.yimg.com/i/cn/sp/slide/slideshows_bottom_2.gif" 
+
+width="35" height="21" align="absmiddle" border="0" alt="停止" onclick="stop()">
+&nbsp;&nbsp;<img src="http://cn.yimg.com/i/cn/sp/slide/slideshows_bottom_3.gif" width="35" height="21" align="absmiddle" 
+
+border="0" alt="前一张" onclick="previous()">&nbsp;&nbsp;<img src="http://cn.yimg.com/i/cn/sp/slide/slideshows_bottom_4.gif" 
+
+width="35" height="21" align="absmiddle" border="0" alt="后一张" onclick="next()">&nbsp;&nbsp;速度：
+<select name="select1" onchange="run(this)">
+<option value="12">12 sec.</option>
+<option selected value="6">6 sec.</option>
+<option value="3">3 sec.</option>
+<option value="9">9 sec.</option>
+</select></td>
+</tr>
+</form>
+</table>
+</td>
+</tr>
+<tr>
+<td height="1" bgcolor="#625A68"></td>
+</tr>
+</table>
+<!--/bottom-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-top:solid 1px #ffffff;border-bottom:solid 1px 
+
+#ffffff;">
+<tr>
+<td bgcolor="#E2DCF5" height="28">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10"></td>
+<td width="1%"></td>
+<td width="70" nowrap><a href="http://www.webjx.com" target="_blank">网页制作</a></td>
+<td width="1%"></td>
+<td width="70" nowrap><a href="http://www.webjx.com" target="_blank">更多精彩</a></td>
+<td width="1%"></td>
+<td width="70" nowrap><a href="http://www.webjx.com" target="_blank">网页教学网</a></td>
+<td width="215"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--/--></center>
+<script language=javascript>
+flagtime=1;
+rotateImage();
+slideit()
+</script>
+</body>
+</html>

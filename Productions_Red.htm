@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<title>红警截图-小波作品--小波DEMO网</title>
+		<link rel="stylesheet" type="text/css" href="Sheet.css">
+	<style type="text/css">
+<!--
+body {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+-->
+    </style></head>
+
+<body onMouseOut="window.status='如果喜欢小波Demo网或喜欢小波本人，就一定要给我留言并且转给你的朋友们哦！！';return true">
+	<script src="DaoHang.js"></script>
+<hr size="2">
+<table width="100%">
+  <tr>
+    <td><a href="index.htm">DEMO</a>- - - <span class="style6"><a href="Productions.htm">小波作品</a></span>- -红警截图</td>
+  </tr>
+</table>
+<table width="100%"  border="0" align="center">
+	<tr>
+		<td>
+			<table width="100%"  border="0">
+			  <tr>
+				<td><table width="266" height="27"  border="5" align="center" bordercolor="#DAD8FA">
+				  <tr>
+					<td width="248" align="center" bgcolor="#D7EBFF"><div align="center"><span class="style3">我玩儿红警时候截的图图哦</span></div></td>
+				  </tr>
+				</table>    </td>
+			  </tr>
+			</table>
+		</td>
+	</tr>
+  <tr>
+    <td align="center">
+	  <table width="424" height="60">
+	  	<tr>
+        	<td bgcolor="#D7EBFF"> <table width="100%"  border="7">
+              <tr>
+                <td align="center"><img src="img/red/0.JPG" name="img" border="5"></td>
+              </tr>
+            </table></td>
+        </tr>
+		
+          <tr>
+            <td bgcolor="#D7EBFF">
+				<script language="javascript"> 
+						//注意，我这里的图片名字是固定的，即1.jpg,2.jpg……x.jpg
+						//如果每张图的名字没有规律，可自己加上数组改进
+					
+						window.onload=getSrc; //打开页面时自动运行getSrc()函数
+						
+						var i=0;//公用变量，记录当前图片数字
+						var count=108;//纪录一共有多少图片
+						var seconds=3*1000;//纪录速度
+						
+						//自动运转
+						function getSrc(flag){
+							if(i>count || flag=="back"){//在这儿检查了i得大小，不能超过界限
+								clearTimeout(Timer01);
+								i=0;
+							}
+							if(flag=="start"){clearTimeout(Timer01);}
+							var src="img/red/"+ i +".JPG";//生成图片地址
+							
+							//预先读取数据
+							//不知道是否有效果
+							Image1= new Image(100,50);Image1.src = src;
+							Image2= new Image(100,50);Image1.src = src+1;
+							Image3= new Image(100,50);Image1.src = src+2;
+							
+							document.img.src=src;
+							document.form1.txt.value=src;
+							if(flag=="change"){
+								seconds=document.form1.seconds.value*1000;
+								clearTimeout(Timer01);
+							}
+							Timer01=setTimeout("getSrc()",seconds);
+							i++;
+						}
+						
+						//停止
+						function letStop(){
+							clearTimeout(Timer01);
+						}
+						
+						//“移动”——如上一张、下一张
+						function move(m){
+							clearTimeout(Timer01);
+							var src=""
+							
+							if(m=="next"){
+								++i;
+								if(i>count) i=0;
+							}
+							if(m=="prev"){
+								--i;
+								if(i<0) i=count;
+							}
+							if(m=="first"){
+								i=0;
+							}
+							if(m=="last"){
+								i=count;
+							}
+							if(m=="goto"){
+								var p=document.form1.txtPage.value;
+								if(p=="" || p>count || p<0 || p==-0 || isNaN(p)==true){//isNaN()检验是否不是数字
+									p=i;//验证数字是否正确，若不正确则不移动，且记录下来了向前的位置
+									document.form1.txtPage.value="";
+								}
+								i=p;
+							}
+							
+							src="img/red/"+ i +".JPG";
+							document.img.src=src;
+							document.form1.txt.value=src;
+						}
+						
+						/*
+						//改变图图的大小
+							//暂时还有点问题
+						function changeSize(){
+							var width=0;
+							var height=0;
+							if(document.form1.imgSize.value="middle"){
+								document.img.width=530;
+								document.img.height=420;
+							}
+							if(document.form1.imgSize.value="small"){
+								document.img.width=350;
+								document.img.height=300;
+							}
+							
+						}
+						*/
+						
+				</script>
+				
+				<form name="form1">
+						<!--控制器-->
+						<div align="center">
+							变速
+							<select name="seconds" onChange="javascript:getSrc('change');form1.txtPage.focus();">
+							  <option value="0.5">0.5</option>
+							  <option value="1">1</option>
+							  <option value="3" selected>3</option>
+							  <option value="5">5</option>
+							  <option value="7">7</option>
+							  <option value="10">10</option>
+							  <option value="12">12</option>
+							</select>
+							秒      
+							
+							&#149;&nbsp; 跳到
+						  	<input type="text" name="txtPage" size="3" maxlength="3">
+							页
+							<input name="button" value="跳！" type=button onClick="move('goto')"  >
+							<!--
+							&nbsp; &#149;&nbsp; 改变大小
+							 <select name="imgSize" id="imgSize" onChange="changeSize()">
+							  <option value="old" selected>原图大小</option>
+							  <option value="middle">中</option>
+							  <option value="small">小</option>                  
+						  	</select>
+							--><!--暂时还有点问题-->
+							<br>
+							<input name="button" type=button onClick="getSrc('start')" value="自动换！" >
+							<input name="button" type=button onClick="letStop()" value="给我停！" >
+							<input name="button" type=button onClick="getSrc('back')" value="从头来！" >
+							<input type="text" name="txt" readonly="" size="13">
+							<input name="button" type=button onClick="move('first')" value="第一个" >
+							<input name="button" type=button onClick="move('prev')" value="上一个" >
+							<input name="button" type=button onClick="move('next')" value="下一个" >
+						<input name="button" type=button onClick="move('last')" value="最后一个" >
+					</div>
+					<!--控制器-->
+	   		</form>	
+			</td>
+          </tr>
+      </table>	</td>
+  </tr>
+  
+  <tr>
+  	<td>
+		<table width="100%" border="0" align="center">
+		  <tr>
+			<td align="center" bgcolor="#67B7E2">Copyright &copy; 2006,小波. .[可查看源码，具有优良代码风格很易懂，供您参考一些算法，共同学习] </td>
+		  </tr>
+		</table>
+	</td>
+  </tr>
+</table>
+
+<a></a>
+<a></a>
+<a></a>
+</body>
+</html>

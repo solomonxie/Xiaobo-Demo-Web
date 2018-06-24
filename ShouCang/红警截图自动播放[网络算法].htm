@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+</head>
+
+<body>
+	
+	<table width="424" height="60" border="5">
+		<tr>
+			<td>
+				<form name="form1">
+					<input type="text" name="txt" readonly=""><br>
+					<input type=button value="开始吧！" onClick="getSrc('start')" >
+					<input type=button value="给我停！" onClick="letStop()" >
+					<input type=button value="从头来！" onClick="getSrc('back')" >
+					<br>
+					<input type=button value="第一个" onClick="move('first')" >
+					<input type=button value="上一个" onClick="move('prev')" >
+					<input type=button value="下一个" onClick="move('next')" >
+					<input type=button value="最后一个" onClick="move('last')" >
+					跳到
+					<input type="text" name="txtPage" size="3" maxlength="3"> 
+					页 
+					<input type=button value="Go！" onClick="move('goto')" >
+					<br>
+					变速度
+					<select name="seconds" onChange="getSrc('change')">
+					  <option value="0.5">0.5</option>
+					  <option value="1">1</option>
+					  <option value="3" selected>3</option>
+					  <option value="5">5</option>
+					  <option value="7">7</option>
+					  <option value="10">10</option>
+					  <option value="12">12</option>
+				    </select>
+				  秒
+					
+				</form>
+					<script> 
+						//注意，我这里的图片名字是固定的，即1.jpg,2.jpg……x.jpg
+						//如果每张图的名字没有规律，可自己加上数组改进
+					
+						window.onload=getSrc; //打开页面时自动运行getSrc()函数
+						
+						var i=0;//公用变量，记录当前图片数字
+						var count=108;//纪录一共有多少图片
+						var seconds=3*1000;//纪录速度
+						
+						//自动运转
+						function getSrc(flag){
+							if(i>108 || flag=="back"){
+								clearTimeout(Timer01);
+								i=0;
+							}
+							if(flag=="start") clearTimeout(Timer01);
+							var src="img/red/"+ i +".JPG";
+							document.img.src=src;
+							document.form1.txt.value=src;
+							if(flag=="change"){
+								seconds=document.form1.seconds.value*1000;
+								clearTimeout(Timer01);
+							}
+							Timer01=setTimeout("getSrc()",seconds);
+							i++;
+						}
+						
+						
+						//停止
+						function letStop(){
+							clearTimeout(Timer01);
+						}
+						
+						//“移动”——如上一张、下一张
+						function move(m){
+							clearTimeout(Timer01);
+							var src=""
+							
+							if(m=="next"){
+								++i;
+								if(i>108) i=0;
+							}
+							if(m=="prev"){
+								--i;
+								if(i<0) i=108;
+							}
+							if(m=="first"){
+								i=0;
+							}
+							if(m=="last"){
+								i=108;
+							}
+							if(m=="goto"){
+								var p=document.form1.txtPage.value;
+								if(p=="" || p>108 || p<0 || p==-0 || isNaN(p)==true){//isNaN()检验是否不是数字
+									p=i;//验证数字是否正确，若不正确则不移动，且记录下来了向前的位置
+									document.form1.txtPage.value="";
+								}
+								i=p;
+							}
+							
+							src="img/red/"+ i +".JPG";
+							document.img.src=src;
+							document.form1.txt.value=src;
+						}
+					</script> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img name="img" src="img/red/0.JPG"  border="20">
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>
