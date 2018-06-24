@@ -13,6 +13,11 @@ body {
 }
 -->
     </style>
+	    <!--引用tickbox技术start-->
+		<script type="text/javascript" src="thickbox/jquery.js"></script>
+		<script type="text/javascript" src="thickbox/thickbox.js"></script>
+		<style type="text/css" media="all">@import "thickbox/thickbox.css";</style>
+		<!--引用tickbox技术end-->
 </head>
 <body onMouseOut="window.status='如果喜欢小波Demo网或喜欢小波本人，就一定要给我留言并且转给你的朋友们哦！！';return true">
 	<script src="DaoHang.js"></script>
@@ -49,6 +54,7 @@ body {
           <tr>
             <td align="center">
 				<iframe src="http://blog.sina.com.cn/album/1253924794" width="650" height="410" frameborder="0" scrolling="no" ></iframe>
+				<!--<a href="http://blog.sina.com.cn/album/1253924794?TB_iframe=true&height=410&width=650" title="我的照片" class="thickbox">点这里！</a>-->  
 			</td>
           </tr>
         </table>

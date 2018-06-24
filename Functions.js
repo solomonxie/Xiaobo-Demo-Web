@@ -82,7 +82,7 @@
 			//返回的是一个数祖
 			var arrParams=paramList.split("&"); // 将多url切割为多个 name/value对
 			
-			if(arrParams==null){return "";}
+			if(arrParams==""){return "";}
 			
 			for(var i=0;i<arrParams.length;i++){ // 遍历 参数数组，处理每个参数对
 			var arrKey=arrParams[i].split("=");
@@ -136,30 +136,6 @@
 			*/
 		}
 //----End----解析地址，得到参数----
-
-
-
-
-//----Start----登陆后的欢迎
-function showWelcome(){
-	var strCookie=document.cookie;
-	var arrCookie=strCookie.split(";"); // 将多cookie切割为多个名/值对
-	for(var i=0;i<arrCookie.length;i++){ // 遍历cookie数组，处理每个cookie对
-		var arrKL=arrCookie[i].split("="); // 找到名称为userId的cookie，并返回它的值
-		if(arrKL[0]=="usname"){
-			document.write("<span class='style5'>欢迎你："+ arrKL[1] +"</span>");
-			//alert("欢迎你："+arrKL[1]);
-		}
-	}	
-}
-
-//----End----
-
-
-
-
-
-
 
 
 
