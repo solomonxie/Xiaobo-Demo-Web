@@ -29,7 +29,7 @@ MM_reloadPage(true);
 		return document.getElementById(s);
 	} 
 	function swap(s,a,b,c){
-		$(s)[a]=$(s)[a]==b?c:b;//操，经典
+		$(s)[a]=$(s)[a]==b?c:b;
 	}
 	function hide(s){
 		$(s).style.display=$(s).style.display=="none"?"":"none";
@@ -38,12 +38,13 @@ MM_reloadPage(true);
 //----End----点击列 隐藏/显示----
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312"></HEAD>
-<BODY text=#000000 vLink=#0000cc aLink=#ff6600 link=#0000cc>
+<BODY text=#000000 vLink=#0000cc aLink=#ff6600 link=#0000ccc>
 <div align="center">
   
   </div>
-<CENTER><IMG height=97 alt=小波搜索 src="img/logo/Mine/XiaoboSearch_logo.jpg" 
-width=250><BR>
+<CENTER>
+<div><IMG height=97 alt=小波搜索 src="img/logo/Mine/XiaoboSearch_logo.jpg" width=250></div>
+<BR>
 <BR><BR><BR>
 <DIV id=l>
 <DIV id="Bar">
@@ -53,15 +54,16 @@ width=250><BR>
 <TABLE cellSpacing=0 cellPadding=0 width=600 border=0>
   <TR vAlign=top>
     <TD width=92></TD>
-    <TD height=62>
+    <TD>
     	<FORM name="form_Total" id="form_Total" onSubmit="return goSearch(this.fname.value);" target="_blank">
 			<INPUT class=kw size=36 name="key" id="key">
+			<INPUT type=submit class=sb value=小波搜索>
+			<a href="javascript:history.back();"><img height=30 src="img/icon/return.jpg" width=60 border=0></a>
 			<input type="hidden" name="type" id="type">
 			<input type="hidden" name="fname"  id="fname">
-			<INPUT type=submit class=sb value=小波搜索>
-        </FORM>
+			<input type="hidden" name="wpname"  id="wpname">
+			</FORM>
 	</TD>
-  <TD width=100 align="middle"><A href="javascript:history.back();"><IMG height=30 src="img/icon/return.jpg" width=60 border=0></a>  </TD>
   </TR>
 </TABLE>
 <table width="600"  border="0">
@@ -69,10 +71,23 @@ width=250><BR>
     <td width="92">
 		
 	 </td>
-    <td><div id="lrSelect" onClick="javascript:$('lrSelect').style.display='none'"></div></td>
+    <td><!--<div id="lrSelect" onClick="javascript:$('lrSelect').style.display='none'"></div>--></td>
     </tr>
 </table>
 <br>
+			<div id="lrSLWP" style="position:absolute; top: 315px; left: 294px; z-index: 1; width: 315px;" class="kw">
+			<!--<div id="lrSLWP" style="position:absolute; top: 82px; left: 63px; z-index: 1;">-->
+			<script>//$("lrSLWP").style.display="none";</script>
+				  <table width="100%"  border="0" align="center">
+					<tr id="trLrc">
+					  <td align="center" bgcolor="#CEEFFF">
+					  <div id="lrText">
+							<div align="center" id="lrSelect"  onClick="setLrSelectDisplay(('引擎是：'+$('wpname').value).fontcolor('#636563'));$('key').focus();" style=" background-color:white;overflow:auto;"><font color="#636563">---------------点击上面选择搜索类型哦----------------</font></div>
+					  </div>
+					  </td>
+					</tr>
+			  </table>
+  </div>
 <br>
 <br>
 <P style="HEIGHT: 30px">
@@ -90,12 +105,14 @@ href="Ideas.htm">wo的想法</A> | <A href="AboutI.htm">About 小波</a></P>
 
 <span id="JScriptes"></span>
 <span id="Count"></span></P>
+<br>
+<hr size="2">
+
 
 <div id="xx" style="display:none;"><script language="javascript" type="text/javascript" src="http://js.users.51.la/832271.js"></script></div>
 <script>$("Count").innerHTML=$("xx").innerHTML;$("xx").innerHTML="";</script>
 
-<br>
-<hr size="2">
+
 <div align="center"><font color="#ffffff">耶和华没有赐予我最好的建设能力 但赐予了我最好的整理能力 阿们</font></div>
 <p></p>
 </CENTER>

@@ -164,7 +164,9 @@ Songs[Songs.length++]=new Song("一直很安静","阿桑","http://53137069.150100.cn/mu
 Songs[Songs.length++]=new Song("忘记","林俊杰","http://202.96.82.69/wma/music2006/9/061205.wma","W","L");
 Songs[Songs.length++]=new Song("没那么爱他","范玮琪","http://fv.menllo.com/musics/e99b82b4-67f3-4166-ae83-77e022039f04/2006/12/31/060935134.mp3","M","F");
 Songs[Songs.length++]=new Song("做你的男人","张信哲","http://music3.9t9t.com/1/367/7356/9t9t_825205.wma","Z","Z");
-Songs[Songs.length++]=new Song("情人节","黄淑惠","http://134217728.ba","Q","H");
+Songs[Songs.length++]=new Song("Dying in the sun","卡百丽","http://music0.hexun.com/Save/Music/2006/1012/633/M_61DDF181DE63CF4D.WMA","D","K");
+
+
 
 //Songs=Songs.sort();//进行整齐排序//排序问题还有待特殊处理下
 

@@ -51,9 +51,9 @@ Data[Data.length++]=new SForm("form_Tom","Get","http://search.tom.com/search.php
 Data[Data.length++]=new SForm("form_SoGou","Get","http://www.sogou.com/web?query=","SoGou","web");
 Data[Data.length++]=new SForm("form_TaiPing","Get","http://ks.pconline.com.cn/index.jsp?q=","太平洋","web");
 Data[Data.length++]=new SForm("form_TaiPing2","Get","http://ks.pcgames.com.cn/games_index.jsp?q=","太平洋游戏区","web");
-Data[Data.length++]=new SForm("form_TanLan","Get","http://s.greedland.net/i.g?k=","贪婪动漫","dongman");
+Data[Data.length++]=new SForm("form_TanLan","Get","http://s2.greedland.net/s152.g?k=","贪婪动漫","dongman");
 Data[Data.length++]=new SForm("form_DongManXianFeng","Get","http://www.go2cartoon.com/index.php?p=donghua_search&search2=1&search3=","动漫先锋","dongman");
-Data[Data.length++]=new SForm("form_MeiRiDongMan","Get","http://www.angelskys.com/index/indexso.asp?zdtype=titletext&&dirs=cvod&Send=%CB%D1%CB%F7Keyword=","每日动漫","dongman");
+Data[Data.length++]=new SForm("form_MeiRiDongMan","Get","http://www.aicomic.com/index/indexso.asp?zdtype=titletext&&dirs=cvod&Send=%CB%D1%CB%F7Keyword=","每日动漫","dongman");
 Data[Data.length++]=new SForm("form_TianShangRenJian","Get","http://www.52tian.com/search.asp?x=14&y=11&typeid=片名&keyword=","天上人间","dongman");
 Data[Data.length++]=new SForm("form_MoonBoat","Get","http://www.ffsee.com/Default.asp?keyword=","月亮船","dongman");
 Data[Data.length++]=new SForm("form_bt_fkee","Get","http://bt.fkee.com/search.aspx?q=","飞客","download");
@@ -105,10 +105,11 @@ Data[Data.length++]=new SForm("form_tom_picture","Get","http://search.tom.com/se
 		var inner="";//纪录page.innerHtml;cao,不写="" 就会出现undifined，太缺了，害我苦找！
 		
 		for(var i=0;i<arrForms.length;i++) 
-			inner+="<a href='#' onClick=\"setParam('"+ arrForms[i].url +"','"+ arrForms[i].name +"');\">"+ arrForms[i].title +"</a>&nbsp;&nbsp;&nbsp;";
-		$("lrSelect").innerHTML="<strong>↓</strong>&nbsp;"+inner;
-		$("lrSelect").style.display="";
+			inner+="<a href='#' onClick=\"setParam('"+ arrForms[i].url +"','"+ arrForms[i].name +"','"+arrForms[i].title+"');\">"+ arrForms[i].title +"</a><br>";
+		setLrSelectDisplay(inner);
+		$("lrSLWP").style.display="";
 	}
+	function setLrSelectDisplay(inner){$("lrSelect").innerHTML=inner;}
 	
 	//返回与选择的类型相对应得网站s的对象
 	function getWPForms(wType){
@@ -131,10 +132,11 @@ Data[Data.length++]=new SForm("form_tom_picture","Get","http://search.tom.com/se
 		//document.getElementById(i).style.background="red";
 	}
 	//设置搜索参数，即搜索类型和搜索引擎名称
-	function setParam(type,fname){
-		document.form_Total.type.value=type;
-		document.form_Total.fname.value=fname;
-		document.form_Total.key.focus();
+	function setParam(type,fname,title){
+		$("form_Total").type.value=type;
+		$("form_Total").fname.value=fname;
+		$("form_Total").wpname.value=title;
+		$("form_Total").key.focus();
 	}
 	
 	//----Start----处理Get/Post方法提交表单的搜索----

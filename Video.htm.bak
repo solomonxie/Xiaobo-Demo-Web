@@ -230,10 +230,8 @@ MM_reloadPage(true);
         </tr>
       </table>
 	</div>
-	
-	
-	<a name="#album"></a>
 	<hr size="1">
+	<a name="#album"></a>
 	<div id="lrAlbum">
 		
 	</div>

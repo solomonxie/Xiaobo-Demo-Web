@@ -11,19 +11,27 @@
 	function xx(){
 		var flag=$("sl").value;
 		if(flag=="Video"){
-			//Videos[Videos.length++]=new Array("","","","","","","");
-			//title[0],CH[1],description[2],tags[3](connect by "&&&"),url[4],color[5],type[6](mv,dongman,movie...)
-			var txt="Videos[Videos.length++]=new Video(\""+ $("Title").value +"\",\""+ $("Description").value +"\",\""+ $("Tags").value +"\",\""+ $("Src").value +"\",\""+ $("Color").value +"\",\""+ $("Ground").value +"\",\""+ $("CH").value +"\");";
+			var txt="Videos[Videos.length++]=new Video(\""+ $("Title").value +"\",\""+ $("Description").value.replace(/\r\n/g,"<br>").replace(/\'/g,"\\\'").replace(/\"/g,"\\\"")
+				.replace(/\//g,"\\\/").replace(/\$/g,"\\\$").replace(/\(/g,"\\\(").replace(/\)/g,"\\\)").replace(/\*/g,"\\\*")
+				.replace(/\+/g,"\\\+").replace(/\./g,"\\\.").replace(/\?/g,"\\\?").replace(/\^/g,"\\\^").replace(/\{/g,"\\\{")
+				.replace(/\|/g,"\\\|").replace(/\}/g,"\\\}") +"\",\""+ $("Tags").value +"\",\""+ $("Src").value +"\",\""+ $("Color").value +"\",\""+ $("Ground").value +"\",\""+ $("CH").value +"\",\""+ $("Album").value +"\");";
+			clipboardData.setData('Text',txt);
+			$("temp").value=txt;
+		}
+		if(flag=="Album"){
+										//aname,ground,color,ch
+			var txt="Albums[Albums.length++]=new Album(\""+ $("Album").value +"\",\""+$("Ground").value+"\",\""+$("Color").value+"\",\""+$("CH").value+"\");";
 			clipboardData.setData('Text',txt);
 			$("temp").value=txt;
 		}
 		if(flag=="Song"){
-			var txt="Songs[Songs.length++]=new Array(\""+ $("Title").value.replace(/\'/g,"\\\'") +"\",\""+ $("CH").value +"\",\""+ $("singer").value +"\",\""+ $("singerCH").value +"\",\""+ $("Src").value +"\");";
+			var txt="Songs[Songs.length++]=new Song(\""+ $("Title").value.replace(/\'/g,"\\\'") +"\",\""+ $("CH").value +"\",\""+ $("singer").value +"\",\""+ $("singerCH").value +"\",\""+ $("Src").value +"\");";
+			var txt="Songs[Songs.length++]=new Song(\""+ $("Title").value.replace(/\'/g,"\\\'") +"\",\""+ $("singer").value +"\",\""+ $("Src").value +"\",\""+ $("CH").value +"\",\""+ $("singerCH").value +"\");";
 			clipboardData.setData('Text',txt);
 			$("temp").value=txt;
 		}
 		if(flag=="Lrc"){
-			var txt="Lrcs[Lrcs.length++]=new Array('"+ $("Title").value +"','"+ 
+			var txt="Lrcs[Lrcs.length++]=new Lrc('"+ $("Title").value +"','"+ 
 				$("txt").value.replace(/\[\d\d:\d\d\.\d\d\]/g,"").replace(/\r\n/g,"<br>").replace(/\'/g,"\\\'").replace(/\"/g,"\\\"")
 				.replace(/\//g,"\\\/").replace(/\$/g,"\\\$").replace(/\(/g,"\\\(").replace(/\)/g,"\\\)").replace(/\*/g,"\\\*")
 				.replace(/\+/g,"\\\+").replace(/\./g,"\\\.").replace(/\?/g,"\\\?").replace(/\^/g,"\\\^").replace(/\{/g,"\\\{")
@@ -34,6 +42,7 @@
 		}
 		alert("复制成功");
 		$("txt").value="";
+		$("Src").value="";
 		$("txt").focus();
 		
 	}
@@ -50,10 +59,7 @@
     <tr><td>
   	<p>
     <input name="Title" id="Title" >
-	  Title  </p>
-	  <p>
-		<input name="CH" id="CH" maxlength="1" >
-	  CH</p>
+	  Title | name</p>
 	  <p>
 	    <input name="singer" id="singer" >
 	    singer</p>
@@ -69,12 +75,16 @@ Src</p>
 		<input name="Tags" id="Tags" >
 	  Tags(connect by "&amp;&amp;&amp;")</p>
 	  <p>
-		<input name="Color" id="Color" >
-	  Color</p>
-	  <p><TEXTAREA name=txt></TEXTAREA>
-Lrc	  </p>
-<p>
-      <DIV></DIV><TEXTAREA id=temp style="HEIGHT: 38px" name=temp cols=30></TEXTAREA> 
+      <input name="Color" id="Color" >	  
+Color</p>
+	  <p>
+    <input name="Album" id="Album2" >
+    Album</p>
+	  <p>      <input name="CH" id="CH2" maxlength="1" >
+      CH</p>	  <p>
+	    <textarea name=txt></textarea>
+Lrc    
+    <DIV></DIV><TEXTAREA id=temp style="HEIGHT: 38px" name=temp cols=30></TEXTAREA> 
       预览
 </td></tr></table>
   
@@ -88,9 +98,10 @@ Lrc	  </p>
       <input type="button" name="button" value="        →数据库格式        " onClick="xx();" style="LEFT: 141px; TOP: 333px">
       <input type="reset" value="清空">
       <select name="sl" id="sl">
-        <option value="Video">Video</option>
+        <option value="Video" selected>Video</option>
+        <option value="Album">Album</option>
+        <option value="Song">Song</option>
         <option value="Lrc">Lrc</option>
-        <option value="Song" selected>Song</option>
       </select>
 			 <select name="Ground" id="Ground">
 			  <option value="Dongman" selected 
