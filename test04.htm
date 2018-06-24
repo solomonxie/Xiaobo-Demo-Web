@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+</head>
+<body>
+<script src="SongsLrc.js"></script>
+<script>
+	function $(s){
+		return document.getElementById(s);
+	} 
+	function swap(s,a,b,c){
+		$(s)[a]=$(s)[a]==b?c:b;//操，经典
+	}
+	function hide(s){
+		$(s).style.display=$(s).style.display=="none"?"":"none";
+	}
+</script>
+<a href="#" title="第一行&#13;第而行&#13;第三行">haha</a>
+<tr><td>
+<textarea id="haha" cols="80" rows="10" wrap="PHYSICAL">
+</textarea>
+<input type="button" value="go        " onClick="xx">
+</td></tr>
+</table>
+<script>
+	function xx(){
+		var str=$("haha").value;
+		
+		$("haha").value=str.replace(/Songs/g,"Lrcs");
+		
+	}
+</script>
+</body>
+</html>

@@ -80,11 +80,8 @@ var form_MoonBoat="http://www.ffsee.com/Default.asp?keyword=";//gggggggggggggggg
 var form_bt_fkee="http://bt.fkee.com/search.aspx?q=";//ggggggggggggggggggggggggggggggg
 	Data[dataIndex++]=new Array("form_bt_fkee","Get",form_bt_fkee,"飞客","download");
 
-
-
 var form_bt_china="http://search.btchina.net/btsearch.php?query=";//ggggggggggggggggggggggggggggggg
 	Data[dataIndex++]=new Array("form_bt_china","Get",form_bt_china,"BT@China","download");
-
 
 var form_verycd="http://find.verycd.com/folders/";//ggggggggggggggggggggggggggggggg
 	Data[dataIndex++]=new Array("form_verycd","Get",form_verycd,"VeryCD","download");
@@ -101,7 +98,7 @@ var form_IceFish="http://bt.icefish.org/search.php?keywords=";//PPPPPPPPPPPPPPPP
 
 
 //视频##########################################################################
-var form_Sina_BoKe="http://search.v.blog.sina.com.cn/s?key";//JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
+var form_Sina_BoKe="http://search.v.blog.sina.com.cn/s?key=";//JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
 	Data[dataIndex++]=new Array("form_Sina_BoKe","Get",form_Sina_BoKe,"新浪播客","video");
 			//"<SELECT name='type'>" + 
 				//"<OPTION value=video selected>视频描述</OPTION>" + 
@@ -235,7 +232,6 @@ var form_tom_picture="http://search.tom.com/searchpic.php?tomsearch=pic&word=ZZZ
 		
 		for(var i=0;i<arrForms.length;i++) 
 			inner+="<a href='#' onClick=\"setParam('"+ arrForms[i][4] +"','"+ arrForms[i][0] +"');\">"+ arrForms[i][3] +"</a>&nbsp;&nbsp;&nbsp;";
-		//原型		<a href='#' onClick=\"setParam('picture','form_163_Picture');\">网易相册</a>&nbsp;&nbsp;&nbsp;
 		$("lrSelect").innerHTML="<strong>↓</strong>&nbsp;"+inner;
 		$("lrSelect").style.display="";
 	}
@@ -264,6 +260,7 @@ var form_tom_picture="http://search.tom.com/searchpic.php?tomsearch=pic&word=ZZZ
 	function setParam(type,fname){
 		document.form_Total.type.value=type;
 		document.form_Total.fname.value=fname;
+		document.form_Total.key.focus();
 	}
 	
 	//----Start----处理Get/Post方法提交表单的搜索----
@@ -308,7 +305,7 @@ var form_tom_picture="http://search.tom.com/searchpic.php?tomsearch=pic&word=ZZZ
 
 //----Start----站内音乐搜索----自己做搜索引擎真累-------
 function searchMusicHere(words){
-	if(words=="") window.open("SongList.htm");
+	if(words=="") window.open("SongsForSearch.htm");
 	var arrSongsNum=new Array();var aidx=0;//记录下来符合条件的编号
 	var arrWords=words.split(" ").sort();//分割搜索词
 	var isIt;
@@ -320,13 +317,11 @@ function searchMusicHere(words){
 		if(isIt==true) arrSongsNum[aidx++]=i;
 	}
 	if(arrSongsNum.length==0){alert("我这儿没这首歌儿啊，换个关键词试试吧！");return false;}
-	//else window.open("SongList.htm#"+arrSongs[0][1]);//具体跳到arrSongs的哪一个位置还没有定夺
 	else{
 		var xx=arrSongsNum[0];for(var i=1;i<arrSongsNum.length;i++)	xx+="*"+arrSongsNum[i];
-		window.open("SongList.htm?arrSongsNum="+xx);
+		window.open("SongsForSearch.htm?arrSongsNum="+xx);
 	}
 }
-
 
 
 //----End----站内音乐搜索---

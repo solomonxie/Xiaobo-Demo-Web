@@ -1,0 +1,17 @@
+//##################################################################################
+//纪录所有MV
+//##################################################################################
+
+
+//###############################################################################################################################
+//总数组，包括了所有的MV
+//总数组，包括了所有的MV
+//Videos[Videos.length]=new Array();
+
+var Videos=new Array();
+
+
+//###############################################################################################################################
+//title,zm,description,tags(connect by "&&&"),url
+//Videos[Videos.length++]=new Array("","","","","");
+Videos[Videos.length++]=new Array("Avril的MV-Nobodys Fool","N","很好听","Avril&&&Nobodys Fool&&&MV","<object width=\"474\" height=\"461\"><param name=\"wmode\" value=\"transparent\" \/><param name=\"movie\" value=\"http:\/\/v\.blog\.sina\.com\.cn\/b\/vblog_player\.swf\?vid=335289&uid=1253924794&initfull=0&cursound=null\"\/><\/param><embed src=\"http:\/\/v\.blog\.sina\.com\.cn\/b\/vblog_player\.swf\?vid=335289&uid=1253924794&initfull=0&cursound=null\" wmode=\"transparent\" type=\"application\/x-shockwave-flash\" width=\"474\" height=\"461\"><\/embed><\/object>");

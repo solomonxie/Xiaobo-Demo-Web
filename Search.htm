@@ -5,8 +5,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <title>小波Demo网站--小波搜索</title>
 <link rel="stylesheet" type="text/css" href="Sheet.css">
-<script src="Functions.js"></script>
 <script>
+	function $(s){
+		return document.getElementById(s);
+	} 
+	function swap(s,a,b,c){
+		$(s)[a]=$(s)[a]==b?c:b;//操，经典
+	}
+	function hide(s){
+		$(s).style.display=$(s).style.display=="none"?"":"none";
+	}
 	function hideAll(s){//隐藏除了参数s之外的所有表
 		var arr_tables=["WebInfo","Blog","Transcate","DongMan","Download","Video","Buy","Music","Picture","Other"];
 		for(var i=0;i<arr_tables.length;i++){
@@ -1154,7 +1162,7 @@
 <br>
 <table width="792" border="0">
   <tr>
-    <td align="center" valign="bottom" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">Copyright &copy; 2006, 小波. All right are reserved.<script src='http://s103.cnzz.com/stat.php?id=395664&web_id=395664' language='JavaScript' charset='gb2312'></script></td>
+    <td align="center" valign="bottom" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">Copyright &copy; 2006, 小波. All right are reserved.<script language="javascript" type="text/javascript" src="http://js.users.51.la/832271.js"></script></td>
   </tr>
   <tr>
     <td align="center" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">全部都以最简单的方式引用各大搜索引擎哦，代码也是组织好了的，直接打看看就是了，供大家互相学习哦.</td>

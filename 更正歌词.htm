@@ -3,23 +3,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>无标题文档</title>
+<title>更正歌词</title>
+<script>
+	var cClick=0;
+	function $(s){
+		return document.getElementById(s);
+	} 
+	function xx(){
+		//if(++cClick>1) return;
+		str=document.f.txt.value;//document.f.txt.value;
+		var xx="own to the end of the day [01:45.00]The clock ticks life away [01:45.97](It\'s so unreal) [01:48.84]Didn\'t look out below [01:50.31]Watched the time go right out the window [01:52.90]Tried to hold on, but didn\'t even know [01:55.64]I wasted it all just to [01:57.12](Watch you go) [01:59.30]I kept everything inside [02:00.74]And, even though I tried, it all fell apart [02:03.06]What it meant to me will eventually be [02:05.46]A memory of a time when I tried so... [02:06.93] [02:08.77]h-to-the-izz-O, v-to-the-izz-A, LP, jay-z, help me out [02:11.89](aw, they having a good \'ol time out there) [02:16.63] [02:17.79]it starts with... h-to-the-izz-O, v-to-the-izz-A, LP, jay-z, help me out [02:24.70](aw, they having a good \'ol time out there) [02:25.98] [02:28.16]it starts with... h-to-the-izz-O, v-to-the-izz-A, LP, jay-z, help me out [02:33.18] [02:36.01](yes, indeed, ladies and gentlemen) ";
+		xx=str.replace(/\r\n/g,"<br>").replace(/\'/g,"\\\'").replace(/\"/g,"\\\"")
+		.replace(/\//g,"\\\/").replace(/\$/g,"\\\$").replace(/\(/g,"\\\(").replace(/\)/g,"\\\)").replace(/\*/g,"\\\*")
+		.replace(/\+/g,"\\\+").replace(/\./g,"\\\.").replace(/\?/g,"\\\?").replace(/\^/g,"\\\^").replace(/\{/g,"\\\{")
+		.replace(/\|/g,"\\\|").replace(/\}/g,"\\\}");
+		//特殊字符过滤//$ ) ( * + . [  ?  \  ^ { | 
+		document.f.txt.value=xx;document.f.txt.focus();
+	}
+</script>
 </head>
 
 <body>
 <form name="f">
-  <textarea name="txt" cols="70" rows="20"></textarea>
-  <input type="button" name="button" value="go            " onClick="xx();">
+  <p align="center">
+    <input type="button" name="button" value="            歌词→数据库格式            " onClick="xx();">
+</p>
+  <p align="center">    <textarea name="txt" cols="60" rows="20"></textarea>
+</p>
+  <p align="center">
+    <input type="button" name="button" value="                  关闭                  " onClick="window.close();">
+  </p>
 </form>
-<script>
-	function xx(){
-		var Lrc=new Array();
-		lIdx=0;
-		str=document.f.txt.value.replace(/"/g,"\\\"");
-		Lrc[lIdx++]=str;
-		document.f.txt.value="\""+str+"\"";
-		
-	}
-</script>
+
+<b></b>
+<b></b>
+<b></b>
+<b></b><b></b><b></b>
 </body>
 </html>

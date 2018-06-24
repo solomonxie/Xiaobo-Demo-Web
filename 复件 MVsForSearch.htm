@@ -42,59 +42,12 @@ MM_reloadPage(true);
 <table width="722">
   <tr>
     <td width="110" rowspan="5">&nbsp;</td>
-    <td colspan="51"><a href="index.htm">DEMO</a>- - - <a href="Music.htm">歌er好快</a>- <a href="SearchFace.htm">小搜波</a>--<a href="SongList.htm"><a href="SongList.htm">我最喜欢的歌er</a>---搜歌er<a name="#dh"></a></td>
+    <td colspan="51"><a href="index.htm">DEMO</a>- - - <a href="Music.htm">歌er好快</a>- <a href="SearchFace.htm">小搜波</a>--<a href="SongList.htm"><a href="SongList.htm">我喜欢的MV</a>---搜MV<a name="#dh"></a></td>
   </tr>
 </table>
 <br>
 
-<div style="margin-left: 120px;margin-right: 120px;">
-  <a href="#"onClick="javascript:hide('lrPlayer');swap('lrPlayer','className','up','down');$('Jia').innerHTML=$('Jia').innerHTML=='+'?'-':'+';">播放器<strong><font id="Jia" color="#ff9900">-</font></strong></a></td>
-<span id="download"><a href="#" title='点击下载'><font color="#ff9900">↓</font></a></span>
-<span><a href="#" onClick="javascript:hide('lrLrc');swap('lrLrc','className','up','down');"><font color="#ff9900">歌词</font></a></span>
-<div id="lrPlayer">
-        <EMBED style="FILTER: invert(); WIDTH: 350px; HEIGHT: 50px;" 
-				src="" 	
-				type=audio/mpeg
-				id="player" 
-				LOOP="5" 
-				AUTOSTART="1" 
-				SHOWSTATUSBAR="2"
-				controls=console>
-		</EMBED>
-  </div>
-</div>
-
-<br>
-
 <!--lrForSearch start-->
-
-<div id="lrLrc" style="position:absolute; width:608px; top: 234px; left: 215px; z-index: 1;">
-	<script>$("lrLrc").style.display="none";</script>
-      <table width="100%"  border="0" align="center">
-        <tr>
-          <td align="center" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">
-		  	<span class="style6"><a href="#"onClick="javascript:hide('trLrc');swap('trLrc','className','up','down');hide('trJia4');swap('trJia4','className','up','down');">歌词<strong><font id="Jia3" color="#ff9900">↓</font></strong></a></span> 
-				<span class="style6"><a href="#"onClick="javascript:$('txtLrc').align=$('Jia5').innerHTML=='←'?'left':'center';$('Jia5').innerHTML=$('Jia5').innerHTML=='←'?'→':'←';"><strong><font id="Jia5" color="#ff9900">←</font></strong></a></span>
-		  </td>
-        </tr>
-        <tr id="trLrc">
-          <td align="center" bgcolor="#CEEFFF">
-			<div id="lrLrcText">
-				<div align="center" id="txtLrc" style=" background-color:white;overflow:auto;">Okey,Click a Song First</div>
-			<!--
-			<textarea cols="95" rows="10" id="txtLrc">
-			Sorry,Have not yo
-			</textarea>
-			-->
-			</div>
-          </td>
-        </tr>
-		 <tr id="trJia4">
-          <td align="center" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'"><span class="style6"><a href="#"onClick="javascript:hide('trLrc');swap('trLrc','className','up','down');hide('trJia4');swap('trJia4','className','up','down');">歌词<strong><font id="Jia4" color="#ff9900">↑</font></strong></a></span></td>
-        </tr>
-  </table>
-</div>
-
 
 <div>
 <table width="722"  border="0">
@@ -107,7 +60,7 @@ MM_reloadPage(true);
 <br>
 <div id="lrForSearch" style="margin-left:120px;margin-right:120px;"></div>
 <br>
-<div style="margin-left:120px;margin-right:120px;"><span class="style6"><a href='SongList.htm'><font color='#ff9900' style="font-style:oblique">想听更多歌er?</font></a></span></div>
+<div style="margin-left:120px;margin-right:120px;"><span class="style6"><a href='MV.htm'><font color='#ff9900' style="font-style:oblique">想看更多MV?</font></a></span></div>
 <br>
 <div>
 <table width="722"  border="0">
@@ -134,12 +87,12 @@ MM_reloadPage(true);
 
 
 <!--###############################################################################-->
-<script src="Songs.js"></script>
+<script src="MVs.js"></script>
 <script src="Functions.js"></script>
 <script>
 <!--进行search列赋值 start-->
-	var key=getKey("arrSongsNum","SongsForSearch.htm");
-	showSongsForSearch(key);//在结尾有东西的情况下才执行下一步
+	var key=getKey("arrMVsNum","MVsForSearch.htm");
+	showMVsForSearch(key);//在结尾有东西的情况下才执行下一步
 <!--进行search列赋值  end-->
 </script>
 <!--###############################################################################-->
@@ -157,6 +110,7 @@ MM_reloadPage(true);
 <b></b><b></b>
 <b></b>
 <b></b>
+
+
 </body>
 </html>
-

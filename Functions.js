@@ -1,18 +1,3 @@
-//----Start----点击列 隐藏/显示----
-	function $(s){
-		return document.getElementById(s);
-	} 
-	function swap(s,a,b,c){
-		$(s)[a]=$(s)[a]==b?c:b;//操，经典
-	}
-	function hide(s){
-		$(s).style.display=$(s).style.display=="none"?"":"none";
-	}
-	
-//----End----点击列 隐藏/显示----
-
-
-
 //----Start----解析地址，得到参数----
 		//公用变量部分
 		var url=this.location.href;//获取引用本js文件的叶面地址
