@@ -8,13 +8,7 @@
 	function hide(s){
 		$(s).style.display=$(s).style.display=="none"?"":"none";
 	}
-	function hideAll(s){//隐藏除了参数之外的所有表
-		var arr_tables=["WebInfo","Blog","Transcate","DongMan","Download","Video","Buy","Music","Picture","Other"];
-		for(var i=0;i<arr_tables.length;i++){
-			if(arr_tables[i]!=s)
-				$(arr_tables[i]).style.display="none";
-		}
-	}
+	
 //----End----点击列 隐藏/显示----
 
 

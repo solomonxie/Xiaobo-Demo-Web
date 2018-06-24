@@ -6,6 +6,15 @@
 <title>小波Demo网站--小波搜索</title>
 <link rel="stylesheet" type="text/css" href="Sheet.css">
 <script src="Functions.js"></script>
+<script>
+	function hideAll(s){//隐藏除了参数s之外的所有表
+		var arr_tables=["All","WebInfo","Blog","Transcate","DongMan","Download","Video","Buy","Music","Picture","Other"];
+		for(var i=0;i<arr_tables.length;i++){
+			if(arr_tables[i]!=s)
+				$(arr_tables[i]).style.display="none";
+		}
+	}
+</script>
 <style type="text/css">
 <!--
 	body {
@@ -34,7 +43,7 @@
 <script>
 	function changeJia(id){
 		for(var i=1;i<=10;i++)	if(("Jia"+i)!=id) $("Jia"+i).innerHTML="+";
-		$(id).innerHTML=$(id).innerHTML=="+"?"-":"+";
+			$(id).innerHTML=$(id).innerHTML=="+"?"-":"+";
 	}
 </script>
 
@@ -47,7 +56,7 @@
 
 
 
-<a href="#" onClick="javascript:hide('All');swap('All','className','up','down');changeJia('Jia0');"><strong><font id="Jia0" color="#ff9900">+</font></strong></a>搜 全部
+<a href="#All" name="#All" onClick="javascript:hide('All');swap('All','className','up','down');changeJia('Jia0');"><strong><font id="Jia0" color="#ff9900">+</font></strong></a>搜 全部
 <table width="100%">
     <td align="center" valign="middle"  id="All" style="display:none">
 		<form name="form_All">
@@ -60,7 +69,7 @@
 <br>
 
 
-<a onClick="javascript:hideAll('WebInfo');hide('WebInfo');swap('WebInfo','className','up','down');changeJia('Jia1');" href="#"><strong><font id="Jia1" color="#ff9900">+</font></strong></a>搜 网络 信息<a name="搜网络信息" id="搜网络信息"></a> 
+<a onClick="javascript:hideAll('WebInfo');hide('WebInfo');swap('WebInfo','className','up','down');changeJia('Jia1');" href="#WebInfo" name="#WebInfo"><strong><font id="Jia1" color="#ff9900">+</font></strong></a>搜 网络 信息<a name="搜网络信息" id="搜网络信息"></a> 
 <table width="100%">
 
   <tr>
@@ -257,7 +266,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('Music');hide('Music');swap('Music','className','up','down');changeJia('Jia2');" href="#"><strong><font id="Jia2" color="#ff9900">+</font></strong></a>搜 歌 er<a name="搜歌er" id="搜歌er"></a>
+<a onclick="javascript:hideAll('Music');hide('Music');swap('Music','className','up','down');changeJia('Jia2');" href="#Music" name="#Music"><strong><font id="Jia2" color="#ff9900">+</font></strong></a>搜 歌 er<a name="搜歌er" id="搜歌er"></a>
 <table width="100%">
 
   <tr>
@@ -376,7 +385,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('Blog');hide('Blog');swap('Blog','className','up','down');changeJia('Jia3');" href="#"><strong><font id="Jia3" color="#ff9900">+</font></strong></a><a name="搜博客" id="搜博客"></a>搜 博客
+<a onclick="javascript:hideAll('Blog');hide('Blog');swap('Blog','className','up','down');changeJia('Jia3');" href="#Blog" name="#Blog"><strong><font id="Jia3" color="#ff9900">+</font></strong></a><a name="搜博客" id="搜博客"></a>搜 博客
 <table width="100%">
   <tr>
     <td id="Blog" style="display:none">
@@ -430,7 +439,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('Transcate');hide('Transcate');swap('Transcate','className','up','down');changeJia('Jia4');" href="#"><strong><font id="Jia4" color="#ff9900">+</font></strong></a><a name="中英翻译" id="中英翻译"></a>中英翻译
+<a onclick="javascript:hideAll('Transcate');hide('Transcate');swap('Transcate','className','up','down');changeJia('Jia4');" href="#Transcate" name="#Transcate"><strong><font id="Jia4" color="#ff9900">+</font></strong></a><a name="中英翻译" id="中英翻译"></a>中英翻译
 <table width="100%">
   <tr>
     <td id="Transcate" style="display:none">
@@ -459,7 +468,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('Picture');hide('Picture');swap('Picture','className','up','down');changeJia('Jia5');" href="#"><strong><font id="Jia5" color="#ff9900">+</font></strong></a><a name="搜图片" id="搜图片"></a>搜 图片
+<a onclick="javascript:hideAll('Picture');hide('Picture');swap('Picture','className','up','down');changeJia('Jia5');" href="#Picture" name="#Picture"><strong><font id="Jia5" color="#ff9900">+</font></strong></a><a name="搜图片" id="搜图片"></a>搜 图片
 <table width="100%">
   <tr>
     <td id="Picture" style="display:none">
@@ -641,7 +650,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('Download');hide('Download');swap('Download','className','up','down');changeJia('Jia6');" href="#"><strong><font id="Jia6" color="#ff9900">+</font></strong></a><a name="搜下载资源" id="搜下载资源"></a>搜 下载资源 [bt,迅雷…]
+<a onclick="javascript:hideAll('Download');hide('Download');swap('Download','className','up','down');changeJia('Jia6');" href="#Download" name="#Download"><strong><font id="Jia6" color="#ff9900">+</font></strong></a><a name="搜下载资源" id="搜下载资源"></a>搜 下载资源 [bt,迅雷…]
 <table width="100%">
   <tr>
     <td id="Download" style="display:none">
@@ -739,7 +748,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('DongMan');hide('DongMan');swap('DongMan','className','up','down');changeJia('Jia7');" href="#"><strong><font id="Jia7" color="#ff9900">+</font></strong></a><a name="搜动漫" id="搜动漫"></a>搜 动漫
+<a onclick="javascript:hideAll('DongMan');hide('DongMan');swap('DongMan','className','up','down');changeJia('Jia7');" href="#DongMan" name="#DongMan"><strong><font id="Jia7" color="#ff9900">+</font></strong></a><a name="搜动漫" id="搜动漫"></a>搜 动漫
 <table width="100%">
   <tr>
     <td id="DongMan" style="display:none">
@@ -854,7 +863,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('Video');hide('Video');swap('Video','className','up','down');changeJia('Jia8');" href="#"><strong><font id="Jia8" color="#ff9900">+</font></strong></a><a name="搜视频" id="搜视频"></a>搜 视频
+<a onclick="javascript:hideAll('Video');hide('Video');swap('Video','className','up','down');changeJia('Jia8');" href="#Video" name="#Video"><strong><font id="Jia8" color="#ff9900">+</font></strong></a><a name="搜视频" id="搜视频"></a>搜 视频
 <table width="100%">
   <tr>
     <td id="Video" style="display:none">
@@ -935,7 +944,7 @@
 </table>
 <br>
 
-<a onclick="javascript:hideAll('Buy');hide('Buy');swap('Buy','className','up','down');changeJia('Jia9');" href="#"><strong><font id="Jia9" color="#ff9900">+</font></strong></a><a name="搜想买的东西" id="搜想买的东西"></a>搜 想买的 东西
+<a onclick="javascript:hideAll('Buy');hide('Buy');swap('Buy','className','up','down');changeJia('Jia9');" href="#Buy" name="#Buy"><strong><font id="Jia9" color="#ff9900">+</font></strong></a><a name="搜想买的东西" id="搜想买的东西"></a>搜 想买的 东西
 <table width="100%">
   <tr>
     <td id="Buy" style="display:none">
@@ -986,7 +995,7 @@
 <br>
 
 
-<a onclick="javascript:hideAll('Other');hide('Other');swap('Other','className','up','down');changeJia('Jia10');" href="#"><strong><font id="Jia10" color="#ff9900">+</font></strong></a><a name="杂项查询"></a>杂项 查询
+<a onclick="javascript:hideAll('Other');hide('Other');swap('Other','className','up','down');changeJia('Jia10');" href="#Other" name="#Other"><strong><font id="Jia10" color="#ff9900">+</font></strong></a><a name="杂项查询"></a>杂项 查询
 <table width="100%">
   <tr>
     <td id="Other" style="display:none">

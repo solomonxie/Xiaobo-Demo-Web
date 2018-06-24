@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<form name="f1">
+	歌名:<input name="sn">
+	地址<input name="dz">
+		<input type="button" value="得到地址" onclick="getDZ();">
+	新地址: <input name="ndz">
+</form>
+<script>
+	function getDZ(){
+		var sn=document.f1.sn.value;
+		var dz=document.f1.dz.value;
+		document.f1.ndz.value="<a href=\"#\" onClick=\"setSrc('"+ dz +"');\">"+ sn +"</a>"
+		document.f1.sn.value="";
+		document.f1.dz.value="";
+	}
+</script>
+
+<body>
+</body>
+</html>

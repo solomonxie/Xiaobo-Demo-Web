@@ -3,7 +3,11 @@
 		document.write("    <td width='20%' height='88'>");
 		document.write("      <table width='75%' border='0'>");
 		document.write("        <tr>");
-		document.write("          <td><IMG src='img/logo/Mine/logo.GIF'></td>");
+		document.write("          <td><object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0' width='165' height='81'>");
+		document.write("              <param name='movie' value='img/logo/Mine/logo.swf'>");
+		document.write("              <param name='quality' value='high'>");
+		document.write("              <embed src='logo.swf' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' width='165' height='81'></embed>");
+		document.write("          </object></td>");
 		document.write("        </tr>");
 		document.write("    </table></td>");
 		document.write("    <td width='80%'><table width='101%' height='85' border='0'>");
