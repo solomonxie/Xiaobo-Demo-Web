@@ -3,16 +3,12 @@
 		document.write("    <td width='20%' height='88'>");
 		document.write("      <table width='75%' border='0'>");
 		document.write("        <tr>");
-		document.write("          <td><object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0' width='165' height='81'>");
-		document.write("              <param name='movie' value='img/logo/Mine/logo.swf'>");
-		document.write("              <param name='quality' value='high'>");
-		document.write("              <embed src='logo.swf' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' width='165' height='81'></embed>");
-		document.write("          </object></td>");
+		document.write("          <td><IMG src='img/logo/Mine/logo.GIF'></td>");
 		document.write("        </tr>");
 		document.write("    </table></td>");
 		document.write("    <td width='80%'><table width='101%' height='85' border='0'>");
 		document.write("        <tr>");
-		document.write("          <td><div align='center'><a href='index.htm'>首页</a> &#149; <a href='News.htm'> 新闻汇总</a> &#149; <a href='Music.htm'>歌儿好快</a> &#149; <a href='Navigation.htm'>小波导航</a> &#149;<span class='style6'> <a href='Ideas.htm'>ideas</a> &#149; </span><a href='AboutI.htm'>关于小波</a></div></td>");
+		document.write("          <td><div align='center'><a href='index.htm'>首页</a> &#149; <a href='News.htm'> 新闻汇总</a> &#149; <a href='Music.htm'>好歌推荐</a> &#149; <a href='Navigation.htm'>小波导航</a> &#149;<span class='style6'> <a href='Ideas.htm'>ideas</a> &#149; </span><a href='AboutI.htm'>关于小波</a></div></td>");
 		document.write("        </tr>");
 		document.write("        <tr>");
 		document.write("          <td><div align='center'><a href='http://blog.sina.com.cn/u/1253924794' target='_blank'>小波博客</a> &#149; <span class='style6'><a href='Productions.htm'>小波作品</a></span> &#149; <a href='SearchFace.htm'>小波搜索</a></div></td>");

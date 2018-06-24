@@ -173,7 +173,7 @@ body {
                   <td bgcolor="#CEEFFF" onmouseover="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><div align="center"><a name="#各大名站"></a>各 大 名 站<font color="#ff9900"><strong><span class="style6"><a href="#各大名站"onClick="javascript:hide('lr19');swap('lr19','className','up','down');$('Jia19').innerHTML=$('Jia19').innerHTML=='+'?'--':'+';"><strong><font id="Jia19" color="#ff9900">+</font></strong></a></span></strong></font></div></td>
                 </tr>
               </table>
-              <div align="center"  id="lr19">Sorry,We Have not now......</div>              <br></td>
+              <div align="center"  id="lr19">Sorry,We Have not now</div>              <br></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
