@@ -30,7 +30,7 @@
 		
 		var form=getForm(fname);//form得到数组
 		document.write(form[2]);//[2]是对应的整个表单语句
-		alert(form[0]);alert(form[1]);alert(form[2]);alert(form[3]);
+		//alert(form[0]);alert(form[1]);alert(form[2]);alert(form[3]);
 		//document.form[0].form[3].value=Data[0];//设置key值//[3]是对应的keyName
 		//alert(document.form[0].form[3].value);
 		//document.form[0].target="_blank";
@@ -56,6 +56,21 @@
 //----End----从Data数组中查找制定名称的数组，并返回----
 
 
+
+//----Start----站内音乐搜索----
+function searchMusicHere(words){
+	if(words=="") this.location.href="SongList.htm";
+	var arrSongs=new Array();var aidx=0;
+	var i;
+	for(i=0;i<Songs.length;i++)
+		if(Songs[i].toString().indexOf(words)>=0) arrSongs[aidx++]=Songs[i];
+	if(arrSongs.length==0){alert("对不起，小波快歌没有你要找的歌儿");window.close();return;}
+	else this.location.href="SongList.htm#"+arrSongs[0][1];
+}
+
+
+
+//----End----站内音乐搜索---
 
 //----Start----解析地址，得到参数----
 		//公用变量部分
@@ -94,8 +109,7 @@
 			
 			//##################################################################
 			
-			
-			
+
 			/*//最初使用的方法
 			
 			//尝试截取字符串，检查有没有传参数过来#############################################

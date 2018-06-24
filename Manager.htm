@@ -1,40 +1,20 @@
-<html>
-<head>
-<title>正在转向……</title>
+<html><head><title>正在搜索……</title><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<!--搜索代理start-->
 <script src="Functions.js"></script>
 <script src="Data.js"></script>
+<script src="Songs.js"></script>
 <script>
-	Data[0]=getKey("key","Manager.htm");
-	var isThisPage=1;//纪录是否还是Manager.htm//以防bug出现，而停留在这儿
-	var form=getForm(getKey("fname","Manager.htm"));
-	var method=form[1];
-	if(method=="Get"){
-		goSearchGet(form[0]);
-		isThisPage=0;
+	haha();//虽然很麻烦，但为了一些功能没办法
+	function haha(){
+		Data[0]=getKey("key","Manager.htm");
+		var form=getForm(getKey("fname","Manager.htm"));
+		var method=form[1];
+		if(form[0]=="form_XiaoBo_music"){searchMusicHere(Data[0]);return;}
+		if(method=="Get") goSearchGet(form[0]);
+		if(method=="Post") goSearchPost(form[0]);
 	}
-	if(method=="Post"){
-		goSearchPost(form[0]);
-		isThisPage=0;
-	}
-	
-	if(isThisPage==1) this.location.href="SearchFace.htm";
-
 </script>
-</head>
-<body onLoad="">
-	正在转向……
-	<script>
-		Timer01=setTimeout("jump()",1000);
-		var s=5;
-		function jump(){
-			document.write("<br>还剩下"+ s +"秒返回");
-			s--;
-			if(s==0) window.close();
-		}
-	</script>
+<!--搜索代理end-->
 
-<a></a>
-<a></a>
-<a></a>
-</body>
-</html>
+</head><body><b></b><b></b><b></b><b></b></body></html>

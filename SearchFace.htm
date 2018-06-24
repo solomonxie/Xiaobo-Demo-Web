@@ -9,10 +9,12 @@
 	MARGIN: 4px 0px;
 	margin-left: 50px;
 	margin-right: 50px;
+	margin-top: 90px;
 	}
 </STYLE>
 <script src="Functions.js"></script>
 <script src="SearchFace.js"></script>
+<script src="Data.js"></script>
 <META content="MSHTML 6.00.2900.3020" name=GENERATOR>
 <script language="JavaScript" type="text/JavaScript">
 <!--
@@ -24,23 +26,17 @@ function MM_reloadPage(init) {  //reloads the window if Nav4 resized
 MM_reloadPage(true);
 //-->
 </script>
-</HEAD>
-<BODY onLoad="setAllPosition();" text=#000000 vLink=#0000cc aLink=#ff6600 link=#0000cc>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></HEAD>
+<BODY text=#000000 vLink=#0000cc aLink=#ff6600 link=#0000cc>
 <div align="center">
   
-  <table width="600"  border="0">
-    <tr>
-      <td height="86">
-	    <div align="center"></div></td>
-    </tr>
-  </table>
-</div>
+  </div>
 <CENTER><IMG height=97 alt=小波搜索 src="img/logo/Mine/XiaoboSearch_logo.jpg" 
 width=250><BR>
 <BR><BR><BR>
 <DIV id=l>
 <DIV id="Bar">
-<a href="#" id="1" onclick="showWP('web');changeColor('1');">网页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="2" onclick="showWP('dongman');changeColor('2');">动漫</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="3" onclick="showWP('download');changeColor('3');">资源</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="4" onclick="showWP('video');changeColor('4');">视频</a>&nbsp;&nbsp; <a href="#" id="5" onclick="showWP('buy');changeColor('5');">购物</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="6" onclick="showWP('music');changeColor('6');">歌er</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="7" onclick="showWP('picture');changeColor('7');">图片</a> &nbsp;&nbsp;<a href="Search.htm">更多&gt;&gt;&nbsp;</a>
+<a href="#" id="1" onclick="getLrSelect('web');changeColor('1');">网页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="2" onclick="getLrSelect('dongman');changeColor('2');">动漫</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="3" onclick="getLrSelect('download');changeColor('3');">资源</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="4" onclick="getLrSelect('video');changeColor('4');">视频</a>&nbsp;&nbsp; <a href="#" id="5" onclick="getLrSelect('buy');changeColor('5');">购物</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="6" onclick="getLrSelect('music');changeColor('6');">歌er</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="7" onclick="getLrSelect('picture');changeColor('7');">图片</a> &nbsp;&nbsp;<a href="Search.htm">更多&gt;&gt;&nbsp;</a>
 </DIV>
 </DIV>
 <TABLE cellSpacing=0 cellPadding=0 width=600 border=0>
@@ -49,69 +45,20 @@ width=250><BR>
     <TD height=62>
     	<FORM name="form_Total" id="form_Total" action="Manager.htm" target="_blank">
 			<INPUT class=kw size=36 name="key">
-			<input type="hidden" name="type">
-			<input type="hidden" name="fname">
+			<input type="hidden" name="type" value="">
+			<input type="hidden" name="fname" value="">
 			<INPUT type=submit class=sb value=小波搜索>
         </FORM>
 	</TD>
   <TD width=100 align="center"><a href="index.htm"><img src="img/icon/return.jpg" width="60" height="30" border="0"></a>  </TD>
   </TR>
 </TABLE>
-<table width="100%"  border="0">
+<table width="600"  border="0">
   <tr>
-    <td height="47">
-      <div onclick="javascript:hide('lrWeb');swap('lrWeb','className','up','down');"
-			id="lrWeb" style="position:absolute; z-index:1; display:'none'; top: 325px; left: 63px; width: 585px;">
-          <table border="0">
-            <tr>
-              <td><img src="img/icon/icon_down.gif"><strong>选择网站</strong></td>
-              <td>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('web','form_BaiDu');">BaiDu</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('web','form_Google');">Google</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('web','form_CSDN');">CSDN</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('web','form_iAsk');">iAsk</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('web','form_Yahoo');">Yahoo</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('web','form_SoSo');">SoSo</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('web','form_SoGou');">SoGou</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('web','form_TaiPing');">太平洋</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('web','form_Tom');">Tom</a>&nbsp;&nbsp;&nbsp; </td>
-            </tr>
-          </table>
-      </div>      <div onclick="javascript:hide('lrDongman');swap('lrDongman','className','up','down');"
-			id="lrDongman" style="position:absolute; z-index:1; display:'none'; left: 8px; top: 194px; width: 390px;">
-          <table border="0">
-            <tr>
-              <td><img src="img/icon/icon_down.gif"><strong>选择网站</strong></td><td>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('dongman','form_TanLan');">贪婪大陆</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('dongman','form_DongManXianFeng');">动漫先锋</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('dongman','form_MeiRiDongMan');">每日动漫</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('dongman','form_TianShangRenJian');">天上人间</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('dongman','form_MoonBoat');">月亮船</a>&nbsp;&nbsp;&nbsp; </td>
-            </tr>
-          </table>
-      </div>      <div onclick="javascript:hide('lrDownLoad');swap('lrDownLoad','className','up','down');"
-			id="lrDownLoad" style="position:absolute; z-index:1; display:'none'; left: 312px; top: 51px; width: 464px;">
-          <table border="0">
-            <tr>
-              <td><img src="img/icon/icon_down.gif"><strong>选择网站</strong></td><td>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('download','form_verycd');">VeryCD</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('download','form_XunLei');">迅雷</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('download','form_Vagaa');">Vagaa</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('download','form_bt_china');">Bt@China</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('download','form_bt_fkee');">飞客</a>&nbsp;&nbsp;&nbsp; </td>
-            </tr>
-          </table>
-      </div>      <div onclick="javascript:hide('lrPicture');swap('lrPicture','className','up','down');"
-			id="lrPicture" style="position:absolute; z-index:1; display:'none'; left: 61px; top: 377px; width: 767px;">
-          <table border="0">
-            <tr>
-              <td><img src="img/icon/icon_down.gif"><strong>选择网站</strong></td><td>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('picture','form_163_Picture');">网易相册</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('picture','form_yahoo_photos');">Yahoo!相册</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('picture','form_baidu_picture');">百度图片</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('picture','form_Google_picture');">Google图片</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('picture','form_yahoo_picture');">Yahoo!图片</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('picture','form_SoSo_picture');">SoSo图片</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('picture','form_iask_picture');">iAsk图片</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('picture','form_sogou_picture');">搜狗图片</a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="setParam('picture','form_tom_picture');">Tom图片</a>&nbsp;&nbsp;&nbsp;</td>
-            </tr>
-          </table>
-      </div>      <div onclick="javascript:hide('lrBuy');swap('lrBuy','className','up','down');"
-			id="lrBuy" style="position:absolute; z-index:1; display:'none'; left: 8px; top: 52px; width: 288px;">
-          <table border="0">
-            <tr>
-              <td><img src="img/icon/icon_down.gif"><strong>选择网站</strong></td><td>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('buy','form_TaoBao');">淘宝网</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('buy','form_DangDang');">当当网</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('buy','form_Alibaba');">阿里巴巴</a>&nbsp;&nbsp;&nbsp; </td>
-            </tr>
-          </table>
-      </div>      <div onclick="javascript:hide('lrMusic');swap('lrMusic','className','up','down');"
-			id="lrMusic" style="position:absolute; z-index:1; display:'none'; left: 10px; top: 13px; width: 438px;">
-          <table border="0">
-            <tr>
-              <td><img src="img/icon/icon_down.gif"><strong>选择网站</strong></td><td>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('music','form_baidu_music');">百度MP3</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('music','form_yahoo_music');">Yahoo!音乐</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('music','form_Haoting');">好听音乐</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('music','form_SouGou_Music');">搜狗</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('music','form_kugoo');">Kugoo</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('music','form_SouGou_Music');">SoGua</a>&nbsp;&nbsp;&nbsp; </td>
-            </tr>
-          </table>
-      </div>      <div onclick="javascript:hide('lrVideo');swap('lrVideo','className','up','down');"
-			id="lrVideo" style="position:absolute; z-index:1; display:'none'; left: 471px; top: 7px; width: 389px;">
-          <table border="0">
-            <tr>
-              <td><img src="img/icon/icon_down.gif"><strong>选择网站</strong></td><td>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('video','form_Sina_BoKe');">新浪播客</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('video','form_TuDou');">土豆网</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('video','form_WoLe');">56.Com!我乐</a>&nbsp;&nbsp;&nbsp; <a href="#" onClick="setParam('video','form_OpenV');">OpenV</a>&nbsp;&nbsp;&nbsp; </td>
-            </tr>
-          </table>
-      </div>
-	  </td>
+    <td width="92">
+		
+	 </td>
+    <td><div id="lrSelect" onClick="javascript:$('lrSelect').style.display='none'"></div></td>
     </tr>
 </table>
 <br>

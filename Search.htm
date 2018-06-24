@@ -8,7 +8,7 @@
 <script src="Functions.js"></script>
 <script>
 	function hideAll(s){//隐藏除了参数s之外的所有表
-		var arr_tables=["All","WebInfo","Blog","Transcate","DongMan","Download","Video","Buy","Music","Picture","Other"];
+		var arr_tables=["WebInfo","Blog","Transcate","DongMan","Download","Video","Buy","Music","Picture","Other"];
 		for(var i=0;i<arr_tables.length;i++){
 			if(arr_tables[i]!=s)
 				$(arr_tables[i]).style.display="none";
@@ -54,18 +54,6 @@
 <hr size="2">
 <p><br></p>
 
-
-
-<a href="#All" name="#All" onClick="javascript:hide('All');swap('All','className','up','down');changeJia('Jia0');"><strong><font id="Jia0" color="#ff9900">+</font></strong></a>搜 全部
-<table width="100%">
-    <td align="center" valign="middle"  id="All" style="display:none">
-		<form name="form_All">
-			<input name="key" type="text" size="50">
-			<input name="btn" type="button" class="SBut" value="Search" onClick="alert('还没做呢，哈哈！！');">
-		</form>
-	</td>
-  </tr>
-</table>
 <br>
 
 
@@ -739,9 +727,23 @@
 					<INPUT type=submit value=哇嘎搜索>
 				</FORM>			  </td>
             </tr>
-          </table>          <p><br>
-              <br>
-          </p></td>
+          </table>
+		  <br>
+		  <table width="100%"  border="0">
+            <tr>
+              <td align="center"><img src="img/logo/icefish_logo.gif" width="200" height="80"></td>
+            </tr>
+            <tr>
+              <td align="center">
+			  	<FORM name=form1 action="http://bt.icefish.org/search.php" method=post target=_blank>
+					<INPUT id=keywords size=35  name=keywords>
+					<INPUT type=submit value="冰鱼综艺" name=Submit>
+				</FORM>			  </td>
+            </tr>
+          </table>
+          <br>
+		  
+		  </td>
       </tr>
     </table></td>
   </tr>
