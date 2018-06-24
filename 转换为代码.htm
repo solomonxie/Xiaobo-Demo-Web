@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>转换为代码</title>
+<script>
+	function $(s){
+		return document.getElementById(s);
+	} 
+	function xx(){
+		var flag=$("sl").value;
+		if(flag=="MV"){
+			$("txt").value="MVs[MVs.length++]=new Array(\""+ $("Title").value.replace(/\'/g,"\\\'") +"\",\""+ $("ZM").value +"\",\""+ $("Description").value +"\",\""+ $("Tags").value +"\",\""+ $("Src").value +"\",\""+ $("Color").value +"\");";
+		}
+		if(flag=="Video"){
+			//Videos[Videos.length++]=new Array("","","","","","","");
+			//title[0],zm[1],description[2],tags[3](connect by "&&&"),url[4],color[5],type[6](mv,dongman,movie...)
+			$("txt").value="";
+			$("txt").value="Videos[Videos.length++]=new Array(\""+ $("txt").value.replace(/\'/g,"\\\'") +"\",\""+ $("ZM").value +"\",\""+ $("Description").value +"\",\""+ $("Tags").value +"\",\""+ $("Src").value +"\",\""+ $("Color").value +"\",\""+ $("tp").value +"\");";
+		}
+		if(flag=="Lrc"){
+			$("txt").value=$("txt").value.replace(/\r\n/g,"<br>").replace(/\'/g,"\\\'").replace(/\"/g,"\\\"")
+				.replace(/\//g,"\\\/").replace(/\$/g,"\\\$").replace(/\(/g,"\\\(").replace(/\)/g,"\\\)").replace(/\*/g,"\\\*")
+				.replace(/\+/g,"\\\+").replace(/\./g,"\\\.").replace(/\?/g,"\\\?").replace(/\^/g,"\\\^").replace(/\{/g,"\\\{")
+				.replace(/\|/g,"\\\|").replace(/\}/g,"\\\}");
+		}
+		$("txt").focus();
+		
+	}
+</script>
+</head>
+
+<body>
+<form name="f">
+  <p align="center">&nbsp;</p>
+  <table align="center">
+    <tr><td>
+  	<p>
+    <input name="Title" type="text" id="Title">
+	  Title  </p>
+	  <p>
+		<input name="ZM" type="text" id="ZM">
+	  ZM</p>
+	  <p>
+	    <input name="Src" type="text" id="Src">
+Src</p>
+	  <p>
+		<textarea name="Description" id="Description"></textarea>
+	  Description</p>
+	  <p>
+		<input name="Tags" type="text" id="Tags">
+	  Tags(connect by &quot;&amp;&amp;&amp;&quot;)</p>
+	  <p>
+		<input name="Color" type="text" id="Color">
+	  Color</p>
+	  </td></tr></table>
+  
+  
+  <div align="center">
+    <p>
+      <input type="button" name="button" value="        →数据库格式        " onClick="xx();">
+      <select name="sl" id="sl" onChange="if(this.value=='Video')$('tp').style.display='';else $('tp').style.display='none';">
+        <option value="MV">MV</option>
+        <option value="Video">Video</option>
+        <option value="Lrc">Lrc</option>
+      </select>
+			 <select name="tp" id="tp" style="display:none;">
+			  <option value="Dongman">动漫</option>
+			  <option value="Movie">影视</option>
+			</select>
+</p>
+    <p>      <textarea name="txt" cols="60" rows="5"></textarea>
+    
+    
+    
+    </p>
+  </div>
+  <p align="center">
+    <input type="button" name="button" value="                  关闭                  " onClick="window.close();">
+  </p>
+</form>
+
+<b></b>
+<b></b>
+<b></b>
+<b></b><b></b><b></b>
+</body>
+</html>

@@ -12,10 +12,10 @@
 		document.write("    </table></td>");
 		document.write("    <td width='80%'><table width='101%' height='85' border='0'>");
 		document.write("        <tr>");
-		document.write("          <td><div align='center'><a href='index.htm'>首页</a> &#149; <a href='News.htm'> 新闻汇总</a> &#149; <a href='Music.htm'>歌儿好快</a> &#149; <a href='Navigation.htm'>小波导航</a> &#149;<span class='style6'> <a href='Ideas.htm'>ideas</a> &#149; </span><a href='AboutI.htm'>关于小波</a></div></td>");
+		document.write("          <td><div align='center'><a href='index.htm'>首页</a> &#149; <a href='Video.htm'>视频汇总</a> &#149; <a href='Music.htm'>歌儿好快</a> &#149; <a href='Navigation.htm'>小波导航</a> &#149;<span class='style6'> <a href='Ideas.htm'>ideas</a> &#149; </span><a href='AboutI.htm'>关于小波</a></div></td>");
 		document.write("        </tr>");
 		document.write("        <tr>");
-		document.write("          <td><div align='center'><a href='http://blog.sina.com.cn/u/1253924794' target='_blank'>小波博客</a> &#149; <span class='style6'><a href='Productions.htm'>小波作品</a></span> &#149; <a href='SearchFace.htm'>小波搜索</a></div></td>");
+		document.write("          <td><div align='center'><a href='http://blog.sina.com.cn/XieXiaoBo' target='_blank'>小波博客</a> &#149; <span class='style6'><a href='Productions.htm'>小波作品</a></span> &#149; <a href='SearchFace.htm'>小波搜索</a></div></td>");
 		document.write("        </tr>");
 		document.write("        <tr>");
 		document.write("          <td><div align='center'> <a href='Talk.htm'>你想说话</a> </div></td>");

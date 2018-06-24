@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>小波MV--小波DEMO网</title>
+<title>小波视频--小波DEMO网</title>
 <link rel="stylesheet" type="text/css" href="Sheet.css">
 <style type="text/css">
 <!--
@@ -41,7 +41,7 @@ MM_reloadPage(true);
 <hr size="2">
 <table width="612">
   <tr>
-    <td colspan="51"><a href="index.htm">DEMO</a>- - - <a href="Music.htm">歌er好快</a>- -我喜欢的MVs<a name="#dh"></a></td>
+    <td colspan="51"><a href="index.htm">DEMO</a>- - - <a href="Video.htm">视频汇总</a>- -我喜欢的Videos<a name="#dh"></a></td>
   </tr>
   <tr id="trZM">
     <TD width=17 align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><FONT 
@@ -177,13 +177,18 @@ MM_reloadPage(true);
                         color=#ffffff>Z</FONT></B></A></FONT></TD>
     <TD width="17" align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><span class="style6"><a href="#"onClick="javascript:hide('lrAll');swap('lrAll','className','up','down');$('Jia0').innerHTML=$('Jia0').innerHTML=='+'?'--':'+';"><strong><font id="Jia0" color="#ff9900">--</font></strong></a></span></TD>
 	
-	<TD width="17" align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><!----><a href="#" onClick="javascript:showSongs('Artist');" title="按歌手名称排列"><strong></strong></a></TD>
-	<TD align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><!----></TD>
+	<TD width="17" align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><!----></TD>
+	<TD align=center bgcolor="#66CCFF" onMouseOver="this.bgColor='#6699FF'" onMouseOut="this.bgColor='#66CCFF'"><span class="style6"><!----></TD>
   </tr>
 </table>
 
 <br>
 
+<div>
+<table width='777'  border='0'>
+  <tr><td align="center" id="tdGroundTitle" bgcolor='#CEEFFF' onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >&nbsp;</td></tr></table>
+</div>
+<br>
 
 
 <table width="777"  border="0">
@@ -193,7 +198,7 @@ MM_reloadPage(true);
 	<div style="z-index:3;">
       <table width="500" height="100%"  border="0" align="center">
         <tr>
-          <td height="10" align="center" bgcolor="#66CCFF"><span class="style6"><a href="#"onClick="javascript:hide('trPlayer');swap('trPlayer','className','up','down');$('Jia1').innerHTML=$('Jia1').innerHTML=='+'?'--':'+';">MV播放器<strong><font id="Jia1" color="#ff9900">--</font></strong></a></span></td>
+          <td height="10" align="center" bgcolor="#66CCFF"><span class="style6"><a href="#"onClick="javascript:hide('trPlayer');swap('trPlayer','className','up','down');$('Jia1').innerHTML=$('Jia1').innerHTML=='+'?'--':'+';">Video播放器<strong><font id="Jia1" color="#ff9900">--</font></strong></a></span></td>
         </tr>
         <tr id="trPlayer">
           <td height="560" align="center" valign="top" bgcolor="#CEEFFF">
@@ -212,7 +217,7 @@ MM_reloadPage(true);
 <!--lrAll start-->
 
 	<div id="lrDemo">
-	<table width='100%'  border='0'>
+	<table width='277'  border='0'>
 	  <tr>
 		<td bgcolor='#CEEFFF' onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color='#ff9900'><strong><a name='#XX' href='#dh' class='imgLink'>A Demo</a></strong></font></td>
 	  </tr>
@@ -241,8 +246,9 @@ MM_reloadPage(true);
 	</script>
 <!--lrAll end-->
 </div>
+
 <br>
-<table width='100%'  border='0'>
+<table width='277'  border='0'>
 	  <tr>
 		<td bgcolor='#CEEFFF' onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >&nbsp;</td>
 	  </tr>
@@ -256,24 +262,21 @@ MM_reloadPage(true);
   </tr>
 </table>
 
-<!--MV公告 start-->
+<!--Video公告 start-->
 <div id="lrPubs" style="position:absolute; width:165px; z-index:3; top: 148px; left: 712px;">
       <table width="100%"  border="0" align="center">
         <tr>
-          <td height="10" align="center" bgcolor="#66CCFF"><span class="style6"><a href="#"onClick="javascript:hide('pubnews');swap('pubnews','className','up','down');$('Jia2').innerHTML=$('Jia2').innerHTML=='+'?'--':'+';">MV公告<strong><font id="Jia2" color="#ff9900">+</font></strong></a></span></td>
+          <td height="10" align="center" bgcolor="#66CCFF"><span class="style6"><a href="#"onClick="javascript:hide('pubnews');swap('pubnews','className','up','down');$('Jia2').innerHTML=$('Jia2').innerHTML=='+'?'--':'+';">请选择Video种类<strong><font id="Jia2" color="#ff9900">+</font></strong></a></span></td>
         </tr>
         <tr id="pubnews" style="display:none; ">
-          <td align="left" bgcolor="#CEEFFF">
-            <marquee align="middle" behavior=scroll direction="up" width=100% scrollamount=2 scrolldelay=10 onmouseover="this.stop()" onmouseout="this.start()">
-            <center>
-              <span class="style6">MV</span>
-            </center>
-            </marquee>
-          </td>
+          <td align="center" bgcolor="#CEEFFF">
+            <a href="#" onClick="javascript:showVideos('Dongman');$('lrPlayer').innerHTML='';$('lrTitle').innerHTML='';$('lrInfo').innerHTML='';" title="动漫"><strong><font color="#ff9900">动漫</font></strong></a>
+			 &nbsp;|&nbsp;
+            <a href="#" onClick="javascript:showVideos('Movie');$('lrPlayer').innerHTML='';$('lrTitle').innerHTML='';$('lrInfo').innerHTML='';" title="影视"><strong><font color="#ff9900">影视</font></strong></a>		  </td>
         </tr>
       </table>
 </div>
-<!--MV公告 start-->
+<!--Video公告 start-->
 
 <div style="margin-left:120px;margin-right:120px;"></div>
 <br>
@@ -290,10 +293,13 @@ MM_reloadPage(true);
 </table>
 
 <!--###############################################################################-->
-<script src="MVs.js"></script>
+<script src="Videos.js"></script>
+<script src="Functions.js"></script>
 <script>
 <!--进行各列赋值start-->
-	showMVs();
+	//在这儿除了要正常显示，并且还要接受参数并据要求显示哪种类型的大厅
+	var t=getKey("type","Video.htm").toLowerCase();
+	showVideos(t==""?"dongman":t);
 <!--进行各列赋值end-->
 </script>
 <!--###############################################################################-->

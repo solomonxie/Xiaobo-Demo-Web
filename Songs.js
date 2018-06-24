@@ -236,11 +236,10 @@ function showSongsForSearch(key){
 
 //哈哈，成功啦！！！通过动态更改innerHtml就可以达到动态赋值拉！张汉东功劳——留名至此！##########################################
 function setSrc(src){
-	var sValue="<EMBED id='player' src=" + src + "  hidden='false' type=audio/mpeg id='player' controls='console' width=273 height=183 LOOP=5 AUTOSTART=1 SHOWSTATUSBAR=2 style='FILTER: invert(); WIDTH: 350px; HEIGHT: 50px;'></EMBED>";
+	var sValue="<EMBED id='player' src=" + src + "  hidden='false' type=audio/mpeg controls='console' width=273 height=183 LOOP=5 AUTOSTART=1 SHOWSTATUSBAR=2 style='FILTER: invert(); WIDTH: 350px; HEIGHT: 50px;'></EMBED>";
 	$("lrPlayer").innerHTML=sValue;
 	$("download").innerHTML="<a href='"+ src +"' title='点击下载'><font color='#ff9900'>下载</font></a>";
 	setLrc();
-	//$("lrLrc").style.display="none";
 }
 
 //设置歌词
@@ -249,7 +248,7 @@ function setLrc(){
 	lidx=getLrcP(0,Songs[getSongsP(4,$("player").src)][0]);
 	if(lidx>=0 && Lrcs[lidx][1]!="")	$("txtLrc").innerHTML=Lrcs[lidx][1];
 	else $("txtLrc").innerHTML="Sorry,Have not"
-		+"<a onclick=alert('告诉我歌曲名称，然后把歌词发过来就好了'); href='http://wpa.qq.com/msgrd?V=1&Uin=563787750&Menu=yes;' target='_blank'><br><font color='#ff9900'>你来添加歌词吧！</font></a> <a href='#showChangeLrc' name='#showChangeLrc' onClick=\"showModalDialog('更正歌词.htm')\"><font color='#ff9900'><strong>□</strong></font></a>";
+		+"<a onclick=alert('告诉我歌曲名称，然后把歌词发过来就好了'); href='http://wpa.qq.com/msgrd?V=1&Uin=563787750&Menu=yes;' target='_blank'><br><font color='#ff9900'>你来添加歌词吧！</font></a> <a href='#showChangeLrc' name='#showChangeLrc' onClick=\"showModalDialog('转换为代码.htm')\""><font color='#ff9900'><strong>□</strong></font></a>";
 }
 //
 function getLrcP(lidx,value){//get lrc's position

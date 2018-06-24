@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>小搜波--搜歌er--小波DEMO网</title>
+<link rel="stylesheet" type="text/css" href="Sheet.css">
+<style type="text/css">
+<!--
+body {
+	margin-left: 100px;margin-right: 100px;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<script>
+	function $(s){
+		return document.getElementById(s);
+	} 
+	function swap(s,a,b,c){
+		$(s)[a]=$(s)[a]==b?c:b;//操，经典
+	}
+	function hide(s){
+		$(s).style.display=$(s).style.display=="none"?"":"none";
+	}
+</script>
+</head>
+
+<body onMouseOut="window.status='如果喜欢小波Demo网或喜欢小波本人，就一定要给我留言并且转给你的朋友们哦！！';return true">
+	<script src="DaoHang.js"></script>
+
+<hr size="2">
+<table width="722">
+  <tr>
+    <td width="110" rowspan="5">&nbsp;</td>
+    <td colspan="51"><a href="index.htm">DEMO</a>- - - <a href="Music.htm">歌er好快</a>- <a href="SearchFace.htm">小搜波</a>--<a href="SongList.htm"><a href="SongList.htm">我喜欢的MV</a>---搜MV<a name="#dh"></a></td>
+  </tr>
+</table>
+<br>
+
+<!--lrForSearch start-->
+
+<div>
+<table width="722"  border="0">
+  <tr>
+    <td width="16%"></td>
+    <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color="#ff9900"><div id="aForSearch">搜索结果</div></font></td>
+  </tr>
+</table>
+</div>
+<br>
+<div id="lrForSearch" style="margin-left:120px;margin-right:120px;"></div>
+<br>
+<div style="margin-left:120px;margin-right:120px;"><span class="style6"><a href='MV.htm'><font color='#ff9900' style="font-style:oblique">想看更多MV?</font></a></span></div>
+<br>
+<div>
+<table width="722"  border="0">
+  <tr>
+    <td width="16%"></td>
+    <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" ><font color="#ff9900"><div id="aForSearch">搜索结果</div></font></td>
+  </tr>
+</table>
+</div>
+
+<!--lrForSearch end-->
+
+<br>
+<table width="722" border="0">
+  <tr>
+  	<td width="110" align="center" valign="bottom">&nbsp;</td>
+    <td align="center" valign="bottom"  bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >Copyright &copy; 2006, 小波. All right are reserved. <span id="Count"></span></td>
+  </tr>
+  <tr>
+    <td width="110" align="center">&nbsp;</td>
+    <td align="center" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'">别看是静态页，运用的都是数据库模式哦，可扩展性高呢！了解更多，请联系我</td>
+  </tr>
+</table>
+
+
+<!--###############################################################################-->
+<script src="MVs.js"></script>
+<script src="Functions.js"></script>
+<script>
+<!--进行search列赋值 start-->
+	var key=getKey("arrMVsNum","MVsForSearch.htm");
+	showMVsForSearch(key);//在结尾有东西的情况下才执行下一步
+<!--进行search列赋值  end-->
+</script>
+<!--###############################################################################-->
+
+
+<div id="xx" style="display:none;"><script language="javascript" type="text/javascript" src="http://js.users.51.la/832271.js"></script></div>
+<script>$("Count").innerHTML=$("xx").innerHTML;$("xx").innerHTML="";</script>
+<br>
+
+	
+
+
+<b></b>
+<b></b>
+<b></b><b></b>
+<b></b>
+<b></b>
+
+
+</body>
+</html>
