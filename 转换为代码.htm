@@ -10,24 +10,36 @@
 	} 
 	function xx(){
 		var flag=$("sl").value;
-		if(flag=="MV"){
-			$("txt").value="MVs[MVs.length++]=new Array(\""+ $("Title").value.replace(/\'/g,"\\\'") +"\",\""+ $("ZM").value +"\",\""+ $("Description").value +"\",\""+ $("Tags").value +"\",\""+ $("Src").value +"\",\""+ $("Color").value +"\");";
-		}
 		if(flag=="Video"){
 			//Videos[Videos.length++]=new Array("","","","","","","");
-			//title[0],zm[1],description[2],tags[3](connect by "&&&"),url[4],color[5],type[6](mv,dongman,movie...)
-			$("txt").value="";
-			$("txt").value="Videos[Videos.length++]=new Array(\""+ $("txt").value.replace(/\'/g,"\\\'") +"\",\""+ $("ZM").value +"\",\""+ $("Description").value +"\",\""+ $("Tags").value +"\",\""+ $("Src").value +"\",\""+ $("Color").value +"\",\""+ $("tp").value +"\");";
+			//title[0],CH[1],description[2],tags[3](connect by "&&&"),url[4],color[5],type[6](mv,dongman,movie...)
+			var txt="Videos[Videos.length++]=new Video(\""+ $("Title").value +"\",\""+ $("Description").value +"\",\""+ $("Tags").value +"\",\""+ $("Src").value +"\",\""+ $("Color").value +"\",\""+ $("Ground").value +"\",\""+ $("CH").value +"\");";
+			clipboardData.setData('Text',txt);
+			$("temp").value=txt;
+		}
+		if(flag=="Song"){
+			var txt="Songs[Songs.length++]=new Array(\""+ $("Title").value.replace(/\'/g,"\\\'") +"\",\""+ $("CH").value +"\",\""+ $("singer").value +"\",\""+ $("singerCH").value +"\",\""+ $("Src").value +"\");";
+			clipboardData.setData('Text',txt);
+			$("temp").value=txt;
 		}
 		if(flag=="Lrc"){
-			$("txt").value=$("txt").value.replace(/\r\n/g,"<br>").replace(/\'/g,"\\\'").replace(/\"/g,"\\\"")
+			var txt="Lrcs[Lrcs.length++]=new Array('"+ $("Title").value +"','"+ 
+				$("txt").value.replace(/\[\d\d:\d\d\.\d\d\]/g,"").replace(/\r\n/g,"<br>").replace(/\'/g,"\\\'").replace(/\"/g,"\\\"")
 				.replace(/\//g,"\\\/").replace(/\$/g,"\\\$").replace(/\(/g,"\\\(").replace(/\)/g,"\\\)").replace(/\*/g,"\\\*")
 				.replace(/\+/g,"\\\+").replace(/\./g,"\\\.").replace(/\?/g,"\\\?").replace(/\^/g,"\\\^").replace(/\{/g,"\\\{")
-				.replace(/\|/g,"\\\|").replace(/\}/g,"\\\}");
+				.replace(/\|/g,"\\\|").replace(/\}/g,"\\\}")
+			 +"');";
+			clipboardData.setData('Text',txt);
+			$("temp").value=txt;
 		}
+		alert("复制成功");
+		$("txt").value="";
 		$("txt").focus();
 		
 	}
+</script>
+<script>
+
 </script>
 </head>
 
@@ -37,49 +49,69 @@
   <table align="center">
     <tr><td>
   	<p>
-    <input name="Title" type="text" id="Title">
+    <input name="Title" id="Title" >
 	  Title  </p>
 	  <p>
-		<input name="ZM" type="text" id="ZM">
-	  ZM</p>
+		<input name="CH" id="CH" maxlength="1" >
+	  CH</p>
 	  <p>
-	    <input name="Src" type="text" id="Src">
+	    <input name="singer" id="singer" >
+	    singer</p>
+	  <p>
+        <input name="singerCH" id="singerCH" maxlength="1" >
+singerCH</p>
+	  <p>
+	    <input name="Src" id="Src" >
 Src</p>
-	  <p>
-		<textarea name="Description" id="Description"></textarea>
+	  <p><TEXTAREA id=Description name=Description></TEXTAREA>
 	  Description</p>
 	  <p>
-		<input name="Tags" type="text" id="Tags">
-	  Tags(connect by &quot;&amp;&amp;&amp;&quot;)</p>
+		<input name="Tags" id="Tags" >
+	  Tags(connect by "&amp;&amp;&amp;")</p>
 	  <p>
-		<input name="Color" type="text" id="Color">
+		<input name="Color" id="Color" >
 	  Color</p>
-	  </td></tr></table>
+	  <p><TEXTAREA name=txt></TEXTAREA>
+Lrc	  </p>
+<p>
+      <DIV></DIV><TEXTAREA id=temp style="HEIGHT: 38px" name=temp cols=30></TEXTAREA> 
+      预览
+</td></tr></table>
+  
+  
+  
+  
   
   
   <div align="center">
     <p>
-      <input type="button" name="button" value="        →数据库格式        " onClick="xx();">
-      <select name="sl" id="sl" onChange="if(this.value=='Video')$('tp').style.display='';else $('tp').style.display='none';">
-        <option value="MV">MV</option>
+      <input type="button" name="button" value="        →数据库格式        " onClick="xx();" style="LEFT: 141px; TOP: 333px">
+      <input type="reset" value="清空">
+      <select name="sl" id="sl">
         <option value="Video">Video</option>
         <option value="Lrc">Lrc</option>
+        <option value="Song" selected>Song</option>
       </select>
-			 <select name="tp" id="tp" style="display:none;">
-			  <option value="Dongman">动漫</option>
+			 <select name="Ground" id="Ground">
+			  <option value="Dongman" selected 
+ >动漫</option>
 			  <option value="Movie">影视</option>
+			  <option value="MV">MV</option>
 			</select>
-</p>
-    <p>      <textarea name="txt" cols="60" rows="5"></textarea>
-    
-    
-    
     </p>
   </div>
   <p align="center">
     <input type="button" name="button" value="                  关闭                  " onClick="window.close();">
   </p>
 </form>
+
+<script>
+	/*var temp="";
+	//<div id=temp></div>
+	for(var i=0;i< Data.length;i++)temp+="Data[Data.length++]=new Form(\""+ Data[i][0] +"\",\""+ Data[i][1] +"\",\""+ Data[i][2] +"\",\""+ Data[i][3] +"\",\""+ Data[i][4] +"\");"+"<br>";
+	
+	$("temp").innerHTML=temp;*/
+</script>
 
 <b></b>
 <b></b>

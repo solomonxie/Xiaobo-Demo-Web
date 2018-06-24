@@ -2,6 +2,38 @@
 //纪录所有Video
 //##################################################################################
 
+//###############################################################################################################################
+//<!--create Object start-->
+//main function
+function Video(title,description,tags,url,color,ground,ch){//ch is charator
+	//member datas
+	this.title=title;
+	this.description=description;
+	this.tags=tags;
+	this.url=url;
+	this.color=color;
+	this.ground=ground;
+	this.ch=ch;
+
+	//member functions
+	this.play=play;
+	this.toString=this.toString;
+}
+
+//control function
+function play(){
+	$("lrPlayer").innerHTML="<iframe src='"+ this.url +"' width='500' height='550' scrolling=no></iframe>";
+	$("lrTitle").innerHTML="<font class='style6'>"+ this.title +"</font>";
+	$("lrInfo").innerHTML="<font class='style6'>Titel:</font>"+ this.title +"<br><font class='style6'>Description:</font>"+ this.description +"<br><font class='style6'>Tags:</font>"+ this.tags.split("&&&") +"<br><a target='_blank' href='http://www.quchao.com/video' title='引用自FLV Downloader' onClick=\"alert('在框框里直接点击复制！！');clipboardData.setData('Text','"+ this.url +"');\"><font color='green'><u>下载</u></font></a>......";
+}
+
+function toString(){
+	return this.title+this.description+this.tags+this.url;
+}
+
+//<!--create Object  end-->
+//###############################################################################################################################
+
 
 //###############################################################################################################################
 //总数组，包括了所有的Video
@@ -12,53 +44,118 @@ var Videos=new Array();
 
 
 //###############################################################################################################################
-//title[0],zm[1],description[2],tags[3](connect by "&&&"),url[4],color[5],type[6](mv,dongman,movie...)
-//Videos[Videos.length++]=new Array("","","","","","","");
+//title[0],zm[1],description[2],tags[3](connect by "&&&"),url[4],color[5],ground[6]
+//Videos[Videos.length++]=new Video("","","","","","","","");
 
-Videos[Videos.length++]=new Array("Avril-Nobodys Fool","A","很好听","Avril&&&Nobodys Fool&&&Video","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=335289&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("周杰伦-退后","T","很好听","Video&&&退后&&&周杰伦&&&Hebe","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1186874&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("TANK-专署天使","Z","很好听","TANK&&&专署天使","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=985441&uid=1431462455","","mv");
-Videos[Videos.length++]=new Array("小猪-好朋友","H","很好听","小猪&&&好朋友","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=876049&uid=1213466551","","mv");
-Videos[Videos.length++]=new Array("Eminem-Stan[Live]02","S","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1189629&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("Eminem-Stan[Live]01","S","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1189604&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("Eminem-Stan[Video]","S","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1189599&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("五月天-戀愛ing","L","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188643&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("Gorillaz - Clint Eastwood","C","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188481&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("Linkin Park-A place for my head[Live]","","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188559&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("Gorillaz-El manana","E","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188456&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("Gorillaz - feel good inc","F","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188452&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("Linkin Park&jay-z-numb_encore[live]","N","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188448&uid=1253924794","","mv");
-Videos[Videos.length++]=new Array("南拳妈妈-破晓","P","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188105&uid=1253924794","","movie");
-Videos[Videos.length++]=new Array("南拳妈妈-What Can I Do","W","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188099&uid=1253924794","","movie");
-Videos[Videos.length++]=new Array("阿桑-疯了","F","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188088&uid=1253924794","","movie");
-Videos[Videos.length++]=new Array("Eminem-Mockingbird","M","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188080&uid=1253924794","","movie");
-Videos[Videos.length++]=new Array("蔡依林-独占神话","D","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188064&uid=1253924794","","movie");
-Videos[Videos.length++]=new Array("Avril-I'm With You[live]","I","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187883&uid=1253924794","green","movie");
-Videos[Videos.length++]=new Array("Avril-Tomorrow[live]","T","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187856&uid=1253924794","","movie");
-Videos[Videos.length++]=new Array("Avril-Knock on Heaven","K","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187844&uid=1253924794","","dongman");
-Videos[Videos.length++]=new Array("五月天---而我知道","E","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187778&uid=1253924794","","dongman");
-Videos[Videos.length++]=new Array("Declan-Tell Me Why","T","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187702&uid=1253924794","","dongman");
-Videos[Videos.length++]=new Array("张信哲-做你的男人","Z","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187121&uid=1253924794","","dongman");
-Videos[Videos.length++]=new Array("Eminem-Mockingbird[live]","M","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1190623&uid=1253924794","","dongman");
-Videos[Videos.length++]=new Array("Alizee-la isla bonita","L","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187013&uid=1253924794","","dongman");
-Videos[Videos.length++]=new Array("Eminem-When I'm Gone","W","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=402583&uid=1265833775","","dongman");
-Videos[Videos.length++]=new Array("罗志祥-精舞门","J","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=620983&uid=1273112750","","dongman");
-Videos[Videos.length++]=new Array("蔡依林-唯舞独尊","W","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1191948&uid=1253924794","","dongman");
-Videos[Videos.length++]=new Array("Eminem-8 Miles最后Battle部分前两段","E","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=953787&uid=1238957694","","dongman");
-Videos[Videos.length++]=new Array("noname-noname","A","","","http://union.bokecc.com/flash/player.swf?videoID=10241_142033&share=false","","dongman");
+Videos[Videos.length++]=new Video("Final Fansty[MV]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1206402&uid=1253924794","","Dongman","F");
+Videos[Videos.length++]=new Video("对话韩寒","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1206294&uid=1253924794","green","Movie","D");
+Videos[Videos.length++]=new Video("杀破狼[预告]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1206280&uid=1253924794","","Movie","S");
+Videos[Videos.length++]=new Video("情牵一线[预告片]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1205992&uid=1253924794","","Movie","Q");
+Videos[Videos.length++]=new Video("阿姆的iPod广告","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1206322&uid=1253924794","","Movie","A");
+Videos[Videos.length++]=new Video("Avril-Nobodys Fool","很好听","Avril&&&Nobodys Fool&&&MV","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=335289&uid=1253924794","green","MV","A");
+Videos[Videos.length++]=new Video("周杰伦-退后","很好听","MV&&&退后&&&周杰伦&&&Hebe","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1186874&uid=1253924794","","MV","T");
+Videos[Videos.length++]=new Video("TANK-专署天使","很好听","TANK&&&专署天使","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=985441&uid=1431462455","","MV","Z");
+Videos[Videos.length++]=new Video("小猪-好朋友","很好听","小猪&&&好朋友","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=876049&uid=1213466551","","MV","H");
+Videos[Videos.length++]=new Video("Eminem-Stan[Live]02","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1189629&uid=1253924794","","MV","S");
+Videos[Videos.length++]=new Video("Eminem-Stan[Live]01","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1189604&uid=1253924794","","MV","S");
+Videos[Videos.length++]=new Video("Eminem-Stan[MV]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1189599&uid=1253924794","green","MV","S");
+Videos[Videos.length++]=new Video("五月天-戀愛ing","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188643&uid=1253924794","","MV","L");
+Videos[Videos.length++]=new Video("Gorillaz - Clint Eastwood","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188481&uid=1253924794","","MV","C");
+Videos[Videos.length++]=new Video("Linkin Park-A place for my head[Live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188559&uid=1253924794","","MV","A");
+Videos[Videos.length++]=new Video("Gorillaz-El manana","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188456&uid=1253924794","","MV","E");
+Videos[Videos.length++]=new Video("Gorillaz - feel good inc","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188452&uid=1253924794","","MV","F");
+Videos[Videos.length++]=new Video("Linkin Park&jay-z-numb[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188448&uid=1253924794","green","MV","N");
+Videos[Videos.length++]=new Video("南拳妈妈-破晓","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188105&uid=1253924794","","MV","P");
+Videos[Videos.length++]=new Video("南拳妈妈-What Can I Do","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188099&uid=1253924794","","MV","W");
+Videos[Videos.length++]=new Video("阿桑-疯了","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188088&uid=1253924794","","MV","F");
+Videos[Videos.length++]=new Video("Eminem-Mockingbird","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188080&uid=1253924794","","MV","M");
+Videos[Videos.length++]=new Video("蔡依林-独占神话","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1188064&uid=1253924794","","MV","D");
+Videos[Videos.length++]=new Video("Avril-I'm With You[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187883&uid=1253924794","green","MV","I");
+Videos[Videos.length++]=new Video("Avril-Tomorrow[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187856&uid=1253924794","green","MV","T");
+Videos[Videos.length++]=new Video("Avril-Knock on Heaven","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187844&uid=1253924794","","MV","K");
+Videos[Videos.length++]=new Video("五月天---而我知道","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187778&uid=1253924794","green","MV","E");
+Videos[Videos.length++]=new Video("Declan-Tell Me Why","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187702&uid=1253924794","green","MV","T");
+Videos[Videos.length++]=new Video("张信哲-做你的男人","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187121&uid=1253924794","","MV","Z");
+Videos[Videos.length++]=new Video("Eminem-Mockingbird[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1190623&uid=1253924794","","MV","M");
+Videos[Videos.length++]=new Video("Alizee-la isla bonita","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1187013&uid=1253924794","","MV","L");
+Videos[Videos.length++]=new Video("Eminem-When I'm Gone","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=402583&uid=1265833775","green","MV","W");
+Videos[Videos.length++]=new Video("罗志祥-精舞门","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=620983&uid=1273112750","","MV","J");
+Videos[Videos.length++]=new Video("蔡依林-唯舞独尊","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1191948&uid=1253924794","","MV","W");
+Videos[Videos.length++]=new Video("Eminem-8 Miles最后Battle部分前两段","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=953787&uid=1238957694","","MV","E");
+Videos[Videos.length++]=new Video("西城男孩-noname","","","http://union.bokecc.com/flash/player.swf?videoID=10241_142033&share=false","","MV","A");
+Videos[Videos.length++]=new Video("千里之外","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1199749&uid=1253924794","","MV","Q");
+Videos[Videos.length++]=new Video("松隆子-noname","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1199102&uid=1253924794","","MV","S");
+Videos[Videos.length++]=new Video("安氏奈美惠-noname","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1199087&uid=1253924794","","MV","A");
+Videos[Videos.length++]=new Video("南拳妈妈-白色裂痕","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1199084&uid=1253924794","","MV","B");
+Videos[Videos.length++]=new Video("夏之记忆-松隆子","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1198960&uid=1253924794","","MV","X");
+Videos[Videos.length++]=new Video("How to be a Gril-安室奈美惠","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1198848&uid=1253924794","","MV","H");
+Videos[Videos.length++]=new Video("Do As Infinity","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1198842&uid=1253924794","","MV","D");
+Videos[Videos.length++]=new Video("BoA-Valentl","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1198825&uid=1253924794","","MV","V");
+Videos[Videos.length++]=new Video("Body Feel Exit-安室奈美惠","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1198831&uid=1253924794","","MV","B");
+Videos[Videos.length++]=new Video("死亡笔记片头MV","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1199781&uid=1253924794","","MV","S");
+Videos[Videos.length++]=new Video("寂寞在唱歌—阿桑","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200128&uid=1253924794","","MV","J");
+Videos[Videos.length++]=new Video("linkin park - Crawling","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200274&uid=1253924794","","MV","C");
+Videos[Videos.length++]=new Video("linkin park - By Myself","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200385&uid=1253924794","","MV","B");
+Videos[Videos.length++]=new Video("Eminem-Lose Yourself[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200742&uid=1253924794","","MV","L");
+Videos[Videos.length++]=new Video("8 Miles MV","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200491&uid=1253924794","","MV","E");
+Videos[Videos.length++]=new Video("南拳妈妈-牡丹江","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200744&uid=1253924794","","MV","M");
+Videos[Videos.length++]=new Video("南拳妈妈-橘子汽水","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200752&uid=1253924794","","MV","J");
+Videos[Videos.length++]=new Video("南拳妈妈-香草吧噗","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200790&uid=1253924794","","MV","X");
+Videos[Videos.length++]=new Video("南拳妈妈-家","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1200770&uid=1253924794","","MV","J");
+Videos[Videos.length++]=new Video("Avril-Take Me Away[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1201103&uid=1253924794","","MV","T");
+Videos[Videos.length++]=new Video("Avril-Slipped away[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1201100&uid=1253924794","","MV","S");
+Videos[Videos.length++]=new Video("Avril-Complicated[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1201072&uid=1253924794","","MV","C");
+Videos[Videos.length++]=new Video("Avril-Losing grip","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1201448&uid=1253924794","","MV","L");
+Videos[Videos.length++]=new Video("Avril-My happy ending","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1201496&uid=1253924794","","MV","M");
+Videos[Videos.length++]=new Video("厉娜-Darling","超级女生","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1206441&uid=1253924794","","MV","D");
+Videos[Videos.length++]=new Video("Avril-Unwanted[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1212551&uid=1253924794","","MV","U");
+Videos[Videos.length++]=new Video("Iris with Goo Goo Dolls","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1212948&uid=1253924794","","MV","I");
+Videos[Videos.length++]=new Video("Avril--Sk8er Boi[live]","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1212923&uid=1253924794","","MV","S");
+Videos[Videos.length++]=new Video("Eminem-Sing For The Moment","","","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1248205&uid=1253924794","","MV","S");
+Videos[Videos.length++]=new Video("Eminem-Like Toy Soldiers[MV]","Eminem-Like Toy Soldiers[MV]","Eminem&&&Like Toy Soldiers&&&MV","http://v.blog.sina.com.cn/b/vblog_player.swf?vid=1255040&uid=1253924794","","MV","L");
+
+//###############################################################################################################################
 
 
-//Videos[Videos.length++]=new Array("","","","","","","");
-//Videos[Videos.length++]=new Array("","","","","","","");
-//title[0],zm[1],description[2],tags[3](connect by "&&&"),url[4],color[5],type[6](mv,dongman,movie...)
 
 
-Videos=Videos.sort();
+//###############################################################################################################################
+//相关操作函数
+//###############################################################################################################################
+
+function getVideoForm(ch,gd){//ch is character ,gd is ground just like 动漫,影视,MV
+	var inner="";
+	
+	var vP=new Array();
+	for(var i=0;i<Videos.length;i++) 
+		if(Videos[i].ch.toLowerCase()==ch.toLowerCase() && Videos[i].ground.toLowerCase()==gd.toLowerCase()) 
+			vP[vP.length++]=i;//如果符合，则记录下来
+	if(vP.length<1) return "Sorry,Have not"
+											+"<a onclick=alert('直接告诉我Video名称就行了，当然有地址更好了'); href='http://wpa.qq.com/msgrd?V=1&Uin=563787750&Menu=yes;' target='_blank'><br><font color='#ff9900'>你来添加吧！</font></a>";
+	for(var i=0;i<vP.length;i++)
+			inner+=Videos[vP[i]].color==""?
+					"<a href='#' id='Videos-"+ vP[i] +"' onClick='Videos["+vP[i]+"].play();'>"+ Videos[vP[i]].title+"</a><br>"
+					:
+					"<a href='#' id='Videos-"+ vP[i] +"' onClick='Videos["+vP[i]+"].play();'>"+ Videos[vP[i]].title.fontcolor(Videos[vP[i]].color)+"</a><br>";
+	return inner;
+}
+
+function showVideos(gd){//flag是排列方式如按照歌曲排或者按照歌手排
+	gd=gd.toLowerCase();
+	for(var i=0;i<26;i++)
+		$("lr"+String.fromCharCode(i+65)).innerHTML=getVideoForm(String.fromCharCode(i+65),gd);
+		
+	setGroundTitle(gd);
+	
+	//为每一个歌曲链接设置title
+	//……
+}
+
 
 <!--//start create object functions
-	function GroundTitle(type){
-		this.type=type.toLowerCase();
-		switch(type){
+	function GroundTitle(gd){
+		this.gd=gd.toLowerCase();
+		switch(gd){
 			case "dongman":this.title="动漫";break;
 			case "movie":this.title="影视";break;
 			case "mv":this.title="MV";break;
@@ -70,57 +167,8 @@ Videos=Videos.sort();
 	}
 //end create object functions-->
 
-
-//###############################################################################################################################
-
-
-
-
-//###############################################################################################################################
-//相关操作函数
-//###############################################################################################################################
-
-//搜索指定相关的数据,返回在Videos中的位置
-function getVideosP(midx,value,type){
-	//midx是Videos得哪一个元素，value是检验相等的值
-	var vP=new Array();//vP为Videos position，是指在Videos中的位置
-	for(var i=0;i<Videos.length;i++)
-		if(Videos[i][midx]==value && type.toLowerCase()==Videos[i][6].toString().toLowerCase()) vP[vP.length++]=i;//如果符合，则记录下来
-	return vP;
-}
-
-function getVideoForm(zm,type){//zm是字母,type是显示种类，如动漫，或者影视之类的
-	var inner="";
-	var vP=getVideosP(1,zm,type);//vP为Videos position，是指在Videos中的位置
-	if(vP.length<1) return "Sorry,Have not"
-											+"<a onclick=alert('直接告诉我Video名称就行了，当然有地址更好了'); href='http://wpa.qq.com/msgrd?V=1&Uin=563787750&Menu=yes;' target='_blank'><br><font color='#ff9900'>你来添加吧！</font></a>";
-	for(var i=0;i<vP.length;i++)
-			inner+=Videos[vP[i]][5]==""?
-					"<a href='#' id='Videos-"+ vP[i] +"' onClick=\"setVideo('"+ Videos[vP[i]][4] +"','"+ Videos[vP[i]][6] +"');\">"+ Videos[vP[i]][0]+"</a><br>"
-					:
-					"<a href='#' id='Videos-"+ vP[i] +"' onClick=\"setVideo('"+ Videos[vP[i]][4] +"');\">"+ Videos[vP[i]][0].fontcolor(Videos[vP[i]][5])+"</a><br>";
-	return inner;
-}
-
-function showVideos(type){//flag是排列方式如按照歌曲排或者按照歌手排
-	type=type.toLowerCase();
-	for(var i=0;i<26;i++)
-		$("lr"+String.fromCharCode(i+65)).innerHTML=getVideoForm(String.fromCharCode(i+65),type);
-		
-	setGroundTitle(type);
-	
-	//为每一个歌曲链接设置title
-	//……
-}
 //显示大厅名称//利用到了自定义类
-function setGroundTitle(type){
-	var g=new GroundTitle(type);
+function setGroundTitle(gd){
+	var g=new GroundTitle(gd);
 	$("tdGroundTitle").innerHTML="<font color='#ff9900'>"+ g.title +"大厅</font>";
-}
-
-function setVideo(src,type){
-	var mv=Videos[getVideosP(4,src,type)[0]];
-	$("lrPlayer").innerHTML="<iframe src='"+ src +"' width='500' height='550' scrolling=no></iframe>";
-	$("lrTitle").innerHTML="<font class='style6'>"+ mv[0] +"</font>";
-	$("lrInfo").innerHTML="<font class='style6'>Titel:</font>"+ mv[0] +"<br><font class='style6'>Description:</font>"+ mv[2] +"<br><font class='style6'>Tags:</font>"+ mv[3].split("&&&") +"<br><a target='_blank' href='"+ mv[4] +"'><u>source</u></a>......";
 }

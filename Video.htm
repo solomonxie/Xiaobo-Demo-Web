@@ -184,6 +184,27 @@ MM_reloadPage(true);
 
 <br>
 
+<!--Video公告 start-->
+<div id="lrPubs" style="position:absolute; width:165px; z-index:3; top: 148px; left: 712px;">
+      <table width="100%"  border="0" align="center">
+        <tr>
+          <td height="10" align="center" bgcolor="#66CCFF"><span class="style6"><a href="#"onClick="javascript:hide('pubnews');swap('pubnews','className','up','down');$('Jia2').innerHTML=$('Jia2').innerHTML=='+'?'--':'+';">请选择大厅<strong><font id="Jia2" color="#ff9900">+</font></strong></a></span></td>
+        </tr>
+        <tr id="pubnews" style="display:none; ">
+          <td align="center" bgcolor="#CEEFFF">
+            <a href="#" onClick="javascript:showVideos('Dongman');$('lrPlayer').innerHTML='';$('lrTitle').innerHTML='';$('lrInfo').innerHTML='';" title="动漫"><strong><font color="#ff9900">动漫</font></strong></a>
+			 &nbsp;|&nbsp;
+            <a href="#" onClick="javascript:showVideos('Movie');$('lrPlayer').innerHTML='';$('lrTitle').innerHTML='';$('lrInfo').innerHTML='';" title="影视"><strong><font color="#ff9900">影视</font></strong></a>
+			 &nbsp;|&nbsp;
+            <a href="#" onClick="javascript:showVideos('MV');$('lrPlayer').innerHTML='';$('lrTitle').innerHTML='';$('lrInfo').innerHTML='';" title="MV"><strong><font color="#ff9900">MV</font></strong></a>
+			
+			
+			</td>
+        </tr>
+      </table>
+</div>
+<!--Video公告 start-->
+
 <div>
 <table width='777'  border='0'>
   <tr><td align="center" id="tdGroundTitle" bgcolor='#CEEFFF' onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >&nbsp;</td></tr></table>
@@ -213,6 +234,10 @@ MM_reloadPage(true);
 <td>
 
 
+
+
+
+
 <div id="lrAll" style="width:300;">
 <!--lrAll start-->
 
@@ -231,15 +256,15 @@ MM_reloadPage(true);
 		var inner="";
 		for(var i=0;i<26;i++) inner+=getTable(String.fromCharCode(i+65).toUpperCase());
 		$("lrAll").innerHTML=inner;
-		function getTable(zm){
+		function getTable(ch){
 			return (
 				"<table width='100%'  border='0'>"+
 				  "<tr>"+
-					"<td bgcolor='#CEEFFF'onMouseOver=\"this.bgColor='#71D0FF'\" onMouseOut=\"this.bgColor='#CEEFFF'\" ><font color='#ff9900'><strong><a name='#"+ zm +"' href='#dh' class='imgLink'>"+ zm +"</a></strong></font></td>"+
+					"<td bgcolor='#CEEFFF'onMouseOver=\"this.bgColor='#71D0FF'\" onMouseOut=\"this.bgColor='#CEEFFF'\" ><font color='#ff9900'><strong><a name='#"+ ch +"' href='#dh' class='imgLink'>"+ ch +"</a></strong></font></td>"+
 				  "</tr>"+
 				"</table>"+
 					"<br>"+
-				"<div id='lr"+ zm +"' style='margin-left:10px;margin-right:10px;'><span class=style6>加载中……<span></div>"+
+				"<div id='lr"+ ch +"' style='margin-left:10px;margin-right:10px;'><span>加载中……<span></div>"+
 					"<br>"
 			);
 		}
@@ -256,34 +281,19 @@ MM_reloadPage(true);
 <div style="margin-left:10px;margin-right:10px;"><a href="#showChangeV" name="#showChangeV" onClick="showModalDialog('转换为代码.htm')"><font color="#ff9900"><strong>□</strong></font></a></div></td>
   </tr>
 </table>
-<table width="100%"  border="0">
+<table width="777"  border="0">
   <tr>
     <td width="84%" bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >&nbsp;</td>
   </tr>
 </table>
 
-<!--Video公告 start-->
-<div id="lrPubs" style="position:absolute; width:165px; z-index:3; top: 148px; left: 712px;">
-      <table width="100%"  border="0" align="center">
-        <tr>
-          <td height="10" align="center" bgcolor="#66CCFF"><span class="style6"><a href="#"onClick="javascript:hide('pubnews');swap('pubnews','className','up','down');$('Jia2').innerHTML=$('Jia2').innerHTML=='+'?'--':'+';">请选择Video种类<strong><font id="Jia2" color="#ff9900">+</font></strong></a></span></td>
-        </tr>
-        <tr id="pubnews" style="display:none; ">
-          <td align="center" bgcolor="#CEEFFF">
-            <a href="#" onClick="javascript:showVideos('Dongman');$('lrPlayer').innerHTML='';$('lrTitle').innerHTML='';$('lrInfo').innerHTML='';" title="动漫"><strong><font color="#ff9900">动漫</font></strong></a>
-			 &nbsp;|&nbsp;
-            <a href="#" onClick="javascript:showVideos('Movie');$('lrPlayer').innerHTML='';$('lrTitle').innerHTML='';$('lrInfo').innerHTML='';" title="影视"><strong><font color="#ff9900">影视</font></strong></a>		  </td>
-        </tr>
-      </table>
-</div>
-<!--Video公告 start-->
 
 <div style="margin-left:120px;margin-right:120px;"></div>
 <br>
 <br>
 
 
-<table width="100%" border="0">
+<table width="777" border="0">
   <tr>
     <td align="center" valign="bottom"  bgcolor="#CEEFFF" onMouseOver="this.bgColor='#71D0FF'" onMouseOut="this.bgColor='#CEEFFF'" >Copyright &copy; 2006, 小波. All right are reserved. <span id="Count"></span></td>
   </tr>
@@ -298,14 +308,12 @@ MM_reloadPage(true);
 <script>
 <!--进行各列赋值start-->
 	//在这儿除了要正常显示，并且还要接受参数并据要求显示哪种类型的大厅
-	var t=getKey("type","Video.htm").toLowerCase();
+	var t=getKey("ground","Video.htm").toLowerCase();
 	showVideos(t==""?"dongman":t);
 <!--进行各列赋值end-->
 </script>
 <!--###############################################################################-->
-<!--
 <div id="xx" style="display:none;"><script language="javascript" type="text/javascript" src="http://js.users.51.la/832271.js"></script></div><script>$("Count").innerHTML=$("xx").innerHTML;$("xx").innerHTML="";</script>
--->
 <br>
 
 <b></b>
